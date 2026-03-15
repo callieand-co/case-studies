@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Callie Rojewski — Case Studies</title>
+  <meta name="description" content="Case studies in ethical tech marketing, community infrastructure, and narrative strategy by Callie Rojewski.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Antilag';
+      src: url('Antilag copy.otf') format('opentype'),
+           url('Antilag copy.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F9F6F1;
+      --ink: #1A1A1A;
+      --accent: #C4693A;
+      --accent-light: #D4845A;
+      --gray-200: #E8E4DF;
+      --gray-400: #A8A29E;
+      --gray-600: #6B6560;
+      --serif: 'Antilag', Georgia, serif;
+      --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(249,246,241,0.92);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .nav-inner {
+      max-width: 1200px; margin: 0 auto; padding: 1.25rem 2rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); }
+    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--gray-600); transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--ink); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; width: 24px; padding: 4px 0; }
+    .hamburger span { display: block; height: 2px; background: var(--ink); border-radius: 1px; transition: all 0.3s; }
+    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+    .hamburger.active span:nth-child(2) { opacity: 0; }
+    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
+    .mobile-menu {
+      display: none; position: fixed; inset: 0; background: var(--bg); z-index: 99;
+      flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
+    }
+    .mobile-menu.active { display: flex; }
+    .mobile-menu a { font-family: var(--serif); font-size: 2rem; color: var(--ink); }
+
+    /* HERO — compact, not full-screen */
+    .hero {
+      padding: 8rem 2rem 3rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .hero-label {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+      line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem;
+      max-width: 700px;
+    }
+    .hero p {
+      font-size: 1.1rem; line-height: 1.7; color: var(--gray-600);
+      max-width: 580px; margin-bottom: 0;
+    }
+
+    /* SEARCH & FILTER */
+    .search-section {
+      max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 1rem;
+    }
+    .search-bar {
+      display: flex; align-items: center; gap: 0.75rem;
+      background: #fff; border: 1px solid var(--gray-200); border-radius: 4px;
+      padding: 0.85rem 1.25rem; max-width: 480px;
+      transition: border-color 0.2s;
+    }
+    .search-bar:focus-within { border-color: var(--accent); }
+    .search-icon { color: var(--gray-400); flex-shrink: 0; }
+    .search-bar input {
+      border: none; background: none; outline: none; font-family: var(--sans);
+      font-size: 0.95rem; color: var(--ink); width: 100%;
+    }
+    .search-bar input::placeholder { color: var(--gray-400); }
+
+    .filter-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      margin-top: 1.25rem;
+    }
+    .filter-btn {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 2px;
+      color: var(--gray-600); background: transparent;
+      border: 1px solid var(--gray-200); transition: all 0.2s;
+    }
+    .filter-btn:hover { border-color: var(--gray-400); color: var(--ink); }
+    .filter-btn.active {
+      background: var(--ink); color: var(--bg); border-color: var(--ink);
+    }
+
+    .no-results {
+      display: none; text-align: center; padding: 4rem 2rem;
+      color: var(--gray-400); font-size: 1rem;
+    }
+    .no-results.visible { display: block; }
+
+    /* CASE STUDY GRID */
+    .grid-section {
+      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 6rem;
+    }
+    .case-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
+    }
+
+    .case-card {
+      background: #fff; border: 1px solid var(--gray-200); border-radius: 4px;
+      overflow: hidden; transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: flex; flex-direction: column;
+    }
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(26,26,26,0.08);
+      border-color: transparent;
+    }
+    .case-card.hidden { display: none; }
+
+    .card-image {
+      width: 100%; aspect-ratio: 16/9; background: var(--gray-200);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray-400); font-size: 0.8rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      position: relative; overflow: hidden;
+    }
+    .card-image img {
+      width: 100%; height: 100%; object-fit: cover;
+      display: block; position: absolute; inset: 0;
+    }
+
+    .card-body { padding: 1.75rem 1.75rem 2rem; display: flex; flex-direction: column; flex: 1; }
+
+    .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .tag {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: #1C1CA8;
+      background: rgba(28,28,168,0.08); padding: 0.25rem 0.55rem; border-radius: 2px;
+    }
+
+    .card-org {
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.5rem;
+    }
+
+    .card-title {
+      font-family: var(--serif); font-size: 1.3rem; line-height: 1.3;
+      margin-bottom: 0.75rem;
+    }
+
+    .card-outcome {
+      font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; flex: 1;
+    }
+
+    .card-link {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      margin-top: 1.25rem; font-size: 0.8rem; font-weight: 600;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      color: #1C1CA8; transition: gap 0.25s;
+    }
+    .case-card:hover .card-link { gap: 0.7rem; }
+
+    .card-status {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gray-400);
+      margin-top: 1.25rem;
+    }
+
+    /* FOOTER */
+    .footer {
+      border-top: 1px solid var(--gray-200);
+      max-width: 1200px; margin: 0 auto;
+      padding: 3rem 2rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-left p {
+      font-size: 0.8rem; color: var(--gray-400);
+    }
+    .footer-left a { color: var(--gray-600); transition: color 0.2s; }
+    .footer-left a:hover { color: var(--ink); }
+    .footer-links {
+      display: flex; gap: 1.5rem; font-size: 0.8rem;
+    }
+    .footer-links a { color: var(--gray-600); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* FADE */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .hero { padding: 7rem 1.5rem 2rem; }
+      .hero h1 { font-size: 2rem; }
+      .search-section { padding: 2rem 1.5rem 0.5rem; }
+      .grid-section { padding: 1.5rem 1.5rem 4rem; }
+      .case-grid { grid-template-columns: 1fr; gap: 1.25rem; }
+      .footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Callie Rojewski</a>
+      <ul class="nav-links">
+        <li><a href="mailto:callie@onlineandirl.com">Contact</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html" onclick="toggleMobileMenu()">Work</a>
+    <a href="mailto:callie@onlineandirl.com" onclick="toggleMobileMenu()">Contact</a>
+  </div>
+
+  <section class="hero">
+    <p class="hero-label fade-in">Case Studies</p>
+    <h1 class="fade-in">Marketing &amp; Narrative Infrastructure for the Technologies That Matter</h1>
+    <p class="fade-in">Selected work in ethical tech, community marketing, and movement building.</p>
+  </section>
+
+  <div class="search-section">
+    <div class="search-bar">
+      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input type="text" id="searchInput" placeholder="Search case studies..." autocomplete="off">
+    </div>
+    <div class="filter-row" id="filterRow">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="movement building">Movement Building</button>
+      <button class="filter-btn" data-filter="community marketing">Community</button>
+      <button class="filter-btn" data-filter="gtm strategy">GTM Strategy</button>
+      <button class="filter-btn" data-filter="brand narrative">Brand Narrative</button>
+      <button class="filter-btn" data-filter="ai product">AI &amp; Tech</button>
+    </div>
+  </div>
+
+  <section class="grid-section">
+    <div class="case-grid" id="caseGrid">
+
+      <!-- 1: Cyber Collective -->
+      <a href="cyber-collective.html" class="case-card fade-in"
+         data-tags="movement building, digital safety, nonprofit growth, community marketing"
+         data-search="cyber collective internet street smarts digital safety movement building nonprofit community 14 countries funding anthem award mozilla omidyar">
+        <div class="card-image">
+          <img src="images/cyber-collective-workshops.png" alt="Cyber Collective community workshops">
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Movement Building</span>
+            <span class="tag">Digital Safety</span>
+          </div>
+          <p class="card-org">Cyber Collective</p>
+          <h3 class="card-title">Internet Street Smarts — Scaling a Digital Safety Movement to 14+ Countries</h3>
+          <p class="card-outcome">$600K+ in philanthropic funding secured and audiences reached across 14+ countries — all through community-first programming.</p>
+          <span class="card-link">Read Case Study <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- 2: Conscious Stack Design -->
+      <a href="conscious-stack-design.html" class="case-card fade-in"
+         data-tags="movement building, brand narrative, gtm strategy, community marketing"
+         data-search="conscious stack design george samuels cmo partnership movement building brand narrative gtm go-to-market certification practitioner pingala ai conscious tech">
+        <div class="card-image" style="background: #1a1d1a;">
+          <img src="images/conscious-stack-og.png" alt="Conscious Stack — Reclaim Your Mind">
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Movement Building</span>
+            <span class="tag">CMO Partnership</span>
+          </div>
+          <p class="card-org">Conscious Stack Design</p>
+          <h3 class="card-title">Building the Movement Infrastructure for Conscious Tech</h3>
+          <p class="card-outcome">Embedded as CMO to build brand narrative, community architecture, and practitioner certification for a paradigm-shifting framework.</p>
+          <span class="card-link">Read Case Study <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- 3: Digital Culturist -->
+      <a href="digital-culturist.html" class="case-card fade-in"
+         data-tags="gtm strategy, ai product, community marketing"
+         data-search="digital culturist ai consumer product gtm go-to-market beta community hubspot crm organic launch">
+        <div class="card-image">
+          <img src="images/digital-culturist-hero.jpg" alt="Digital Culturist workspace illustration">
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">GTM Strategy</span>
+            <span class="tag">AI Product</span>
+          </div>
+          <p class="card-org">Digital Culturist</p>
+          <h3 class="card-title">0→1 Go-to-Market for an AI Consumer Product</h3>
+          <p class="card-outcome">Grew beta community to 150+ members in 7 days through organic channels only — no paid spend.</p>
+          <span class="card-link">Read Case Study <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- 4: Meta Well -->
+      <a href="meta-well.html" class="case-card fade-in"
+         data-tags="brand narrative, ai product, community marketing"
+         data-search="meta well wellness ai brand narrative community">
+        <div class="card-image">
+          <img src="images/metawell-featured.png" alt="Meta Well brand visual">
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Brand Narrative</span>
+            <span class="tag">AI &amp; Tech</span>
+          </div>
+          <p class="card-org">Meta Well</p>
+          <h3 class="card-title">Brand Narrative for a Digital Wellness Platform</h3>
+          <p class="card-outcome">Built brand story, editorial voice, and content strategy for a platform helping people make peace with the internet.</p>
+          <span class="card-link">Read Case Study <span>→</span></span>
+        </div>
+      </a>
+
+      <!-- 5: OurKind -->
+      <a href="ourkind.html" class="case-card fade-in"
+         data-tags="community marketing, brand narrative, movement building"
+         data-search="ourkind community brand narrative movement building">
+        <div class="card-image">
+          <img src="images/ourkind-therapists.jpg" alt="OurKind Therapy team">
+        </div>
+        <div class="card-body">
+          <div class="card-tags">
+            <span class="tag">Community</span>
+            <span class="tag">Brand Narrative</span>
+          </div>
+          <p class="card-org">OurKind</p>
+          <h3 class="card-title">OurKind Therapy — Brand & Community Infrastructure for a Modern Practice</h3>
+          <p class="card-outcome">Built brand narrative, community architecture, and digital presence for a mission-driven therapy practice.</p>
+          <span class="card-link">Read Case Study <span>→</span></span>
+        </div>
+      </a>
+
+    </div>
+    <p class="no-results" id="noResults">No case studies match your search.</p>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-left">
+      <p>&copy; 2026 <a href="https://callierojewski.com" target="_blank" rel="noopener">Callie Rojewski</a></p>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a>
+      <a href="https://onlineandirl.com" target="_blank" rel="noopener">onlineandirl.com</a>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile menu
+    function toggleMobileMenu() {
+      document.getElementById('mobileMenu').classList.toggle('active');
+      document.querySelector('.hamburger').classList.toggle('active');
+    }
+
+    // Search + Filter
+    const cards = document.querySelectorAll('.case-card');
+    const input = document.getElementById('searchInput');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const noResults = document.getElementById('noResults');
+    let activeFilter = 'all';
+
+    function filterCards() {
+      const q = input.value.toLowerCase().trim();
+      let visible = 0;
+
+      cards.forEach(card => {
+        const search = card.dataset.search || '';
+        const tags = card.dataset.tags || '';
+        const title = card.querySelector('.card-title').textContent.toLowerCase();
+        const org = card.querySelector('.card-org').textContent.toLowerCase();
+        const text = `${search} ${tags} ${title} ${org}`;
+
+        const matchesSearch = !q || text.includes(q);
+        const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
+
+        if (matchesSearch && matchesFilter) {
+          card.classList.remove('hidden');
+          visible++;
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+
+      noResults.classList.toggle('visible', visible === 0);
+    }
+
+    input.addEventListener('input', filterCards);
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        activeFilter = btn.dataset.filter;
+        filterCards();
+      });
+    });
+
+    // Scroll animations
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

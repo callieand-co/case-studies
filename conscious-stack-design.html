@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conscious Stack Design — Case Study | Callie Rojewski</title>
+  <meta name="description" content="How Callie Rojewski partnered with founder George Samuels as CMO to build movement infrastructure for conscious tech.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Antilag';
+      src: url('Antilag copy.otf') format('opentype'),
+           url('Antilag copy.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #F5F2EC;
+      --white: #FFFFFF;
+      --ink: #1A1A1A;
+      --green: #3B5C38;
+      --green-bg: #ECF2EA;
+      --ochre: #C97A2A;
+      --ochre-bg: #FBF0E1;
+      --slate: #6B7B8D;
+      --gray-200: #DDD9D2;
+      --gray-400: #A8A29E;
+      --serif: 'Antilag', Georgia, serif;
+      --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #1A1D1A;
+        --white: #242824;
+        --ink: #E8E4DF;
+        --green: #7BAF76;
+        --green-bg: #252E24;
+        --ochre: #E09A4A;
+        --ochre-bg: #2E2618;
+        --slate: #9AA8B6;
+        --gray-200: #3A3A36;
+        --gray-400: #6B6560;
+      }
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans); background: var(--bg);
+      color: var(--ink); line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* NAV */
+    .nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(245,242,236,0.94);
+      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--gray-200);
+    }
+    @media (prefers-color-scheme: dark) {
+      .nav { background: rgba(26,29,26,0.94); }
+    }
+    .nav-inner {
+      max-width: 820px; margin: 0 auto; padding: 1.25rem 1.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
+    .nav-back {
+      font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--slate);
+      display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s;
+    }
+    .nav-back:hover { color: var(--ink); }
+
+    /* HERO CARD */
+    .hero-card {
+      max-width: 820px; margin: 0 auto;
+      padding: 8rem 1.5rem 0;
+    }
+    .hero-card-inner {
+      background: var(--green-bg); border-radius: 6px;
+      padding: 3.5rem 3rem;
+    }
+    .hero-card h1 {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4.5vw, 2.75rem);
+      line-height: 1.15; letter-spacing: -0.01em;
+      margin-bottom: 1.25rem; max-width: 650px;
+    }
+    .hero-card .hero-sub {
+      font-size: 1.05rem; line-height: 1.7; color: var(--slate);
+      max-width: 600px; margin-bottom: 1.75rem;
+    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+    .hero-tag {
+      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
+      text-transform: uppercase; padding: 0.3rem 0.65rem; border-radius: 2px;
+    }
+    .hero-tag.green { color: var(--green); background: rgba(59,92,56,0.12); }
+    .hero-tag.neutral { color: var(--slate); background: rgba(107,123,141,0.1); }
+
+    /* IMAGE PLACEHOLDERS */
+    .content-image {
+      width: 100%; aspect-ratio: 16/9; background: var(--gray-200);
+      border-radius: 4px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gray-400); font-size: 0.75rem; font-weight: 500;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      margin: 2rem 0;
+    }
+
+    /* DIVIDER */
+    .divider {
+      max-width: 820px; margin: 0 auto; padding: 0 1.5rem;
+    }
+    .divider hr {
+      border: none; height: 0.5px;
+      background: rgba(26,26,26,0.08);
+    }
+    @media (prefers-color-scheme: dark) {
+      .divider hr { background: rgba(232,228,223,0.08); }
+    }
+
+    /* SECTIONS */
+    .section {
+      max-width: 820px; margin: 0 auto;
+      padding: 3.5rem 1.5rem;
+    }
+    .section-label {
+      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--green); margin-bottom: 1rem;
+    }
+    .section h2 {
+      font-family: var(--serif);
+      font-size: clamp(1.5rem, 3vw, 2rem);
+      line-height: 1.25; margin-bottom: 1.75rem;
+    }
+    .section p {
+      font-size: 0.975rem; line-height: 1.8; color: var(--slate);
+      margin-bottom: 1.25rem; max-width: 680px;
+    }
+
+    /* BLOCKQUOTE — GREEN */
+    .quote-green {
+      border-left: 3px solid var(--green);
+      padding: 1.25rem 1.5rem;
+      margin: 2rem 0; max-width: 680px;
+    }
+    .quote-green p {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.1rem; line-height: 1.6; color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .quote-green .quote-attr {
+      font-family: var(--sans); font-style: normal;
+      font-size: 0.8rem; color: var(--slate);
+    }
+
+    /* BLOCKQUOTE — OCHRE */
+    .quote-ochre {
+      border-left: 3px solid var(--ochre);
+      background: var(--ochre-bg);
+      padding: 1.5rem 1.75rem;
+      margin: 2rem 0; max-width: 680px;
+      border-radius: 0 4px 4px 0;
+    }
+    .quote-ochre p {
+      font-family: var(--serif); font-style: italic;
+      font-size: 1.1rem; line-height: 1.6; color: var(--ink);
+      margin-bottom: 0.5rem;
+    }
+    .quote-ochre .quote-attr {
+      font-family: var(--sans); font-style: normal;
+      font-size: 0.8rem; color: var(--slate);
+    }
+
+    /* SERVICES GRID */
+    .services-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 1.5rem; margin: 2.5rem 0 2rem;
+    }
+    .service-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: 4px; padding: 1.75rem 1.5rem;
+    }
+    .service-num {
+      font-family: var(--serif); font-size: 2.5rem;
+      color: var(--gray-200); line-height: 1; margin-bottom: 0.5rem;
+    }
+    @media (prefers-color-scheme: dark) {
+      .service-num { color: var(--gray-400); opacity: 0.3; }
+    }
+    .service-title {
+      font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem;
+      color: var(--ink);
+    }
+    .service-desc {
+      font-size: 0.875rem; line-height: 1.65; color: var(--slate);
+    }
+
+    /* FOOTER CTA CARD */
+    .footer-cta {
+      max-width: 820px; margin: 0 auto; padding: 0 1.5rem 3rem;
+    }
+    .footer-cta-inner {
+      background: var(--green-bg); border-radius: 6px;
+      padding: 3rem; text-align: center;
+    }
+    .footer-cta h3 {
+      font-family: var(--serif);
+      font-size: 1.5rem; margin-bottom: 0.75rem;
+    }
+    .footer-cta p {
+      font-size: 0.95rem; color: var(--slate); line-height: 1.7;
+      max-width: 500px; margin: 0 auto 1.5rem;
+    }
+    .btn-green {
+      display: inline-block;
+      padding: 0.9rem 2rem; background: var(--green); color: #fff;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; border-radius: 3px;
+      transition: all 0.25s;
+    }
+    .btn-green:hover { opacity: 0.9; transform: translateY(-1px); }
+
+    /* SITE FOOTER */
+    .site-footer {
+      border-top: 1px solid var(--gray-200);
+      max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem;
+      text-align: center;
+    }
+    .site-footer p { font-size: 0.75rem; color: var(--gray-400); }
+    .site-footer a { color: var(--slate); transition: color 0.2s; }
+    .site-footer a:hover { color: var(--ink); }
+
+    /* FADE */
+    .fade-in {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .hero-card { padding-top: 6.5rem; }
+      .hero-card-inner { padding: 2.5rem 1.5rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .footer-cta-inner { padding: 2rem 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .hero-card h1 { font-size: 1.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Callie Rojewski</a>
+      <a href="index.html" class="nav-back">← All Case Studies</a>
+    </div>
+  </nav>
+
+  <!-- 1. HERO -->
+  <section class="hero-card fade-in">
+    <div class="hero-card-inner">
+      <h1>Building the Movement Infrastructure for Conscious Tech</h1>
+      <p class="hero-sub">How Callie Rojewski partnered with founder George Samuels as CMO to give a paradigm-shifting framework its brand, community, and place in the world.</p>
+      <div class="hero-tags">
+        <span class="hero-tag green">Movement Building</span>
+        <span class="hero-tag green">CMO Partnership</span>
+        <span class="hero-tag green">Go-to-Market</span>
+        <span class="hero-tag neutral">Brand Narrative</span>
+        <span class="hero-tag neutral">Community Architecture</span>
+        <span class="hero-tag neutral">Practitioner Certification</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE -->
+  <section class="section" style="padding-bottom: 0;">
+    <div class="content-image fade-in" style="background: #1a1d1a; overflow: hidden;">
+      <img src="images/conscious-stack-og.png" alt="Conscious Stack — Reclaim Your Mind, One Stack at a Time" style="width: 100%; height: 100%; object-fit: cover;">
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- 2. THE IDEA -->
+  <section class="section fade-in">
+    <p class="section-label">The Idea</p>
+    <h2>Your tech stack isn't a productivity problem. It's an identity problem.</h2>
+    <p>Most people's digital tool stacks aren't designed — they accumulate. App by app, platform by platform, shaped by defaults and the invisible logic of Big Tech, until your attention, your focus, maybe even your sense of self, has been quietly co-opted by systems that were never built with you in mind.</p>
+    <p>Conscious Stack Design, founded by George Samuels, is a methodology and growing movement built on a radical premise: your relationship with technology reflects your relationship with yourself. Design it intentionally — using George's nine-slot pyramid and 5:3:1 framework — and something shifts. You stop being a passive consumer of the digital world and start being its architect.</p>
+
+    <div class="quote-green">
+      <p>"In an AI world, we have to make humans great again and go back to basics. The way we measure success is going to come from alignment and coherence — how well you're aligning the stuff inside of you with all of this stuff on the outside."</p>
+      <span class="quote-attr">— George Samuels, Silicon Valley panel, October 2025</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- 3. WHY IT MATTERS -->
+  <section class="section fade-in">
+    <p class="section-label">Why It Matters Now</p>
+    <h2>The most contrarian view in the room — and the one that landed hardest.</h2>
+    <p>At an LG Nova innovation summit in Silicon Valley, every talk was about capital, data centers, and AI adoption. Then George went a different direction: asking a room of investors and founders whether anyone was stopping to consider what happens to the human when AI makes knowledge work obsolete. Not as a warning — as an invitation to go inward first.</p>
+    <p>People from Harvard and Stanford approached him after. Strangers wrote back unprompted to check that they'd understood correctly. That's not audience engagement. That's the signal of a movement.</p>
+
+    <div class="content-image">
+      <span>Image Placeholder — Silicon Valley Panel</span>
+      <!-- <img src="images/csd-panel.jpg" alt="George Samuels at LG Nova panel"> -->
+    </div>
+
+    <div class="quote-ochre">
+      <p>"People were repeating back to me their interpretation of conscious stack design — and it was on point. They got it. Which means what we're putting out and messaging is hitting."</p>
+      <span class="quote-attr">— George Samuels, October 2025</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- 4. SERVICES -->
+  <section class="section fade-in">
+    <p class="section-label">Services Delivered</p>
+    <h2>Named CMO. Embedded practitioner. Movement architect.</h2>
+    <p>George didn't bring Callie in to write copy. He named her CMO because he recognized what most founders miss: the most powerful person to build movement infrastructure is someone who lives inside the methodology itself. Callie became a CSD practitioner — working through her own identity stack, pressure-testing the product with her clients, surfacing the nuances that shaped product decisions. She built from within.</p>
+
+    <div class="services-grid">
+      <div class="service-card">
+        <p class="service-num">01</p>
+        <p class="service-title">Brand narrative & positioning</p>
+        <p class="service-desc">Translated a philosophical framework into clear language across three personas without losing the depth that makes it powerful.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">02</p>
+        <p class="service-title">Website strategy & copy</p>
+        <p class="service-desc">Three-persona pathway architecture, homepage CTAs anchored to the Frequency Finder quiz and mini course, SEO copy iteration.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">03</p>
+        <p class="service-title">Community infrastructure</p>
+        <p class="service-desc">Luma calendar, Substack with contributor model, monthly meetup cadence, inner circle rituals — built from zero with shared admin access.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">04</p>
+        <p class="service-title">Practitioner certification</p>
+        <p class="service-desc">First CSD certification pathway: session structure, archetype onboarding, participatory design framework, and licensing model for third-party trainers.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">05</p>
+        <p class="service-title">Go-to-market strategy</p>
+        <p class="service-desc">Full GTM sequencing from podcast-driven awareness to live certification events, with two distinct funnel lanes mapped and prioritized.</p>
+      </div>
+      <div class="service-card">
+        <p class="service-num">06</p>
+        <p class="service-title">Product feedback loops</p>
+        <p class="service-desc">Live consulting simulations with the Pingala agent surfaced UX insights that George embedded directly into product development.</p>
+      </div>
+    </div>
+
+    <div class="quote-green">
+      <p>"The way I see you is like you're essentially the CMO of this. That's how I see it."</p>
+      <span class="quote-attr">— George Samuels, January 2026</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- 5. THE MOVEMENT -->
+  <section class="section fade-in">
+    <p class="section-label">The Movement</p>
+    <h2>Not a productivity tool. A new operating system for being human in the age of AI.</h2>
+    <p>The conscious tech movement is building toward something most AI conversations aren't asking yet: what does a person look like who is genuinely sovereign over their digital life? Not just private or secure — but aligned. Where what they say they believe is reflected in how they actually spend their attention.</p>
+    <p>CSD is the methodology. The Pingala agent is the technology. The practitioner certification is the scale infrastructure. Callie's role was to build the connective tissue — the narrative, the systems, the on-ramp that invites people in before they even know they need it.</p>
+
+    <div class="content-image">
+      <span>Image Placeholder — Movement</span>
+      <!-- <img src="images/csd-movement.jpg" alt="CSD community"> -->
+    </div>
+
+    <div class="quote-ochre">
+      <p>"I think we've stayed in contact because I know you feel it. And that's why I want you to truly understand it so that you can explain it to other people yourself. This is a movement, and everyone has their place within the ecosystem."</p>
+      <span class="quote-attr">— George Samuels, February 2026</span>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- 6. FOOTER CTA -->
+  <div class="footer-cta fade-in">
+    <div class="footer-cta-inner">
+      <h3>Ready to build your movement infrastructure?</h3>
+      <p>Callie works with conscious tech founders and mission-led platforms at the intersection of digital rights, community, and ethical AI.</p>
+      <a href="mailto:callie@onlineandirl.com" class="btn-green">Work with Callie →</a>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="index.html">← Back to all case studies</a> · <a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a></p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>

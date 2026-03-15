@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Culturist — Case Study | Callie Rojewski</title>
+  <meta name="description" content="How Callie Rojewski took an AI consumer product from concept to 150+ beta members in 7 days with zero paid spend.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <style>
+    @font-face {
+      font-family: 'Antilag';
+      src: url('Antilag copy.otf') format('opentype'),
+           url('Antilag copy.ttf') format('truetype');
+      font-weight: normal;
+      font-style: normal;
+      font-display: swap;
+    }
+    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg: #FFFFFF;
+      --ink: #1A1A1A;
+      --accent: #2A6B5E;
+      --accent-bg: rgba(42,107,94,0.06);
+      --gray-200: #E8E4DF;
+      --gray-400: #A8A29E;
+      --gray-600: #6B6560;
+      --serif: 'Antilag', Georgia, serif;
+      --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
+    a { color: inherit; text-decoration: none; }
+
+    .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); }
+    .nav-inner { max-width: 820px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-logo { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
+    .nav-back { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-600); display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+    .nav-back:hover { color: var(--ink); }
+
+    .hero { max-width: 820px; margin: 0 auto; padding: 8rem 1.5rem 3rem; }
+    .hero-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
+    .hero-subtitle { font-size: 1.15rem; line-height: 1.7; color: var(--gray-600); max-width: 620px; margin-bottom: 1rem; }
+    .hero-meta { font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.03em; }
+
+    .hero-image { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    .hero-image img { width: 100%; border-radius: 4px; }
+
+    .stats { max-width: 820px; margin: 0 auto; padding: 3.5rem 1.5rem 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    .stat-number { font-family: var(--serif); font-size: 2rem; color: var(--accent); line-height: 1.1; margin-bottom: 0.35rem; }
+    .stat-label { font-size: 0.825rem; color: var(--gray-600); line-height: 1.5; }
+
+    .divider { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    .divider hr { border: none; height: 0.5px; background: rgba(26,26,26,0.08); }
+
+    .section { max-width: 820px; margin: 0 auto; padding: 3.5rem 1.5rem; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; margin-bottom: 1.75rem; }
+    .section p { font-size: 0.975rem; line-height: 1.8; color: var(--gray-600); margin-bottom: 1.25rem; max-width: 680px; }
+    .section ul { list-style: none; padding: 0; max-width: 680px; }
+    .section ul li { font-size: 0.975rem; line-height: 1.75; color: var(--gray-600); padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
+    .section ul li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+
+    .content-image { width: 100%; aspect-ratio: 16/9; border-radius: 4px; overflow: hidden; margin: 2rem 0; }
+    .content-image img { width: 100%; height: 100%; object-fit: cover; }
+
+    .quote-block { border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; max-width: 680px; }
+    .quote-block p { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--ink); margin-bottom: 0; }
+
+    .case-footer { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem 4rem; text-align: center; }
+    .case-footer a { font-size: 0.95rem; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.25s; }
+    .case-footer a:hover { gap: 0.8rem; }
+
+    .site-footer { border-top: 1px solid var(--gray-200); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; text-align: center; }
+    .site-footer p { font-size: 0.75rem; color: var(--gray-400); }
+    .site-footer a { color: var(--gray-600); transition: color 0.2s; }
+    .site-footer a:hover { color: var(--ink); }
+
+    .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 768px) {
+      .hero { padding: 7rem 1.25rem 2.5rem; }
+      .stats { grid-template-columns: 1fr; gap: 1.5rem; }
+    }
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 1.85rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">Callie Rojewski</a>
+      <a href="index.html" class="nav-back">← All Case Studies</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <p class="hero-label fade-in">Case Study</p>
+    <h1 class="fade-in">Digital Culturist — 0→1 Go-to-Market for an AI Consumer Product</h1>
+    <p class="hero-subtitle fade-in">How Callie built the GTM strategy, beta community, and CRM infrastructure for an AI-powered cultural research tool — from concept to 150+ members in 7 days with zero paid spend.</p>
+    <p class="hero-meta fade-in">Digital Culturist · Online & IRL Fractional CMO · 2024–Present</p>
+  </section>
+
+  <div class="hero-image fade-in">
+    <img src="images/digital-culturist-hero.jpg" alt="Digital Culturist — retro workspace illustration">
+  </div>
+
+  <div class="stats">
+    <div class="stat fade-in">
+      <p class="stat-number">150+</p>
+      <p class="stat-label">Beta members in 7 days, organic only</p>
+    </div>
+    <div class="stat fade-in">
+      <p class="stat-number">$0</p>
+      <p class="stat-label">Paid acquisition spend</p>
+    </div>
+    <div class="stat fade-in">
+      <p class="stat-number">Q1 2026</p>
+      <p class="stat-label">Product launch target</p>
+    </div>
+  </div>
+
+  <div class="divider"><hr></div>
+
+  <section class="section fade-in">
+    <p class="section-label">The Product</p>
+    <h2>An AI tool for the people who see patterns before anyone else.</h2>
+    <p>Digital Culturist, created by strategist Carissa Estreller, solves a problem every cultural researcher knows intimately: the scattered mess of screenshots, bookmarks, saved TikToks, and half-formed observations that never get organized into actual insight. The platform lets users upload cultural fragments — screenshots, quotes, articles, memes — alongside personal notes about why each piece matters, then uses AI to identify thematic clusters and surface patterns.</p>
+    <p>The philosophy is intentionally contrarian in an AI landscape obsessed with speed: "This isn't about speeding up. It's about slowing down. Making space to think more thoughtfully, for the work you do before anyone knows it's work."</p>
+
+    <div class="content-image">
+      <img src="images/digital-culturist-screen.png" alt="Digital Culturist interface — Ready to curate the internet?" style="object-fit: contain; background: #f5f3ee;">
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <section class="section fade-in">
+    <p class="section-label">The Challenge</p>
+    <h2>No brand. No audience. No budget. Launch anyway.</h2>
+    <p>Carissa had a powerful product concept and deep domain expertise — but no prior brand presence, no existing community, and no paid acquisition budget. In a market flooded with AI tools competing on speed and automation, Digital Culturist needed a launch strategy that matched its ethos: trust-first, community-led, and rooted in genuine user value rather than hype.</p>
+    <p>The product also sat in a tricky positioning space — too niche for mainstream AI marketing, too innovative for traditional research tool categories. It needed a GTM approach that would find its people without trying to be everything to everyone.</p>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <section class="section fade-in">
+    <p class="section-label">The Approach</p>
+    <h2>Community-first GTM from concept through beta.</h2>
+    <ul>
+      <li>Led full go-to-market strategy from concept through MVP, defining positioning, audience segmentation, and channel strategy for a product that didn't fit existing categories</li>
+      <li>Built beta acquisition strategy using organic community channels only — Substack, private Slack, and word-of-mouth within strategist and cultural research networks</li>
+      <li>Designed the beta community program with monthly virtual meetups, product previews, direct feedback sessions, and early testing access</li>
+      <li>Ran product reveal events to generate momentum and convert curiosity into committed beta signups</li>
+      <li>Designed HubSpot CRM and email onboarding infrastructure to nurture early users from curiosity to activation</li>
+      <li>Closed user feedback loops so Carissa could iterate the product based on real practitioner needs, not assumptions</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <section class="section fade-in">
+    <p class="section-label">The Results</p>
+    <h2>150+ beta members. 7 days. Zero dollars.</h2>
+    <ul>
+      <li>Grew beta community to 150+ members in 7 days through organic channels only</li>
+      <li>Established repeatable community-led acquisition framework for ongoing growth</li>
+      <li>Built CRM and email infrastructure that scales with user base from day one</li>
+      <li>Created a beta community with active Slack engagement, monthly meetups, and direct product influence</li>
+      <li>Product on track for Q1 2026 launch with a built-in audience of founding members</li>
+    </ul>
+
+    <div class="quote-block">
+      <p>Proves that trust-first, community-led product launches can outperform paid acquisition — especially for AI products where user skepticism is high.</p>
+    </div>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <section class="section fade-in">
+    <p class="section-label">What I Did</p>
+    <h2>Fractional CMO — full-stack GTM.</h2>
+    <ul>
+      <li>Go-to-market strategy and sequencing</li>
+      <li>Brand positioning and messaging</li>
+      <li>Beta community design and management</li>
+      <li>CRM architecture (HubSpot) and email onboarding flows</li>
+      <li>Product reveal event strategy</li>
+      <li>User feedback loop design</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <div class="case-footer fade-in">
+    <a href="https://digitalculturist.ai" target="_blank" rel="noopener">→ digitalculturist.ai</a>
+  </div>
+
+  <footer class="site-footer">
+    <p><a href="index.html">← Back to all case studies</a> · <a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a></p>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+
+</body>
+</html>
