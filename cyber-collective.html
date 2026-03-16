@@ -25,8 +25,8 @@
       --bg: #FFFFFF;
       --bg-page: #FAFAFA;
       --ink: #1A1A1A;
-      --teal: #00827F;
-      --teal-light: rgba(0,130,127,0.06);
+      --teal: #1C1CA8;
+      --teal-light: rgba(28,28,168,0.06);
       --gray-200: #E8E4DF;
       --gray-400: #A8A29E;
       --gray-600: #6B6560;
@@ -209,6 +209,14 @@
       content: ''; position: absolute; left: 0; top: 0.65rem;
       width: 5px; height: 5px; background: var(--teal); border-radius: 50%;
     }
+    .list-section ul li a {
+      color: var(--teal); text-decoration: underline;
+      text-decoration-color: rgba(28,28,168,0.3);
+      text-underline-offset: 2px; transition: text-decoration-color 0.2s;
+    }
+    .list-section ul li a:hover {
+      text-decoration-color: var(--teal);
+    }
 
     /* FOOTER */
     .case-footer {
@@ -222,6 +230,14 @@
       transition: gap 0.25s;
     }
     .case-footer a:hover { gap: 0.8rem; }
+    .cta-button {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.85rem 2rem; background: var(--teal); color: #FFFFFF !important;
+      font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em;
+      text-transform: uppercase; border-radius: 4px;
+      transition: background 0.2s, gap 0.25s;
+    }
+    .cta-button:hover { background: #16168a; gap: 0.8rem; }
 
     .site-footer {
       border-top: 1px solid var(--gray-200);
@@ -331,10 +347,9 @@
 
         <p class="col-sublabel">What's in Development</p>
         <ul>
-          <li>AI-powered resource hub (built with developer Meg) — curated, trusted, community-filtered digital safety resources</li>
-          <li>Cultural LLM — a proprietary AI model trained on Cyber Collective's community dataset and Dr. Khan's Digital Resilience Framework</li>
-          <li>Pop-up programming in NYC — Community Tech Days bringing Internet Street Smarts into physical space for elders and youth</li>
-          <li>100K youth target through Safe Online direct programming</li>
+          <li>AI-powered resource hub (built with developer Meg) — curated, trusted, community-filtered digital safety resources designed with the Digital Resilience Framework</li>
+          <li>Pop-up programming in NYC — Bringing Internet Street Smarts into physical space for elders and youth</li>
+          <li>Internet Street Smarts Curriculum — a trauma-informed, story-driven digital safety program co-created with 50+ global volunteers for teens, caregivers, and educators</li>
         </ul>
       </div>
     </div>
@@ -354,12 +369,27 @@
     <p class="section-label">Contributions</p>
     <h2>What I Did</h2>
     <ul>
-      <li>Brand, campaign, and partnership strategy</li>
+      <li>Brand strategy</li>
       <li>Grant narrative and funder positioning</li>
       <li>Community growth and advocacy programs</li>
       <li>Certification development</li>
-      <li>AI platform strategy and product scoping (with Meg)</li>
-      <li>Impact reporting and organizational narrative</li>
+      <li>AI platform strategy and product scoping</li>
+      <li>Impact reporting</li>
+      <li>Team management</li>
+      <li>Systems & operations</li>
+    </ul>
+  </section>
+
+  <div class="divider"><hr></div>
+
+  <!-- CASE STUDIES LINKS -->
+  <section class="list-section fade-in">
+    <p class="section-label">Case Studies</p>
+    <h2>Cyber Collective Case Studies</h2>
+    <ul>
+      <li><a href="https://www.cybercollective.org/impact#case-studies" target="_blank" rel="noopener">Event Facilitation at the first Responsible Tech Youth Power Fund Convening</a></li>
+      <li><a href="https://www.cybercollective.org/impact#case-studies" target="_blank" rel="noopener">Web3 For Creatives Convening</a></li>
+      <li><a href="https://www.cybercollective.org/impact#case-studies" target="_blank" rel="noopener">Translating Research to Social Media Optimized Content</a></li>
     </ul>
   </section>
 
@@ -367,7 +397,7 @@
 
   <!-- FOOTER LINK -->
   <div class="case-footer fade-in">
-    <a href="https://cybercollective.org" target="_blank" rel="noopener">→ cybercollective.org</a>
+    <a href="https://cybercollective.org" target="_blank" rel="noopener" class="cta-button">cybercollective.org →</a>
   </div>
 
   <footer class="site-footer">
