@@ -3,22 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Meta Well — Case Study | Callie Rojewski</title>
-  <meta name="description" content="How Callie Rojewski built brand narrative and content strategy for a digital wellness platform helping people make peace with the internet.">
+  <title>MetaWell — Case Study | Callie Rojewski</title>
+  <meta name="description" content="How Callie Rojewski helped MetaWell founder Kelly Cloutier clarify her brand, design a revenue architecture, and reimagine the platform as a third space for intentional practice.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <style>
-    @font-face {
-      font-family: 'Antilag';
-      src: url('Antilag copy.otf') format('opentype'),
-           url('Antilag copy.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
@@ -26,69 +16,96 @@
       --ink: #1A1A1A;
       --accent: #6B4FA0;
       --accent-bg: rgba(107,79,160,0.06);
+      --gray-100: #F5F4F2;
       --gray-200: #E8E4DF;
       --gray-400: #A8A29E;
       --gray-600: #6B6560;
-      --serif: 'Antilag', Georgia, serif;
+      --serif: 'DM Serif Display', Georgia, serif;
       --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
+      --max-w: 780px;
     }
 
     html { scroll-behavior: smooth; }
     body { font-family: var(--sans); background: var(--bg); color: var(--ink); line-height: 1.6; -webkit-font-smoothing: antialiased; }
     a { color: inherit; text-decoration: none; }
 
+    /* ---- Nav ---- */
     .nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(255,255,255,0.94); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid var(--gray-200); }
-    .nav-inner { max-width: 820px; margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
+    .nav-inner { max-width: var(--max-w); margin: 0 auto; padding: 1.25rem 1.5rem; display: flex; align-items: center; justify-content: space-between; }
     .nav-logo { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); }
     .nav-back { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--gray-600); display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
     .nav-back:hover { color: var(--ink); }
 
-    .hero { max-width: 820px; margin: 0 auto; padding: 8rem 1.5rem 3rem; }
-    .hero-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .hero h1 { font-family: var(--serif); font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.25rem; }
-    .hero-subtitle { font-size: 1.15rem; line-height: 1.7; color: var(--gray-600); max-width: 620px; margin-bottom: 1rem; }
-    .hero-meta { font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.03em; }
+    /* ---- Hero ---- */
+    .hero { max-width: var(--max-w); margin: 0 auto; padding: 8rem 1.5rem 3rem; }
+    .hero-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+    .hero h1 { font-family: var(--serif); font-size: clamp(2.25rem, 5vw, 3.25rem); line-height: 1.12; letter-spacing: -0.02em; margin-bottom: 1.25rem; font-weight: 400; }
+    .hero-subtitle { font-size: 1.1rem; line-height: 1.75; color: var(--gray-600); max-width: 660px; }
 
-    .hero-image { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
-    .hero-image-inner { width: 100%; aspect-ratio: 16/9; border-radius: 6px; overflow: hidden; }
-    .hero-image-inner img { width: 100%; height: 100%; object-fit: cover; }
+    /* ---- Meta Row ---- */
+    .meta-row { max-width: var(--max-w); margin: 0 auto; padding: 2.5rem 1.5rem; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; border-top: 1px solid var(--gray-200); border-bottom: 1px solid var(--gray-200); }
+    .meta-item-label { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.35rem; }
+    .meta-item-value { font-size: 0.9rem; color: var(--ink); line-height: 1.4; }
 
-    .divider { max-width: 820px; margin: 0 auto; padding: 0 1.5rem; }
+    /* ---- Shared Section ---- */
+    .section { max-width: var(--max-w); margin: 0 auto; padding: 4rem 1.5rem; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+    .section h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; margin-bottom: 1.75rem; font-weight: 400; }
+    .section p { font-size: 0.975rem; line-height: 1.8; color: var(--gray-600); margin-bottom: 1.25rem; max-width: 680px; }
+
+    .divider { max-width: var(--max-w); margin: 0 auto; padding: 0 1.5rem; }
     .divider hr { border: none; height: 0.5px; background: rgba(26,26,26,0.08); }
 
-    .section { max-width: 820px; margin: 0 auto; padding: 3.5rem 1.5rem; }
-    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-    .section h2 { font-family: var(--serif); font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.25; margin-bottom: 1.75rem; }
-    .section p { font-size: 0.975rem; line-height: 1.8; color: var(--gray-600); margin-bottom: 1.25rem; max-width: 680px; }
-    .section ul { list-style: none; padding: 0; max-width: 680px; }
-    .section ul li { font-size: 0.975rem; line-height: 1.75; color: var(--gray-600); padding-left: 1.25rem; position: relative; margin-bottom: 0.5rem; }
-    .section ul li::before { content: ''; position: absolute; left: 0; top: 0.65rem; width: 5px; height: 5px; background: var(--accent); border-radius: 50%; }
+    /* ---- Services Grid ---- */
+    .services-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
+    .service-card { background: var(--gray-100); border-radius: 6px; padding: 1.5rem; }
+    .service-card h3 { font-family: var(--serif); font-size: 1.05rem; font-weight: 400; margin-bottom: 0.5rem; color: var(--ink); }
+    .service-card p { font-size: 0.85rem; line-height: 1.65; color: var(--gray-600); margin-bottom: 0; }
 
-    .quote-block { border-left: 3px solid var(--accent); padding: 1.25rem 1.5rem; margin: 2rem 0; max-width: 680px; }
-    .quote-block p { font-family: var(--serif); font-style: italic; font-size: 1.1rem; line-height: 1.6; color: var(--ink); margin-bottom: 0; }
+    /* ---- Impact Metrics ---- */
+    .metrics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 0.5rem; }
+    .metric-card { background: var(--gray-100); border-radius: 6px; padding: 1.75rem 1.5rem; text-align: center; }
+    .metric-value { font-family: var(--serif); font-size: 2rem; color: var(--ink); margin-bottom: 0.35rem; }
+    .metric-label { font-size: 0.85rem; line-height: 1.5; color: var(--gray-600); }
 
-    .topics-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin: 2rem 0; max-width: 680px; }
-    .topic-pill { background: var(--accent-bg); color: var(--accent); font-size: 0.8rem; font-weight: 600; text-align: center; padding: 0.75rem 1rem; border-radius: 4px; letter-spacing: 0.03em; }
+    /* ---- Testimonials ---- */
+    .testimonial { border-left: 3px solid var(--accent); padding: 1.5rem 1.75rem; margin-bottom: 2rem; max-width: 680px; }
+    .testimonial p { font-family: var(--serif); font-size: 1.1rem; line-height: 1.6; color: var(--ink); margin-bottom: 0.75rem; font-style: italic; }
+    .testimonial cite { font-family: var(--sans); font-style: normal; font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.02em; }
 
-    .case-footer { max-width: 820px; margin: 0 auto; padding: 3rem 1.5rem 4rem; text-align: center; }
-    .case-footer a { font-size: 0.95rem; font-weight: 600; color: var(--accent); display: inline-flex; align-items: center; gap: 0.5rem; transition: gap 0.25s; }
-    .case-footer a:hover { gap: 0.8rem; }
+    /* ---- Footer Tags ---- */
+    .tag-row { max-width: var(--max-w); margin: 0 auto; padding: 2.5rem 1.5rem 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
+    .tag { background: var(--accent-bg); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.45rem 0.9rem; border-radius: 3px; letter-spacing: 0.03em; }
 
-    .site-footer { border-top: 1px solid var(--gray-200); max-width: 820px; margin: 0 auto; padding: 2rem 1.5rem; text-align: center; }
+    /* ---- Site Footer ---- */
+    .site-footer { border-top: 1px solid var(--gray-200); max-width: var(--max-w); margin: 0 auto; padding: 2rem 1.5rem; text-align: center; }
     .site-footer p { font-size: 0.75rem; color: var(--gray-400); }
     .site-footer a { color: var(--gray-600); transition: color 0.2s; }
     .site-footer a:hover { color: var(--ink); }
 
+    /* ---- Animations ---- */
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
+    /* ---- Responsive ---- */
     @media (max-width: 768px) {
       .hero { padding: 7rem 1.25rem 2.5rem; }
-      .topics-grid { grid-template-columns: repeat(2, 1fr); }
+      .meta-row { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
+      .services-grid { grid-template-columns: 1fr; }
+      .metrics-grid { grid-template-columns: 1fr; }
     }
     @media (max-width: 480px) {
       .hero h1 { font-size: 1.85rem; }
-      .topics-grid { grid-template-columns: 1fr; }
+      .meta-row { grid-template-columns: 1fr; }
+    }
+
+    /* ---- Print ---- */
+    @media print {
+      .nav { position: static; border: none; backdrop-filter: none; }
+      .fade-in { opacity: 1; transform: none; }
+      body { color: #000; }
+      .service-card, .metric-card { background: #f5f5f5; }
+      .testimonial { border-left-color: #333; }
     }
   </style>
 </head>
@@ -101,84 +118,120 @@
     </div>
   </nav>
 
+  <!-- Hero -->
   <section class="hero">
-    <p class="hero-label fade-in">Case Study</p>
-    <h1 class="fade-in">Meta Well — Brand Narrative for a Digital Wellness Platform</h1>
-    <p class="hero-subtitle fade-in">Helping people make peace with the internet — building the brand story, content strategy, and editorial voice for a platform tackling our rising digital dependence.</p>
-    <p class="hero-meta fade-in">Meta Well · Online & IRL Fractional CMO · 2024–Present</p>
+    <p class="hero-eyebrow fade-in">Online &amp; IRL — Case Study</p>
+    <h1 class="fade-in">MetaWell: from wellness content to a community of practice</h1>
+    <p class="hero-subtitle fade-in">How I helped MetaWell founder Kelly Cloutier clarify her brand, design a revenue architecture, and reimagine the platform as a third space for intentional practice — not just content consumption.</p>
   </section>
 
-  <div class="hero-image fade-in">
-    <div class="hero-image-inner">
-      <img src="images/metawell-featured.png" alt="Meta Well brand visual">
+  <!-- Meta Row -->
+  <div class="meta-row fade-in">
+    <div>
+      <p class="meta-item-label">Client</p>
+      <p class="meta-item-value">MetaWell / Kelly Cloutier</p>
+    </div>
+    <div>
+      <p class="meta-item-label">Category</p>
+      <p class="meta-item-value">Digital wellness &amp; conscious tech</p>
+    </div>
+    <div>
+      <p class="meta-item-label">Engagement</p>
+      <p class="meta-item-value">Fractional strategy &amp; GTM</p>
+    </div>
+    <div>
+      <p class="meta-item-label">Timeline</p>
+      <p class="meta-item-value">2024–2025</p>
     </div>
   </div>
 
-  <div class="divider" style="margin-top: 3rem;"><hr></div>
-
+  <!-- Services Delivered -->
   <section class="section fade-in">
-    <p class="section-label">The Platform</p>
-    <h2>A flexible toolkit to help manage our rising digital dependence.</h2>
-    <p>Meta Well exists at the intersection of digital wellness and cultural criticism. In a world of tech addiction, doom scrolling, zoom fatigue, and post-VR sadness, the platform provides curated content, original research, expert interviews, and practical tools to help people rethink their relationship with technology — without asking them to abandon it entirely.</p>
-    <p>The challenge isn't convincing people that their digital habits need attention. It's building a brand voice that meets them with empathy instead of judgment, offers practical steps instead of guilt, and earns trust in a space crowded with wellness grifts and performative digital detoxes.</p>
-
-    <div class="topics-grid">
-      <span class="topic-pill">Tech Addiction</span>
-      <span class="topic-pill">Doom Scrolling</span>
-      <span class="topic-pill">Zoom Fatigue</span>
-      <span class="topic-pill">AI Anxiety</span>
-      <span class="topic-pill">Binge Watching</span>
-      <span class="topic-pill">Digital Trust</span>
+    <p class="section-label">Services Delivered</p>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Brand strategy</h3>
+        <p>Audience persona mapping, messaging framework, brand voice refinement</p>
+      </div>
+      <div class="service-card">
+        <h3>Platform strategy</h3>
+        <p>Community platform audit (Mighty Networks, Kajabi, Patreon, Discord) with recommendation</p>
+      </div>
+      <div class="service-card">
+        <h3>Revenue architecture</h3>
+        <p>Tiered model across membership, ticketed events, digital products, and physical goods</p>
+      </div>
+      <div class="service-card">
+        <h3>GTM planning</h3>
+        <p>Launch sequencing, collaborator framework, audience-to-advocate journey</p>
+      </div>
+      <div class="service-card">
+        <h3>Website UX</h3>
+        <p>Audit and recommendations for CTA flows, gated content, and email capture</p>
+      </div>
+      <div class="service-card">
+        <h3>Systems design</h3>
+        <p>AI-assisted workflows, Zapier automations, CRM and onboarding infrastructure</p>
+      </div>
     </div>
   </section>
 
   <div class="divider"><hr></div>
 
+  <!-- The Shift -->
   <section class="section fade-in">
-    <p class="section-label">The Challenge</p>
-    <h2>Talking about digital wellness without sounding like a scold or a gimmick.</h2>
-    <p>Digital wellness is a category with a credibility problem. Between corporate mindfulness apps owned by the same companies causing the problem and influencers hawking "digital detox retreats," the space is noisy with solutions that don't address root causes. Meta Well needed a brand voice that was intellectually honest, culturally literate, and genuinely helpful — one that could hold complexity without losing accessibility.</p>
-    <p>The platform also needed a content strategy that would build an audience organically through editorial quality, not volume. Every piece had to earn its place in someone's already-overwhelmed feed.</p>
+    <p class="section-label">The Shift</p>
+    <h2>From content output to community architecture.</h2>
+    <p>Early sessions revealed MetaWell's Guides and Instagram posts were reaching people, but not allowing MetaWell to develop deeper relationships with their audience.</p>
+    <p>I reframed the platform around a single idea: MetaWell could expand to be a third space for practice — a place where people engage actively with technology, together. That reframe shaped every downstream decision: platform selection, membership pricing, event formats, and how collaborators could plug in without creating more work for Kelly.</p>
+    <p>The community was designed around two flagship practices — an information abundance workshop and an Offline Sundays cohort — lightweight enough for Kelly to run sustainably while building toward a richer library over time.</p>
   </section>
 
   <div class="divider"><hr></div>
 
+  <!-- Impact -->
   <section class="section fade-in">
-    <p class="section-label">The Approach</p>
-    <h2>Brand narrative, editorial voice, and content architecture.</h2>
-    <ul>
-      <li>Developed the brand narrative and positioning — translating the platform's academic and research-driven foundation into language that feels human, approachable, and culturally aware</li>
-      <li>Created the editorial voice and content strategy for the platform's library: original thinking pieces, research summaries, expert interviews, and curated tool recommendations</li>
-      <li>Built the content architecture across categories — Our Thinking, Research, Interviews, Our Tools, Others' Tools — designed to serve different audience needs and entry points</li>
-      <li>Crafted headline-level messaging that cuts through wellness noise: "We're here to help you make peace with the internet"</li>
-      <li>Designed newsletter strategy that respects the platform's own ethos — "occasional, spam free, respects your need to conserve cognitive load"</li>
-      <li>Positioned Meta Well as a credible, non-preachy voice in the digital wellness conversation</li>
-    </ul>
-
-    <div class="quote-block">
-      <p>Digital wellness doesn't need another app telling you to put your phone down. It needs honest, culturally intelligent content that helps people understand why they can't — and what to do about it.</p>
+    <p class="section-label">Impact</p>
+    <div class="metrics-grid">
+      <div class="metric-card">
+        <p class="metric-value">$40</p>
+        <p class="metric-label">All-inclusive monthly membership tier established</p>
+      </div>
+      <div class="metric-card">
+        <p class="metric-value">$85K</p>
+        <p class="metric-label">Annual revenue target modeled and mapped to income replacement</p>
+      </div>
+      <div class="metric-card">
+        <p class="metric-value">3→1</p>
+        <p class="metric-label">Objectives collapsed from scattered tactics to a single platform launch</p>
+      </div>
     </div>
   </section>
 
   <div class="divider"><hr></div>
 
+  <!-- In Kelly's Words -->
   <section class="section fade-in">
-    <p class="section-label">What I Did</p>
-    <h2>Fractional CMO — brand and content strategy.</h2>
-    <ul>
-      <li>Brand narrative and positioning</li>
-      <li>Editorial voice development</li>
-      <li>Content strategy and architecture</li>
-      <li>Library content creation and curation</li>
-      <li>Newsletter strategy</li>
-      <li>Audience development through editorial quality</li>
-    </ul>
+    <p class="section-label">In Kelly's Words</p>
+    <div class="testimonial">
+      <p>"This conversation has been so helpful — really thinking about it as a third space for practice is like a really big light bulb. It's not so mentally intensive, it's more about the doing. And I love that the practice piece is so impactful and so community driven."</p>
+      <cite>— Kelly Cloutier, founder of MetaWell</cite>
+    </div>
+    <div class="testimonial">
+      <p>"You're such a rare person I've met that actually understands the space. People hire someone to generate content or do socials, but this is such a different thing — you have to get it, and there are so few people who get it."</p>
+      <cite>— Kelly Cloutier, MetaWell</cite>
+    </div>
   </section>
 
-  <div class="divider"><hr></div>
-
-  <div class="case-footer fade-in">
-    <a href="https://metawell.online" target="_blank" rel="noopener">→ metawell.online</a>
+  <!-- Footer Tags -->
+  <div class="tag-row fade-in">
+    <span class="tag">community strategy</span>
+    <span class="tag">platform architecture</span>
+    <span class="tag">revenue modeling</span>
+    <span class="tag">digital wellness</span>
+    <span class="tag">GTM</span>
+    <span class="tag">conscious tech</span>
+    <span class="tag">fractional CMO</span>
   </div>
 
   <footer class="site-footer">
