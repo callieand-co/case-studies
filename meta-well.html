@@ -73,6 +73,11 @@
     .testimonial p { font-family: var(--serif); font-size: 1.1rem; line-height: 1.6; color: var(--ink); margin-bottom: 0.75rem; font-style: italic; }
     .testimonial cite { font-family: var(--sans); font-style: normal; font-size: 0.8rem; color: var(--gray-400); letter-spacing: 0.02em; }
 
+    /* ---- CTA Button ---- */
+    .cta-row { max-width: var(--max-w); margin: 0 auto; padding: 1rem 1.5rem 2.5rem; text-align: center; }
+    .cta-btn { display: inline-block; font-family: var(--sans); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--bg); background: var(--ink); padding: 0.9rem 2.25rem; border-radius: 4px; transition: background 0.2s, transform 0.15s; }
+    .cta-btn:hover { background: #333; transform: translateY(-1px); }
+
     /* ---- Footer Tags ---- */
     .tag-row { max-width: var(--max-w); margin: 0 auto; padding: 2.5rem 1.5rem 1.5rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; }
     .tag { background: var(--accent-bg); color: var(--accent); font-size: 0.75rem; font-weight: 600; padding: 0.45rem 0.9rem; border-radius: 3px; letter-spacing: 0.03em; }
@@ -222,6 +227,11 @@
       <cite>— Kelly Cloutier, MetaWell</cite>
     </div>
   </section>
+
+  <!-- CTA -->
+  <div class="cta-row fade-in">
+    <a href="https://www.metawell.online" target="_blank" rel="noopener" class="cta-btn">Visit MetaWell →</a>
+  </div>
 
   <!-- Footer Tags -->
   <div class="tag-row fade-in">
