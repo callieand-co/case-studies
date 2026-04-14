@@ -82,6 +82,12 @@
     .site-footer a { color: var(--gray-600); transition: color 0.2s; }
     .site-footer a:hover { color: var(--ink); }
 
+    .callout-box { max-width: 680px; background: var(--accent-bg); border: 1px solid var(--gray-200); border-radius: 6px; padding: 1.75rem 2rem; margin: 0 auto; }
+    .callout-box h3 { font-family: var(--serif); font-size: 1rem; margin-bottom: 1rem; color: var(--ink); }
+    .callout-box dl { display: grid; gap: 0.75rem; }
+    .callout-box dt { font-size: 0.85rem; font-weight: 700; color: var(--ink); margin-bottom: 0.1rem; }
+    .callout-box dd { font-size: 0.85rem; line-height: 1.6; color: var(--gray-600); margin: 0; }
+
     .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
 
@@ -130,6 +136,31 @@
   </div>
 
   <div class="divider"><hr></div>
+
+  <!-- Key Terms Callout -->
+  <section class="section fade-in" style="padding-bottom: 0;">
+    <div class="callout-box">
+      <h3>Key Terms</h3>
+      <dl>
+        <div>
+          <dt>0→1</dt>
+          <dd>Taking a product from idea to its first real users (early traction)</dd>
+        </div>
+        <div>
+          <dt>Go-to-Market (GTM)</dt>
+          <dd>How a product is introduced to and reaches its audience</dd>
+        </div>
+        <div>
+          <dt>Beta</dt>
+          <dd>An early version of a product tested with a small group of users</dd>
+        </div>
+        <div>
+          <dt>CRM</dt>
+          <dd>A system for managing relationships with users or customers</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
 
   <section class="section fade-in">
     <p class="section-label">The Product</p>
