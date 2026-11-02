@@ -59,14 +59,15 @@
 
     /* HERO */
     .hero {
-      padding: 40px 0 48px;
-      display: grid; grid-template-columns: minmax(0, 1fr) minmax(220px, 340px);
-      gap: 40px; align-items: end;
+      padding: 32px 0 40px;
+      display: grid; grid-template-columns: minmax(0, 1fr) minmax(180px, 220px);
+      gap: 40px; align-items: start;
     }
+    .hero-text { padding-top: 48px; }
     .hero-receipt img { display: block; width: 100%; height: auto; }
     .hero h1 {
       font-family: var(--display); font-weight: normal;
-      font-size: clamp(56px, 11vw, 148px);
+      font-size: clamp(40px, 6.5vw, 88px);
       line-height: .9; letter-spacing: 0;
     }
     .hero p {
@@ -173,6 +174,7 @@
       .wrap { padding: 0 16px; }
       .hero { padding: 24px 0 36px; grid-template-columns: 1fr; gap: 24px; }
       .hero-receipt { max-width: 260px; justify-self: center; }
+      .hero-text { padding-top: 0; }
       .hero p { font-size: 14px; }
       .row-meta { min-height: 0; max-width: none; }
       .thumbs { overflow-x: auto; scrollbar-width: none; }
@@ -197,12 +199,12 @@
   </nav>
 
   <header class="hero">
-    <div>
+    <div class="hero-text">
       <h1>Callie Rojewski</h1>
       <p>Hi, I’m Callie, a go-to-market and community leader with 10+ years across B2B SaaS, consumer tech, and mission-driven companies. I’m a go-to-market partner to startups, and I create content and events that help us rethink our relationship with tech. Now I’m looking for my next chapter in the tech industry. Read my “receipts” below and connect with me at <a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a>.</p>
     </div>
     <figure class="hero-receipt">
-      <img src="images/receipt-header.jpg" width="680" height="1125" alt="A taped-up receipt reading Callie Rojewski, Online &amp; IRL, Professional Experience: Strategy, Customer Insights, Brand, Marketing, Community, Product, Partnerships, Campaigns and Events, each marked Yes, above a halftone photo of Callie.">
+      <img src="images/receipt-header.jpg" width="680" height="1000" alt="A taped-up receipt reading Callie Rojewski, Online &amp; IRL, Professional Experience: Strategy, Customer Insights, Brand, Marketing, Community, Product, Partnerships, Campaigns and Events, each marked Yes, above a halftone photo of Callie.">
     </figure>
   </header>
 
