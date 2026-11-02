@@ -1,0 +1,57 @@
+/* Black-and-white system shared with the home page.
+   Loaded after each page's own <style>, so these values win. */
+@font-face {
+  font-family: 'Antilag';
+  src: url('../fonts/Antilag.otf') format('opentype'),
+       url('../fonts/Antilag.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root,
+:root:not([data-theme]) {
+  --bg: #FFFFFF;
+  --bg-page: #FFFFFF;
+  --cream: #FFFFFF;
+  --ink: #000000;
+  --teal: #000000;
+  --teal-light: #F2F2F2;
+  --accent: #000000;
+  --accent-light: #000000;
+  --accent-bg: #F2F2F2;
+  --moss: #000000;
+  --moss-light: #F2F2F2;
+  --ochre: #000000;
+  --ochre-light: #F2F2F2;
+  --mist: #6B6B6B;
+  --gray-100: #F4F4F4;
+  --gray-200: #D9D9D9;
+  --gray-400: #8A8A8A;
+  --gray-600: #6B6B6B;
+  --serif: 'Antilag', 'IBM Plex Mono', monospace;
+  --sans: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+/* Conscious Stack had its own dark mode; keep every page black on white. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --cream: #FFFFFF;
+    --ink: #000000;
+    --moss: #000000;
+    --moss-light: #F2F2F2;
+    --ochre: #000000;
+    --ochre-light: #F2F2F2;
+    --mist: #6B6B6B;
+    --gray-200: #D9D9D9;
+    --gray-400: #8A8A8A;
+  }
+}
+
+body { background: #FFFFFF; color: #000000; letter-spacing: 0; }
+h1, h2, h3, h4 { font-weight: normal; letter-spacing: 0; }
+a:focus-visible, button:focus-visible { outline: 2px solid #000; outline-offset: 2px; }
+
+.nav { background: rgba(255,255,255,0.94) !important; border-bottom: 1px solid #000 !important; }
+.nav-logo { font-family: 'IBM Plex Mono', monospace !important; font-size: 12px !important; text-transform: uppercase; letter-spacing: .03em; }
+.nav-back, .nav-links a { font-family: 'IBM Plex Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: .03em; color: #000 !important; }
