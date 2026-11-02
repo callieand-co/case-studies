@@ -1,459 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Callie Rojewski — Case Studies</title>
-  <meta name="description" content="Case studies in ethical tech marketing, community infrastructure, and narrative strategy by Callie Rojewski.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
-  <style>
-    @font-face {
-      font-family: 'Antilag';
-      src: url('Antilag copy.otf') format('opentype'),
-           url('Antilag copy.ttf') format('truetype');
-      font-weight: normal;
-      font-style: normal;
-      font-display: swap;
-    }
-    h1, h2, h3, h4, h5, h6 { font-weight: normal; }
-
-    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
-    :root {
-      --bg: #F9F6F1;
-      --ink: #1A1A1A;
-      --accent: #C4693A;
-      --accent-light: #D4845A;
-      --gray-200: #E8E4DF;
-      --gray-400: #A8A29E;
-      --gray-600: #6B6560;
-      --serif: 'Antilag', Georgia, serif;
-      --sans: 'DM Sans', 'Helvetica Neue', sans-serif;
-    }
-
-    html { scroll-behavior: smooth; font-size: 16px; }
-
-    body {
-      font-family: var(--sans);
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    button { cursor: pointer; border: none; background: none; font-family: inherit; }
-
-    /* NAV */
-    .nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(249,246,241,0.92);
-      backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--gray-200);
-    }
-    .nav-inner {
-      max-width: 1200px; margin: 0 auto; padding: 1.25rem 2rem;
-      display: flex; align-items: center; justify-content: space-between;
-    }
-    .nav-logo { font-family: var(--serif); font-size: 1.25rem; color: var(--ink); }
-    .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-    .nav-links a {
-      font-size: 0.875rem; font-weight: 500; letter-spacing: 0.06em;
-      text-transform: uppercase; color: var(--gray-600); transition: color 0.2s;
-    }
-    .nav-links a:hover { color: var(--ink); }
-    .hamburger { display: none; flex-direction: column; gap: 5px; width: 24px; padding: 4px 0; }
-    .hamburger span { display: block; height: 2px; background: var(--ink); border-radius: 1px; transition: all 0.3s; }
-    .hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
-    .hamburger.active span:nth-child(2) { opacity: 0; }
-    .hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(5px,-5px); }
-    .mobile-menu {
-      display: none; position: fixed; inset: 0; background: var(--bg); z-index: 99;
-      flex-direction: column; align-items: center; justify-content: center; gap: 2.5rem;
-    }
-    .mobile-menu.active { display: flex; }
-    .mobile-menu a { font-family: var(--serif); font-size: 2rem; color: var(--ink); }
-
-    /* HERO — compact, not full-screen */
-    .hero {
-      padding: 8rem 2rem 3rem;
-      max-width: 1200px; margin: 0 auto;
-    }
-    .hero-label {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.15em;
-      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
-    }
-    .hero h1 {
-      font-family: var(--serif);
-      font-size: clamp(2.25rem, 4.5vw, 3.5rem);
-      line-height: 1.15; letter-spacing: -0.02em; margin-bottom: 1.25rem;
-      max-width: 700px;
-    }
-    .hero p {
-      font-size: 1.1rem; line-height: 1.7; color: var(--gray-600);
-      max-width: 580px; margin-bottom: 0;
-    }
-
-    /* SEARCH & FILTER */
-    .search-section {
-      max-width: 1200px; margin: 0 auto; padding: 2.5rem 2rem 1rem;
-    }
-    .search-bar {
-      display: flex; align-items: center; gap: 0.75rem;
-      background: #fff; border: 1px solid var(--gray-200); border-radius: 4px;
-      padding: 0.85rem 1.25rem; max-width: 480px;
-      transition: border-color 0.2s;
-    }
-    .search-bar:focus-within { border-color: var(--accent); }
-    .search-icon { color: var(--gray-400); flex-shrink: 0; }
-    .search-bar input {
-      border: none; background: none; outline: none; font-family: var(--sans);
-      font-size: 0.95rem; color: var(--ink); width: 100%;
-    }
-    .search-bar input::placeholder { color: var(--gray-400); }
-
-    .filter-row {
-      display: flex; flex-wrap: wrap; gap: 0.5rem;
-      margin-top: 1.25rem;
-    }
-    .filter-btn {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; padding: 0.4rem 0.85rem; border-radius: 2px;
-      color: var(--gray-600); background: transparent;
-      border: 1px solid var(--gray-200); transition: all 0.2s;
-    }
-    .filter-btn:hover { border-color: var(--gray-400); color: var(--ink); }
-    .filter-btn.active {
-      background: var(--ink); color: var(--bg); border-color: var(--ink);
-    }
-
-    .no-results {
-      display: none; text-align: center; padding: 4rem 2rem;
-      color: var(--gray-400); font-size: 1rem;
-    }
-    .no-results.visible { display: block; }
-
-    /* CASE STUDY GRID */
-    .grid-section {
-      max-width: 1200px; margin: 0 auto; padding: 2rem 2rem 6rem;
-    }
-    .case-grid {
-      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.75rem;
-    }
-
-    .case-card {
-      background: #fff; border: 1px solid var(--gray-200); border-radius: 4px;
-      overflow: hidden; transition: all 0.35s cubic-bezier(0.25,0.46,0.45,0.94);
-      display: flex; flex-direction: column;
-    }
-    .case-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 40px rgba(26,26,26,0.08);
-      border-color: transparent;
-    }
-    .case-card.hidden { display: none; }
-
-    .card-image {
-      width: 100%; aspect-ratio: 16/9; background: var(--gray-200);
-      display: flex; align-items: center; justify-content: center;
-      color: var(--gray-400); font-size: 0.8rem; font-weight: 500;
-      letter-spacing: 0.08em; text-transform: uppercase;
-      position: relative; overflow: hidden;
-    }
-    .card-image img {
-      width: 100%; height: 100%; object-fit: cover;
-      display: block; position: absolute; inset: 0;
-    }
-
-    .card-body { padding: 1.75rem 1.75rem 2rem; display: flex; flex-direction: column; flex: 1; }
-
-    .card-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
-    .tag {
-      font-size: 0.65rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: #1C1CA8;
-      background: rgba(28,28,168,0.08); padding: 0.25rem 0.55rem; border-radius: 2px;
-    }
-
-    .card-org {
-      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.08em;
-      text-transform: uppercase; color: var(--gray-400); margin-bottom: 0.5rem;
-    }
-
-    .card-title {
-      font-family: var(--serif); font-size: 1.3rem; line-height: 1.3;
-      margin-bottom: 0.75rem;
-    }
-
-    .card-outcome {
-      font-size: 0.9rem; color: var(--gray-600); line-height: 1.6; flex: 1;
-    }
-
-    .card-link {
-      display: inline-flex; align-items: center; gap: 0.4rem;
-      margin-top: 1.25rem; font-size: 0.8rem; font-weight: 600;
-      letter-spacing: 0.06em; text-transform: uppercase;
-      color: #1C1CA8; transition: gap 0.25s;
-    }
-    .case-card:hover .card-link { gap: 0.7rem; }
-
-    .card-status {
-      font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em;
-      text-transform: uppercase; color: var(--gray-400);
-      margin-top: 1.25rem;
-    }
-
-    /* FOOTER */
-    .footer {
-      border-top: 1px solid var(--gray-200);
-      max-width: 1200px; margin: 0 auto;
-      padding: 3rem 2rem;
-      display: flex; justify-content: space-between; align-items: center;
-      flex-wrap: wrap; gap: 1rem;
-    }
-    .footer-left p {
-      font-size: 0.8rem; color: var(--gray-400);
-    }
-    .footer-left a { color: var(--gray-600); transition: color 0.2s; }
-    .footer-left a:hover { color: var(--ink); }
-    .footer-links {
-      display: flex; gap: 1.5rem; font-size: 0.8rem;
-    }
-    .footer-links a { color: var(--gray-600); transition: color 0.2s; }
-    .footer-links a:hover { color: var(--ink); }
-
-    /* FADE */
-    .fade-in {
-      opacity: 0; transform: translateY(20px);
-      transition: opacity 0.6s ease, transform 0.6s ease;
-    }
-    .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-    /* RESPONSIVE */
-    @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .hamburger { display: flex; }
-      .hero { padding: 7rem 1.5rem 2rem; }
-      .hero h1 { font-size: 2rem; }
-      .search-section { padding: 2rem 1.5rem 0.5rem; }
-      .grid-section { padding: 1.5rem 1.5rem 4rem; }
-      .case-grid { grid-template-columns: 1fr; gap: 1.25rem; }
-      .footer { padding: 2rem 1.5rem; flex-direction: column; align-items: flex-start; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Callie Rojewski Case Studies</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Callie Rojewski builds brands people want to participate in. Five stories across global impact, 0 to 1 product, creative, campaigns and B2B programs.">
+<meta property="og:title" content="Callie Rojewski Case Studies">
+<meta property="og:description" content="$7M pipeline. 650K+ campaign reach. 100+ enterprise advocates. Search the stories behind the numbers.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.readmycasestudies.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'Antilag';src:url('Antilag copy.otf') format('opentype'),url('Antilag copy.ttf') format('truetype');font-display:swap}
+/* Layout: one left-aligned ledger. Every story is a line item with its result in the left column. */
+:root{--bg:#F9F6F1;--ink:#1A1A1A;--accent:#A9522A;--link:#1C1CA8;--line:#E0DBD3;--soft:#5F5953;--paper:#fff;
+--serif:'Antilag',Georgia,serif;--sans:'DM Sans','Helvetica Neue',sans-serif}
+*,*::before,*::after{box-sizing:border-box}
+html{font-size:16px;background:var(--bg)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;
+padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1000px;margin:0 auto}
+h1,h2,h3,p,dl,dd{margin:0}
+h1,h2,h3{font-weight:normal}
+a{color:var(--link)}
+:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:1.5rem}
+.top strong{font-family:var(--serif);font-weight:normal;font-size:1.2rem}
+.top nav{display:flex;gap:1.25rem;font-size:.95rem}
+.hero{padding-block:2.5rem 2rem;display:grid;gap:1rem}
+h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.02em;max-width:17em;text-wrap:balance}
+.lede{font-size:1.1rem;color:var(--soft);max-width:38em}
+.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-block:1.75rem;border-block:1px solid var(--ink)}
+.stat{min-width:0}
+.stat dt{font-family:var(--serif);font-size:clamp(2rem,4vw,2.75rem);line-height:1.1;color:var(--accent)}
+.stat dd{font-size:.9rem;color:var(--soft);margin-top:.35rem;line-height:1.4}
+.cred{display:grid;gap:.3rem;padding-block:1.25rem;font-size:.95rem;color:var(--soft)}
+.cred b{color:var(--ink);font-weight:600}
+.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:1rem .75rem;border-bottom:1px solid var(--line);display:grid;gap:.75rem;margin-top:1.5rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.tools label{font-family:var(--serif);font-size:1.5rem}
+#search{width:100%;font:inherit;font-size:1.05rem;padding:.75rem .9rem;background:var(--paper);color:var(--ink);border:1px solid var(--ink);border-radius:3px}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font:inherit;font-size:.875rem;font-weight:500;padding:.3rem .7rem;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--ink);cursor:pointer}
+.chip:hover{border-color:var(--ink)}
+.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.status{font-size:.9rem;color:var(--soft);min-height:1.4em}
+.story{padding-block:2.5rem 1rem;display:grid;gap:1.25rem;scroll-margin-top:12rem}
+.story header{display:grid;gap:.1rem}
+.theme{color:var(--accent);font-weight:600;font-size:.95rem}
+.story h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15}
+.meta{color:var(--soft);font-size:.95rem}
+.mini{display:flex;flex-wrap:wrap;gap:1rem 2.5rem}
+.mini dt{font-family:var(--serif);font-size:1.8rem;line-height:1.1;color:var(--accent)}
+.mini dd{font-size:.85rem;color:var(--soft)}
+.gallery{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start}
+.gallery img{display:block;flex:1 1 300px;width:100%;min-width:0;max-width:100%;height:auto;border-radius:3px}
+.rows{display:grid}
+.row{display:grid;grid-template-columns:10.5rem minmax(0,1fr);gap:1.5rem;padding-block:.8rem;border-top:1px solid var(--line)}
+.row h3{font-family:var(--sans);font-size:.95rem;font-weight:600;line-height:1.5}
+.row p{max-width:42em}
+.storylink{font-weight:500}
+.empty{padding-block:3rem;max-width:34em}
+.foot{margin-top:2.5rem;padding-block:2rem 3rem;border-top:1px solid var(--ink);display:flex;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;font-size:.95rem}
+.foot h2{font-family:var(--serif);font-size:1.5rem}
+.foot ul{list-style:none;margin:0;padding:0;display:flex;gap:.5rem 1.25rem;flex-wrap:wrap;align-items:center}
+[hidden]{display:none!important}
+@media (max-width:760px){
+.proof{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 1rem}
+.tools{position:static}
+.row{grid-template-columns:minmax(0,1fr);gap:.15rem}
+}
+</style>
 </head>
 <body>
-
-  <nav class="nav">
-    <div class="nav-inner">
-      <a href="index.html" class="nav-logo">Callie Rojewski</a>
-      <ul class="nav-links">
-        <li><a href="mailto:callie@onlineandirl.com">Contact</a></li>
-      </ul>
-      <button class="hamburger" aria-label="Toggle menu" onclick="toggleMobileMenu()">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <div class="mobile-menu" id="mobileMenu">
-    <a href="index.html" onclick="toggleMobileMenu()">Work</a>
-    <a href="mailto:callie@onlineandirl.com" onclick="toggleMobileMenu()">Contact</a>
-  </div>
+<div class="wrap">
+  <header class="top">
+    <strong>Callie Rojewski</strong>
+    <nav aria-label="Contact"><a href="mailto:callie@onlineandirl.com">Email</a><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a></nav>
+  </header>
 
   <section class="hero">
-    <p class="hero-label fade-in">Case Studies</p>
-    <h1 class="fade-in">Movement-Building Marketing.</h1>
-    <p class="fade-in" style="margin-bottom: 0.25rem;">By Callie Rojewski, Online &amp; IRL</p>
-    <p class="fade-in">Selected work in ethical tech. Brand, community, and go-to-market strategy.</p>
+    <h1>I build brands people want to participate in, not just hear from.</h1>
+    <p class="lede">Brand, community and customer marketing leader with 10+ years across B2B SaaS, consumer tech and mission-driven companies.</p>
   </section>
 
-  <div class="search-section">
-    <div class="search-bar">
-      <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="text" id="searchInput" placeholder="Search case studies..." autocomplete="off">
-    </div>
-    <div class="filter-row" id="filterRow">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="movement building">Movement Building</button>
-      <button class="filter-btn" data-filter="community marketing">Community</button>
-      <button class="filter-btn" data-filter="gtm strategy">GTM Strategy</button>
-      <button class="filter-btn" data-filter="brand narrative">Brand Narrative</button>
-      <button class="filter-btn" data-filter="ai product">AI &amp; Tech</button>
-    </div>
+  <dl class="proof" id="proof"><div class="stat"><dt>$7M</dt><dd>pipeline from early adopter programs</dd></div><div class="stat"><dt>68%</dt><dd>ARR increase community programs contributed to</dd></div><div class="stat"><dt>650K+</dt><dd>reached by one campaign on a minimal budget</dd></div><div class="stat"><dt>100+</dt><dd>enterprise advocates in a program built from scratch</dd></div></dl>
+
+  <div class="cred">
+    <p><b>Worked with</b> Menlo Security, Guru, B Lab, Cyber Collective, Mozilla, Cisco, Filecoin Foundation</p>
+    <p><b>Recognized by</b> Anthem Awards (Responsible Technology), CMA Top 100 Strategists</p>
+    <p><b>Spoke at</b> Columbia University, New America, NYC Open Data Week, Customer Marketing Summit (two-time host)</p>
   </div>
 
-  <section class="grid-section">
-    <div class="case-grid" id="caseGrid">
-
-      <!-- 1: Cyber Collective -->
-      <a href="cyber-collective.html" class="case-card fade-in"
-         data-tags="movement building, digital safety, nonprofit growth, community marketing"
-         data-search="cyber collective internet street smarts digital safety movement building nonprofit community 14 countries funding anthem award mozilla omidyar">
-        <div class="card-image">
-          <img src="images/cyber-collective-workshops.png" alt="Cyber Collective community workshops">
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag">Movement Building</span>
-            <span class="tag">Digital Safety</span>
-          </div>
-          <p class="card-org">Cyber Collective</p>
-          <h3 class="card-title">Internet Street Smarts — Scaling a Digital Safety Movement to 14+ Countries</h3>
-          <p class="card-outcome">$600K+ in philanthropic funding secured and audiences reached across 14+ countries — all through community-first programming.</p>
-          <span class="card-link">Read Case Study <span>→</span></span>
-        </div>
-      </a>
-
-      <!-- 2: Conscious Stack Design -->
-      <a href="conscious-stack-design.html" class="case-card fade-in"
-         data-tags="movement building, brand narrative, gtm strategy, community marketing"
-         data-search="conscious stack design george samuels cmo partnership movement building brand narrative gtm go-to-market certification practitioner pingala ai conscious tech">
-        <div class="card-image" style="background: #1a1d1a;">
-          <img src="images/conscious-stack-og.png" alt="Conscious Stack — Reclaim Your Mind">
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag">Movement Building</span>
-            <span class="tag">CMO Partnership</span>
-          </div>
-          <p class="card-org">Conscious Stack Design</p>
-          <h3 class="card-title">Building the Movement Infrastructure for Conscious Tech</h3>
-          <p class="card-outcome">Embedded as CMO to build brand narrative, community architecture, and practitioner certification for a paradigm-shifting framework.</p>
-          <span class="card-link">Read Case Study <span>→</span></span>
-        </div>
-      </a>
-
-      <!-- 3: Digital Culturist -->
-      <a href="digital-culturist.html" class="case-card fade-in"
-         data-tags="gtm strategy, ai product, community marketing"
-         data-search="digital culturist ai consumer product gtm go-to-market beta community hubspot crm organic launch">
-        <div class="card-image">
-          <img src="images/digital-culturist-hero.jpg" alt="Digital Culturist workspace illustration">
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag">GTM Strategy</span>
-            <span class="tag">AI Product</span>
-          </div>
-          <p class="card-org">Digital Culturist</p>
-          <h3 class="card-title">0→1 Go-to-Market for an AI Consumer Product</h3>
-          <p class="card-outcome">Grew beta community to 150+ members in 7 days through organic channels only — no paid spend.</p>
-          <span class="card-link">Read Case Study <span>→</span></span>
-        </div>
-      </a>
-
-      <!-- 4: Meta Well -->
-      <a href="meta-well.html" class="case-card fade-in"
-         data-tags="brand narrative, ai product, community marketing"
-         data-search="meta well wellness ai brand narrative community">
-        <div class="card-image">
-          <img src="images/metawell-featured.png" alt="Meta Well brand visual">
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag">Brand Narrative</span>
-            <span class="tag">AI &amp; Tech</span>
-          </div>
-          <p class="card-org">Meta Well</p>
-          <h3 class="card-title">Brand Narrative for a Digital Wellness Platform</h3>
-          <p class="card-outcome">Built brand story, editorial voice, and content strategy for a platform helping people make peace with the internet.</p>
-          <span class="card-link">Read Case Study <span>→</span></span>
-        </div>
-      </a>
-
-      <!-- 5: OurKind -->
-      <a href="ourkind.html" class="case-card fade-in"
-         data-tags="community marketing, brand narrative, movement building"
-         data-search="ourkind community brand narrative movement building">
-        <div class="card-image">
-          <img src="images/ourkind-therapists.jpg" alt="OurKind Therapy team">
-        </div>
-        <div class="card-body">
-          <div class="card-tags">
-            <span class="tag">Community</span>
-            <span class="tag">Brand Narrative</span>
-          </div>
-          <p class="card-org">OurKind</p>
-          <h3 class="card-title">OurKind Therapy — Brand & Community Infrastructure for a Modern Practice</h3>
-          <p class="card-outcome">Built brand narrative, community architecture, and digital presence for a mission-driven therapy practice.</p>
-          <span class="card-link">Read Case Study <span>→</span></span>
-        </div>
-      </a>
-
+  <div class="tools">
+    <label for="search">Search the work</label>
+    <input id="search" type="search" placeholder="Try G2, merch, interviews, creators, pipeline" autocomplete="off">
+    <div class="chips" id="chips" role="group" aria-label="Filter by area of work">
+      <button type="button" class="chip" data-lane="" aria-pressed="true">All work</button>
+      <button type="button" class="chip" data-lane="insights" aria-pressed="false">Insights</button>
+      <button type="button" class="chip" data-lane="brand" aria-pressed="false">Brand</button>
+      <button type="button" class="chip" data-lane="launch" aria-pressed="false">Launch</button>
+      <button type="button" class="chip" data-lane="community" aria-pressed="false">Community</button>
+      <button type="button" class="chip" data-lane="social" aria-pressed="false">Social &amp; content</button>
+      <button type="button" class="chip" data-lane="partners" aria-pressed="false">Creators &amp; partners</button>
+      <button type="button" class="chip" data-lane="advocacy" aria-pressed="false">Customer advocacy</button>
+      <button type="button" class="chip" data-lane="ai" aria-pressed="false">AI</button>
     </div>
-    <p class="no-results" id="noResults">No case studies match your search.</p>
-  </section>
+    <p class="status" id="status" aria-live="polite"></p>
+  </div>
 
-  <footer class="footer">
-    <div class="footer-left">
-      <p>&copy; 2026 <a href="https://callierojewski.com" target="_blank" rel="noopener">Callie Rojewski</a></p>
+  <main id="work">
+    <section class="story" id="cyber">
+      <header><p class="theme">Global impact</p><h2>Cyber Collective</h2><p class="meta">Fractional Chief Strategy &amp; Marketing Officer, 2021–2026. Board member since 2022</p></header>
+      <dl class="mini"><div class="stat"><dt>$600K+</dt><dd>funding secured</dd></div><div class="stat"><dt>100</dt><dd>co-designers</dd></div><div class="stat"><dt>500+</dt><dd>participants heard</dd></div><div class="stat"><dt>14+</dt><dd>countries</dd></div></dl>
+      <div class="gallery"><img src="images/story-cyber-collage.png" alt="Cyber Collective events, campaigns and Internet Street Smarts" loading="lazy" style="max-width:536px"><img src="images/story-cyber-merch.png" alt="Cyber Collective merch and the password journal" loading="lazy" style="max-width:538px"></div>
+      <div class="rows">
+      <div class="row" data-lanes="community partners social" data-keywords="creators influencers ecosystem digital safety Community Creators &amp; partners Social &amp; content"><h3>Social &amp; community</h3><p>Connected creator partners (Mozilla, Cisco, Filecoin Foundation, Stardust, AdoreMe), convenings, campaigns and merch into one story, with Internet Street Smarts at the center.</p></div>
+      <div class="row" data-lanes="social brand" data-keywords="campaign tiktok instagram awareness Social &amp; content Brand"><h3>Voice</h3><p>Directed three Cybersecurity Awareness Month campaigns and shaped the impact narratives used with funders and partners.</p></div>
+      <div class="row" data-lanes="brand partners launch" data-keywords="merch merchandise swag physical product tactile events irl Brand Creators &amp; partners Launch"><h3>Creative campaigns</h3><p>Created a password journal with digital safety tips to bring teachings IRL. Hosted convenings with creator, impact and brand partners on topics such as misinformation and Web3 privacy.</p></div>
+      <div class="row" data-lanes="insights community" data-keywords="research co-design participatory survey airtable anthem award Insights Community"><h3>Insights</h3><p>Co-designed the signature program with 100 global advocates, and built in pre- and post-program surveys and listening sessions with 500+ participants.</p></div>
+      <div class="row" data-lanes="brand partners" data-keywords="fundraising grants philanthropy revenue impact Brand Creators &amp; partners"><h3>Measurement</h3><p>Turned program data into evidence that secured $600K+ from Omidyar, Hewlett and the Archewell Foundation, and built revenue from events, merch and programs.</p></div>
+      <div class="row" data-lanes="community" data-keywords="leadership manager management Community"><h3>Team</h3><p>Led a team of three across comms, social, grants and community.</p></div>
+      </div>
+      <p class="storylink"><a href="cyber-collective.html">Read the full case study</a></p>
+    </section>
+    <section class="story" id="digital-culturist">
+      <header><p class="theme">0 to 1 product</p><h2>Digital Culturist</h2><p class="meta">AI consumer product, through Online &amp; IRL</p></header>
+      <dl class="mini"><div class="stat"><dt>55%</dt><dd>sign-up rate, email list to beta</dd></div><div class="stat"><dt>8</dt><dd>first customer interviews</dd></div></dl>
+      <div class="gallery"><img src="images/digital-culturist-hero.jpg" alt="Digital Culturist brand illustration of a retro computer" loading="lazy"><img src="images/story-dc-board.png" alt="Digital Culturist brand world, merch, beta community, mascot, trend report and enterprise pilot" loading="lazy" style="max-width:536px"></div>
+      <div class="rows">
+      <div class="row" data-lanes="community launch social ai" data-keywords="beta maxxing challenge advocates trend report slack Community Launch Social &amp; content AI"><h3>Social &amp; community</h3><p>Designed the advocate journey and value-exchange framework. Activated it through content, a private beta community on Slack, reveal events, challenges, merch and a co-created report.</p></div>
+      <div class="row" data-lanes="brand ai" data-keywords="messaging identity nostalgic tech brand world mascot Brand AI"><h3>Voice</h3><p>Sharpened the positioning to activate users as “Digital Culturists.”</p></div>
+      <div class="row" data-lanes="launch brand ai" data-keywords="merch hat go-to-market gtm events irl Launch Brand AI"><h3>Creative campaigns</h3><p>Ran the beta with my 0→1 playbook: prototype walkthrough, product reveal events, the June 2026 launch event and the “paid to overthink” hat.</p></div>
+      <div class="row" data-lanes="insights ai" data-keywords="user research ux interviews qualitative discovery Insights AI"><h3>Insights</h3><p>Ran the first 8 in-depth customer interviews. Built the bug-reporting workflow and customer data and feedback loop into a dashboard and recommendations for the product roadmap.</p></div>
+      <div class="row" data-lanes="launch ai" data-keywords="go-to-market lifecycle email activation retention growth analytics Launch AI"><h3>Measurement</h3><p>Set GTM success metrics, power-user thresholds and segmented re-engagement emails. Achieved a 55% sign-up rate from email list to beta.</p></div>
+      </div>
+      <p class="storylink"><a href="digital-culturist.html">Read the full case study</a></p>
+    </section>
+    <section class="story" id="online-irl">
+      <header><p class="theme">Creative</p><h2>Online &amp; IRL</h2><p class="meta">Founder and consultant, 2016–present</p></header>
+      <dl class="mini"><div class="stat"><dt>250+</dt><dd>videos and essays</dd></div><div class="stat"><dt>15+</dt><dd>client engagements</dd></div><div class="stat"><dt>10+</dt><dd>events</dd></div><div class="stat"><dt>550+</dt><dd>community members across two communities</dd></div></dl>
+      <div class="gallery"><img src="images/story-oirl-events.png" alt="Posters for Online &amp; IRL events" loading="lazy" style="max-width:360px"></div>
+      <div class="rows">
+      <div class="row" data-lanes="social brand" data-keywords="creator content video editing writing Social &amp; content Brand"><h3>Voice</h3><p>I write, film and edit my own work: 250+ videos, essays and graphics across TikTok, Instagram, YouTube, LinkedIn and my Substack, Online &amp; IRL. I also self-published <i>Book of My Content</i>.</p></div>
+      <div class="row" data-lanes="community partners ai" data-keywords="founders sponsorships monetization affiliate Community Creators &amp; partners AI"><h3>Campaigns</h3><p>Co-created cross-promotion and monetization offers with creators (Shape of Now, Internet Intimacy Cohort), and launched Women Building with AI (400+) and the Conscious Technologist Association (150+) from scratch.</p></div>
+      <div class="row" data-lanes="insights launch ai" data-keywords="frameworks consulting Insights Launch AI"><h3>Insights</h3><p>Turned insights from 15+ client engagements and 10+ events into founder resources and marketing playbooks on customer marketing and 0 to 1 AI product launches.</p></div>
+      <div class="row" data-lanes="ai" data-keywords="builder vibe coding wellness productivity AI"><h3>Building with AI</h3><p>Shipped prototypes with Claude Code, Cursor and Vercel: Year at Glance, Screen Readings and Lifestyle.AI.</p></div>
+      </div>
+      <p class="storylink"><a href="https://onlineandirl.com">Visit Online &amp; IRL</a></p>
+    </section>
+    <section class="story" id="b-lab">
+      <header><p class="theme">Campaigns</p><h2>B Lab</h2><p class="meta">Brand &amp; Community Manager, 2016–2019. The nonprofit behind B Corp</p></header>
+      <dl class="mini"><div class="stat"><dt>650K+</dt><dd>campaign reach</dd></div><div class="stat"><dt>400+</dt><dd>press placements</dd></div><div class="stat"><dt>15K+</dt><dd>followers from zero</dd></div><div class="stat"><dt>~20%</dt><dd>social growth a year</dd></div></dl>
+      <div class="gallery"><img src="images/story-blab-photos.png" alt="B Lab event photos" loading="lazy" style="max-width:198px"></div>
+      <div class="rows">
+      <div class="row" data-lanes="social brand" data-keywords="content strategy Social &amp; content Brand"><h3>Digital shift</h3><p>Led the shift from print to a digital content strategy, connecting social, a new community platform (bthechange.com) and earned media into one brand presence.</p></div>
+      <div class="row" data-lanes="social launch community" data-keywords="newsletter email media brand editorial Social &amp; content Launch Community"><h3>Growth</h3><p>Social following grew about 20% a year, and bthechange.com went from zero to 15K+ followers and 7,500 email subscribers.</p></div>
+      <div class="row" data-lanes="social brand" data-keywords="pr earned media comms ugc Social &amp; content Brand"><h3>Campaigns</h3><p>Designed the 2018 B Corp Month campaign, a proof of concept for community-powered marketing that reached 650K+ people on a minimal budget. Supported the earned media strategy behind 400+ placements, including Forbes and Fast Company.</p></div>
+      </div>
+      
+    </section>
+    <section class="story" id="menlo-guru">
+      <header><p class="theme">B2B programs</p><h2>Menlo Security &amp; Guru</h2><p class="meta">Director of Customer Marketing &amp; Advocacy at Menlo, 2021–2023. Customer Marketing Manager at Guru, 2019–2021</p></header>
+      <dl class="mini"><div class="stat"><dt>$7M</dt><dd>pipeline</dd></div><div class="stat"><dt>$1M+</dt><dd>influenced revenue</dd></div><div class="stat"><dt>68%</dt><dd>ARR increase contributed to</dd></div><div class="stat"><dt>3x</dt><dd>G2 reviews</dd></div></dl>
+      <div class="gallery"><img src="images/story-menlo-events.png" alt="Menlo Security customer events" loading="lazy" style="max-width:278px"></div>
+      <div class="rows">
+      <div class="row" data-lanes="advocacy insights" data-keywords="customer marketing cab references testimonials enterprise saas b2b executive retention Customer advocacy Insights"><h3>Menlo: programs</h3><p>Grew a global advocacy program to 100+ enterprise advocates. Built an award-nominated Customer Advisory Board of 15 strategic accounts (9.6/10 satisfaction, 100% return interest).</p></div>
+      <div class="row" data-lanes="advocacy launch" data-keywords="go-to-market gtm beta product marketing Customer advocacy Launch"><h3>Menlo: impact</h3><p>Defined segmentation and advocacy KPIs. Early adopter programs produced $7M in pipeline, workshops contributed $2M in new business, and advocacy influenced $1M+ in revenue.</p></div>
+      <div class="row" data-lanes="advocacy insights" data-keywords="voc interviews sales enablement leadership case studies Customer advocacy Insights"><h3>Menlo: team</h3><p>Built the customer marketing function, managed a direct report and led cross-functional initiatives. Ran a Voice of Customer program that produced 15 customer stories, mapped to sales plays with Sales Enablement.</p></div>
+      <div class="row" data-lanes="community advocacy social" data-keywords="plg community-led growth email lifecycle Community Customer advocacy Social &amp; content"><h3>Guru: community</h3><p>Connected a global community, peer-to-peer learning programs, a bi-weekly newsletter to 100K+ users and a G2 review program into one product-led growth motion.</p></div>
+      <div class="row" data-lanes="insights advocacy" data-keywords="data analytics Insights Customer advocacy"><h3>Guru: insights</h3><p>Ran product usage analysis in Pendo to find power users, which shaped who we recruited for reviews, case studies and advocacy. Turned customer stories into case studies with Sales, CS and Product.</p></div>
+      <div class="row" data-lanes="advocacy community" data-keywords="revenue retention review generation Customer advocacy Community"><h3>Guru: impact</h3><p>Community programs contributed to a 68% increase in ARR, G2 reviews tripled with quarterly awards, and case studies drove a 2x conversion rate.</p></div>
+      </div>
+      
+    </section>
+    <section class="story" id="more">
+      <header><h2>More client work</h2></header>
+      <div class="rows">
+<div class="row" data-lanes="brand community" data-keywords="fractional cmo health wellness Brand Community"><h3><a href="ourkind.html">OurKind Therapy</a></h3><p>Brand and community infrastructure for a therapy practice: 3x monthly inquiries through organic channels.</p></div>
+<div class="row" data-lanes="brand community launch" data-keywords="fractional cmo positioning Brand Community Launch"><h3><a href="conscious-stack-design.html">Conscious Stack Design</a></h3><p>CMO partnership covering brand narrative, go-to-market, community and the first practitioner certification.</p></div>
+<div class="row" data-lanes="brand community" data-keywords="digital wellness membership pricing Brand Community"><h3><a href="meta-well.html">MetaWell</a></h3><p>Reframed a wellness content brand as a community of practice, with a tiered revenue model and launch plan.</p></div>
+      </div>
+    </section>
+    <div class="empty" id="empty" hidden>
+      <p>No results for that search. Try a broader word like community or launch, or email me at callie@onlineandirl.com and I’ll tell you if I’ve done it.</p>
     </div>
-    <div class="footer-links">
-      <a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a>
-      <a href="https://onlineandirl.com" target="_blank" rel="noopener">onlineandirl.com</a>
-    </div>
+  </main>
+
+  <footer class="foot">
+    <h2>Let’s talk</h2>
+    <ul>
+      <li><a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a></li>
+      <li><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://onlineandirl.com" rel="noopener">onlineandirl.com</a></li>
+      <li><a href="https://callierojewski.com" rel="noopener">callierojewski.com</a></li>
+    </ul>
   </footer>
+</div>
 
-  <script>
-    // Mobile menu
-    function toggleMobileMenu() {
-      document.getElementById('mobileMenu').classList.toggle('active');
-      document.querySelector('.hamburger').classList.toggle('active');
-    }
-
-    // Search + Filter
-    const cards = document.querySelectorAll('.case-card');
-    const input = document.getElementById('searchInput');
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const noResults = document.getElementById('noResults');
-    let activeFilter = 'all';
-
-    function filterCards() {
-      const q = input.value.toLowerCase().trim();
-      let visible = 0;
-
-      cards.forEach(card => {
-        const search = card.dataset.search || '';
-        const tags = card.dataset.tags || '';
-        const title = card.querySelector('.card-title').textContent.toLowerCase();
-        const org = card.querySelector('.card-org').textContent.toLowerCase();
-        const text = `${search} ${tags} ${title} ${org}`;
-
-        const matchesSearch = !q || text.includes(q);
-        const matchesFilter = activeFilter === 'all' || tags.includes(activeFilter);
-
-        if (matchesSearch && matchesFilter) {
-          card.classList.remove('hidden');
-          visible++;
-        } else {
-          card.classList.add('hidden');
-        }
-      });
-
-      noResults.classList.toggle('visible', visible === 0);
-    }
-
-    input.addEventListener('input', filterCards);
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        activeFilter = btn.dataset.filter;
-        filterCards();
-      });
-    });
-
-    // Scroll animations
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
-    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-  </script>
-
+<script>
+// Each filter has its own link, such as readmycasestudies.com/#insights
+const LANES={"insights": {"q": "Do you understand the market and where the opportunity is?", "name": "Insights", "proof": [["500+", "participants in surveys and listening sessions"], ["100", "advocates in co-design workshops"], ["9.6/10", "Customer Advisory Board satisfaction"], ["15", "customer stories from a Voice of Customer program"]]}, "brand": {"q": "Can you find the idea that makes people care?", "name": "Brand", "proof": [["$600K+", "in funding secured with impact narratives"], ["650K+", "reached by one campaign on a minimal budget"], ["400+", "press placements supported in 2018"], ["3x", "monthly inquiries for OurKind through organic channels"]]}, "launch": {"q": "Can you get a new product off the ground?", "name": "Launch", "proof": [["$7M", "pipeline from early adopter programs"], ["55%", "sign-up rate from email list to beta"], ["$2M", "new business from workshops"], ["15K+", "followers for a media brand started from zero"]]}, "community": {"q": "Will people choose to be part of it?", "name": "Community", "proof": [["400+", "members in Women Building with AI"], ["100K+", "product users on the Guru newsletter"], ["68%", "ARR increase community programs contributed to"], ["14+", "countries reached by a co-designed program"]]}, "social": {"q": "Can you get people to show up, online and IRL?", "name": "Social & content", "proof": [["650K+", "reached by B Corp Month on a minimal budget"], ["5M+", "reached through awareness campaigns"], ["~20%", "social following growth each year at B Lab"], ["250+", "videos and essays I made myself"]]}, "partners": {"q": "Can you turn partners into a growth channel?", "name": "Creators & partners", "proof": [["5", "brand partners connected into one story"], ["$600K+", "in funding from three foundations"], ["100", "advocates co-designing a program"]]}, "advocacy": {"q": "Can you turn customers into your best marketing?", "name": "Customer advocacy", "proof": [["100+", "enterprise advocates"], ["$2M+", "ARR influenced by the Customer Advisory Board"], ["3x", "G2 reviews at Guru"], ["2x", "conversion rate from customer case studies"]]}, "ai": {"q": "Can you build with AI, not just talk about it?", "name": "AI", "proof": [["55%", "email-to-beta sign-up rate for an AI product"], ["400+", "members in Women Building with AI"], ["150+", "members in the Conscious Technologist Association"], ["15+", "client engagements turned into playbooks"]]}};
+const stories=[...document.querySelectorAll('.row')].map(el=>({el,lanes:el.dataset.lanes.split(' '),text:(el.textContent+' '+el.dataset.keywords+' '+el.closest('.story').querySelector('h2').textContent).toLowerCase()}));
+const groups=[...document.querySelectorAll('.story')],input=document.getElementById('search'),statusEl=document.getElementById('status'),empty=document.getElementById('empty'),proofEl=document.getElementById('proof'),chips=[...document.querySelectorAll('.chip')],defaultProof=proofEl.innerHTML;
+let lane='';
+function esc(s){const d=document.createElement('div');d.textContent=s;return d.innerHTML}
+function apply(){
+  const words=input.value.toLowerCase().trim().split(/\s+/).filter(Boolean);let count=0;
+  stories.forEach(s=>{const show=(!lane||s.lanes.includes(lane))&&words.every(w=>(' '+s.text).includes(' '+w)||s.text.includes(w)&&w.length>3);s.el.hidden=!show;if(show)count++});
+  groups.forEach(g=>{g.hidden=!g.querySelector('.row:not([hidden])')});
+  empty.hidden=count>0;
+  const filtered=lane||words.length;
+  statusEl.textContent=lane?LANES[lane].q+(words.length?' '+count+(count===1?' result':' results')+'.':''):(filtered?count+(count===1?' result':' results')+'.':'');
+}
+function setLane(k,fromHash){
+  lane=LANES[k]?k:'';
+  chips.forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.lane===lane)));
+  proofEl.innerHTML=lane?LANES[lane].proof.map(p=>'<div class="stat"><dt>'+esc(p[0])+'</dt><dd>'+esc(p[1])+'</dd></div>').join(''):defaultProof;
+  if(!fromHash){try{history.replaceState(null,'',lane?'#'+lane:location.pathname+location.search)}catch(e){}}
+  apply();
+}
+chips.forEach(c=>c.addEventListener('click',()=>setLane(c.dataset.lane)));
+input.addEventListener('input',apply);
+window.addEventListener('hashchange',()=>setLane(location.hash.slice(1),true));
+setLane(location.hash.slice(1),true);
+</script>
 </body>
 </html>
