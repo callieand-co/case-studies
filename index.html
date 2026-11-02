@@ -5,211 +5,254 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Callie Rojewski Case Studies</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Callie Rojewski builds brands people want to participate in. Five stories across global impact, 0 to 1 product, creative, campaigns and B2B programs.">
+<meta name="description" content="Case studies, aka receipts. Callie Rojewski builds brands people want to participate in. Five searchable stories across global impact, 0 to 1 product, creative, campaigns and B2B programs.">
 <meta property="og:title" content="Callie Rojewski Case Studies">
-<meta property="og:description" content="$7M pipeline. 650K+ campaign reach. 100+ enterprise advocates. Search the stories behind the numbers.">
+<meta property="og:description" content="Case studies, aka receipts. $7M pipeline. 650K+ campaign reach. 100+ enterprise advocates.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.readmycasestudies.com/">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 <style>
 @font-face{font-family:'Antilag';src:url('Antilag copy.otf') format('opentype'),url('Antilag copy.ttf') format('truetype');font-display:swap}
-/* Layout: one left-aligned ledger. Every story is a line item with its result in the left column. */
-:root{--bg:#F9F6F1;--ink:#1A1A1A;--accent:#A9522A;--link:#1C1CA8;--line:#E0DBD3;--soft:#5F5953;--paper:#fff;
---serif:'Antilag',Georgia,serif;--sans:'DM Sans','Helvetica Neue',sans-serif}
+/* Layout: oversized name, then spreads where a printed receipt overlaps a loose image mosaic. Yellow is a highlighter, used only for marking things up. */
+:root{--bg:#fff;--ink:#000;--soft:#555;--line:#000;--hair:#ddd;--paper:#f3f3f1;--marker:#FFEF3A;--ph:#efefef;
+--serif:'Antilag',Georgia,serif;--sans:'DM Sans','Helvetica Neue',sans-serif;--mono:'JetBrains Mono',Menlo,monospace;--max:1440px;color-scheme:light}
 *,*::before,*::after{box-sizing:border-box}
-html{font-size:16px;background:var(--bg)}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.55;-webkit-font-smoothing:antialiased;
-padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1000px;margin:0 auto}
-h1,h2,h3,p,dl,dd{margin:0}
-h1,h2,h3{font-weight:normal}
-a{color:var(--link)}
-:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-.top{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;padding-block:1.5rem}
-.top strong{font-family:var(--serif);font-weight:normal;font-size:1.2rem}
-.top nav{display:flex;gap:1.25rem;font-size:.95rem}
-.hero{padding-block:2.5rem 2rem;display:grid;gap:1rem}
-h1{font-family:var(--serif);font-size:clamp(2.1rem,5vw,3.4rem);line-height:1.1;letter-spacing:-.02em;max-width:17em;text-wrap:balance}
-.lede{font-size:1.1rem;color:var(--soft);max-width:38em}
-.proof{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5rem;padding-block:1.75rem;border-block:1px solid var(--ink)}
-.stat{min-width:0}
-.stat dt{font-family:var(--serif);font-size:clamp(2rem,4vw,2.75rem);line-height:1.1;color:var(--accent)}
-.stat dd{font-size:.9rem;color:var(--soft);margin-top:.35rem;line-height:1.4}
-.cred{display:grid;gap:.3rem;padding-block:1.25rem;font-size:.95rem;color:var(--soft)}
-.cred b{color:var(--ink);font-weight:600}
-.tools{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:1rem .75rem;border-bottom:1px solid var(--line);display:grid;gap:.75rem;margin-top:1.5rem}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.tools label{font-family:var(--serif);font-size:1.5rem}
-#search{width:100%;font:inherit;font-size:1.05rem;padding:.75rem .9rem;background:var(--paper);color:var(--ink);border:1px solid var(--ink);border-radius:3px}
-.chips{display:flex;flex-wrap:wrap;gap:.4rem}
-.chip{font:inherit;font-size:.875rem;font-weight:500;padding:.3rem .7rem;border:1px solid var(--line);border-radius:3px;background:transparent;color:var(--ink);cursor:pointer}
-.chip:hover{border-color:var(--ink)}
-.chip[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.status{font-size:.9rem;color:var(--soft);min-height:1.4em}
-.story{padding-block:2.5rem 1rem;display:grid;gap:1.25rem;scroll-margin-top:12rem}
-.story header{display:grid;gap:.1rem}
-.theme{color:var(--accent);font-weight:600;font-size:.95rem}
-.story h2{font-family:var(--serif);font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.15}
-.meta{color:var(--soft);font-size:.95rem}
-.mini{display:flex;flex-wrap:wrap;gap:1rem 2.5rem}
-.mini dt{font-family:var(--serif);font-size:1.8rem;line-height:1.1;color:var(--accent)}
-.mini dd{font-size:.85rem;color:var(--soft)}
-.gallery{display:flex;flex-wrap:wrap;gap:.75rem;align-items:flex-start}
-.gallery img{display:block;flex:1 1 300px;width:100%;min-width:0;max-width:100%;height:auto;border-radius:3px}
-.rows{display:grid}
-.row{display:grid;grid-template-columns:10.5rem minmax(0,1fr);gap:1.5rem;padding-block:.8rem;border-top:1px solid var(--line)}
-.row h3{font-family:var(--sans);font-size:.95rem;font-weight:600;line-height:1.5}
-.row p{max-width:42em}
-.storylink{font-weight:500}
-.empty{padding-block:3rem;max-width:34em}
-.foot{margin-top:2.5rem;padding-block:2rem 3rem;border-top:1px solid var(--ink);display:flex;justify-content:space-between;gap:1rem 2rem;flex-wrap:wrap;font-size:.95rem}
-.foot h2{font-family:var(--serif);font-size:1.5rem}
-.foot ul{list-style:none;margin:0;padding:0;display:flex;gap:.5rem 1.25rem;flex-wrap:wrap;align-items:center}
+html{background:var(--bg);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:clip}
+.pad{padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px));max-width:var(--max);margin-inline:auto}
+h1,h2,h3,p,dl,dd,ul,figure{margin:0;padding:0}
+h1,h2,h3{font-weight:normal}ul{list-style:none}
+a{color:inherit}
+a:hover{background:var(--marker)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.top{display:flex;justify-content:space-between;gap:.5rem 1.5rem;flex-wrap:wrap;padding-block:1.1rem;font-family:var(--mono);font-size:.82rem}
+.top nav{display:flex;gap:1.25rem}
+.name{font-family:var(--serif);font-size:calc((min(100vw,1440px) - 56px) / 8.25);line-height:1.08;letter-spacing:-.025em;white-space:nowrap;margin-top:.5rem}
+.hero{display:grid;grid-template-columns:minmax(0,1fr) 400px;gap:3rem;padding-block:1.5rem 4rem;align-items:start}
+.statement{font-family:var(--serif);font-size:clamp(1.9rem,3.6vw,3.2rem);line-height:1.1;max-width:15em;text-wrap:balance}
+.statement mark{background:var(--marker);color:inherit;padding:0 .08em}
+.lede{margin-top:1.25rem;font-size:1.15rem;max-width:32em}
+.cred{margin-top:2.25rem;display:grid;gap:.6rem;font-size:.95rem;max-width:40em}
+.cred b{display:block;font-family:var(--mono);font-weight:400;font-size:.78rem;color:var(--soft)}
+.receipt-wrap{filter:drop-shadow(0 10px 18px rgba(0,0,0,.2))}
+.receipt{background:var(--paper);padding:1.5rem 1.4rem 2rem;font-family:var(--mono);font-size:.82rem;line-height:1.4;
+-webkit-mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;mask:conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) 50%/14px 100%;display:grid;gap:.9rem}
+.hero .receipt-wrap{transform:rotate(1.6deg);margin-top:-3.5rem;position:relative;z-index:2}
+.r-title{font-weight:700;font-size:.95rem;text-align:center}
+.r-meta{text-align:center;color:var(--soft)}
+.r-lines{border-block:2px dashed var(--ink);padding-block:.5rem}
+.line{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding-block:.42rem}
+.line dt{grid-column:2;grid-row:1;font-weight:700;font-size:1.3rem;line-height:1.1}
+.line dd{grid-column:1;grid-row:1}
+.barcode{height:46px;background:repeating-linear-gradient(90deg,#000 0 2px,transparent 2px 5px,#000 5px 6px,transparent 6px 8px,#000 8px 12px,transparent 12px 15px,#000 15px 16px,transparent 16px 21px)}
+.rlink{text-align:center;font-weight:700}
+.toc{border-top:2px solid var(--ink)}
+.toc a{display:grid;grid-template-columns:3.5rem minmax(0,1fr) auto;gap:1rem;align-items:baseline;padding-block:.65rem;border-bottom:1px solid var(--ink);text-decoration:none}
+.t-num,.t-theme{font-family:var(--mono);font-size:.82rem}
+.t-name{font-family:var(--serif);font-size:clamp(1.7rem,4vw,3.2rem);line-height:1.1}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--ink);color:#fff;margin-top:4rem}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--ink)}
+.bar-in{display:grid;grid-template-columns:minmax(220px,340px) minmax(0,1fr);gap:.6rem 1.5rem;align-items:center;padding-block:.75rem}
+#search{width:100%;font-family:var(--mono);font-size:.9rem;padding:.55rem .7rem;background:#000;color:#fff;border:1px solid #fff;border-radius:0}
+#search::placeholder{color:#bbb}
+.chips{display:flex;flex-wrap:wrap;gap:.2rem .35rem}
+.chip{font-family:var(--mono);font-size:.8rem;padding:.25rem .5rem;background:none;border:0;color:#fff;cursor:pointer}
+.chip:hover{text-decoration:underline}
+.chip[aria-pressed="true"]{background:var(--marker);color:#000}
+.chip:focus-visible,#search:focus-visible{outline-color:var(--marker)}
+.status{grid-column:1/-1;font-family:var(--mono);font-size:.82rem;color:#fff}
+.status:empty{display:none}
+.story{padding-block:5rem 1rem;scroll-margin-top:4rem}
+.s-theme{font-family:var(--mono);font-size:.82rem;margin-bottom:.9rem}
+.story h2{font-family:var(--serif);font-size:clamp(2.8rem,9vw,8rem);line-height:.98;letter-spacing:-.02em}
+.s-grid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:0;align-items:start;margin-top:1.5rem}
+.flip .s-grid{grid-template-columns:360px minmax(0,1fr)}
+.flip .mosaic{order:2}
+.s-grid .receipt-wrap{position:sticky;top:6.5rem;margin-left:-3.5rem;margin-top:3rem;z-index:3;transform:rotate(-1.4deg)}
+.flip .s-grid .receipt-wrap{margin-left:0;margin-right:-3.5rem;transform:rotate(1.2deg)}
+.mosaic{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(0,auto);gap:10px}
+.m{min-width:0;overflow:hidden;background:var(--ph)}
+.m img{display:block;width:100%;height:100%;object-fit:cover}
+.m.a{grid-column:span 4;aspect-ratio:4/3}
+.m.b{grid-column:span 2;aspect-ratio:auto;min-height:100%}
+.m.c{grid-column:span 2;aspect-ratio:1}
+.m.w{grid-column:span 4;aspect-ratio:auto}
+.ph{position:relative;display:flex;align-items:flex-end;border:1px solid #000;background:#f6f6f6;min-height:160px}
+.ph.moving{background:repeating-linear-gradient(-45deg,#fff 0 14px,#ececec 14px 28px);background-size:200% 200%;animation:drift 12s linear infinite}
+@keyframes drift{to{background-position:198px 0}}
+.ph figcaption{font-family:var(--mono);font-size:.74rem;line-height:1.35;background:#fff;padding:.4rem .5rem;margin:.5rem;border:1px solid #000}
+.ph b{background:var(--marker);padding:0 .2em}
+.rows{margin-top:2.5rem;columns:2;column-gap:3rem}
+.row{break-inside:avoid;padding-block:.8rem;border-top:1px solid var(--ink)}
+.row h3{font-family:var(--mono);font-size:.82rem;font-weight:700;margin-bottom:.15rem}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem;margin-top:1.5rem}
+.card{border-top:0;padding:0}
+.card a{display:grid;gap:.4rem;text-decoration:none}
+.card img{width:100%;aspect-ratio:3/2;object-fit:cover;display:block}
+.card h3{margin:.3rem 0 0}
+.filtering .toc-wrap,.filtering .s-grid{display:none}
+.filtering .story{padding-block:2.5rem .5rem}
+.filtering .story h2{font-size:clamp(2rem,5vw,3.5rem)}
+.empty{padding-block:4rem;max-width:34em}
+.foot{margin-top:5rem;border-top:2px solid var(--ink);padding-block:2rem 3rem}
+.foot h2{font-family:var(--serif);font-size:clamp(2.8rem,9vw,8rem);line-height:1}
+.foot ul{display:flex;flex-wrap:wrap;gap:.5rem 1.5rem;margin-top:1.25rem;font-family:var(--mono);font-size:.9rem}
 [hidden]{display:none!important}
-@media (max-width:760px){
-.proof{grid-template-columns:repeat(2,minmax(0,1fr));gap:1.25rem 1rem}
-.tools{position:static}
-.row{grid-template-columns:minmax(0,1fr);gap:.15rem}
+@media (prefers-reduced-motion:no-preference){.hero .receipt{animation:print 1s cubic-bezier(.2,.7,.2,1) both}@keyframes print{from{transform:translateY(-14%);clip-path:inset(0 0 72% 0)}to{transform:none;clip-path:inset(0 0 0 0)}}}
+@media (prefers-reduced-motion:reduce){.ph.moving{animation:none}html{scroll-behavior:auto}}
+@media (max-width:980px){
+.hero{grid-template-columns:minmax(0,1fr)}.hero .receipt-wrap{margin-top:0;max-width:420px}
+.s-grid,.flip .s-grid{grid-template-columns:minmax(0,1fr)}
+.flip .mosaic{order:0}
+.s-grid .receipt-wrap,.flip .s-grid .receipt-wrap{position:static;margin:-2.5rem auto 0;width:min(100%,380px);transform:rotate(-1deg)}
+.rows{columns:1}.cards{grid-template-columns:minmax(0,1fr)}
+.bar{position:static}.bar-in{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:560px){
+.pad{padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mosaic{grid-template-columns:repeat(2,minmax(0,1fr))}
+.m.a,.m.w{grid-column:span 2}.m.b,.m.c{grid-column:span 1;aspect-ratio:4/5;min-height:0}
+.toc a{grid-template-columns:2rem minmax(0,1fr)}.t-theme{grid-column:2}
 }
 </style>
 </head>
 <body>
-<div class="wrap">
-  <header class="top">
-    <strong>Callie Rojewski</strong>
-    <nav aria-label="Contact"><a href="mailto:callie@onlineandirl.com">Email</a><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a></nav>
-  </header>
-
+<div class="pad">
+  <header class="top"><span>Case studies (aka receipts)</span>
+    <nav aria-label="Contact"><a href="mailto:callie@onlineandirl.com">Email</a><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a><a href="https://onlineandirl.substack.com" rel="noopener">Substack</a></nav></header>
+  <h1 class="name">Callie Rojewski</h1>
   <section class="hero">
-    <h1>I build brands people want to participate in, not just hear from.</h1>
-    <p class="lede">Marketing strategist with 10+ years across B2B SaaS, consumer tech and mission-driven companies. I help people rethink their relationship with tech and build connection.</p>
+    <div>
+      <p class="statement">I build brands people want to <mark>participate in</mark>, not just hear from.</p>
+      <p class="lede">Marketing strategist with 10+ years across B2B SaaS, consumer tech and mission-driven companies. I help people rethink their relationship with tech and build connection.</p>
+      <div class="cred">
+        <p><b>Worked with</b>Menlo Security, Guru, B Lab, Cyber Collective, Mozilla, Cisco, Filecoin Foundation</p>
+        <p><b>Recognized by</b>Anthem Awards (Responsible Technology), CMA Top 100 Strategists</p>
+        <p><b>Spoke at</b>Columbia University, New America, NYC Open Data Week, Customer Marketing Summit (two-time host)</p>
+      </div>
+    </div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">Total receipts</p>
+      <p class="r-meta">Callie Rojewski, 2016–2026</p>
+      <dl class="r-lines" id="proof"><div class="line"><dt>$7M</dt><dd>pipeline from early adopter programs</dd></div><div class="line"><dt>68%</dt><dd>ARR increase community programs contributed to</dd></div><div class="line"><dt>650K+</dt><dd>reached by one campaign on a minimal budget</dd></div><div class="line"><dt>100+</dt><dd>enterprise advocates in a program built from scratch</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div>
+    </div></aside>
   </section>
-
-  <dl class="proof" id="proof"><div class="stat"><dt>$7M</dt><dd>pipeline from early adopter programs</dd></div><div class="stat"><dt>68%</dt><dd>ARR increase community programs contributed to</dd></div><div class="stat"><dt>650K+</dt><dd>reached by one campaign on a minimal budget</dd></div><div class="stat"><dt>100+</dt><dd>enterprise advocates in a program built from scratch</dd></div></dl>
-
-  <div class="cred">
-    <p><b>Worked with</b> Menlo Security, Guru, B Lab, Cyber Collective, Mozilla, Cisco, Filecoin Foundation</p>
-    <p><b>Recognized by</b> Anthem Awards (Responsible Technology), CMA Top 100 Strategists</p>
-    <p><b>Spoke at</b> Columbia University, New America, NYC Open Data Week, Customer Marketing Summit (two-time host)</p>
-  </div>
-
-  <div class="tools">
-    <label for="search">Search the work</label>
-    <input id="search" type="search" placeholder="Try G2, merch, interviews, creators, pipeline" autocomplete="off">
-    <div class="chips" id="chips" role="group" aria-label="Filter by area of work">
-      <button type="button" class="chip" data-lane="" aria-pressed="true">All work</button>
-      <button type="button" class="chip" data-lane="insights" aria-pressed="false">Insights</button>
-      <button type="button" class="chip" data-lane="brand" aria-pressed="false">Brand</button>
-      <button type="button" class="chip" data-lane="launch" aria-pressed="false">Launch</button>
-      <button type="button" class="chip" data-lane="community" aria-pressed="false">Community</button>
-      <button type="button" class="chip" data-lane="social" aria-pressed="false">Social &amp; content</button>
-      <button type="button" class="chip" data-lane="partners" aria-pressed="false">Creators &amp; partners</button>
-      <button type="button" class="chip" data-lane="advocacy" aria-pressed="false">Customer advocacy</button>
-      <button type="button" class="chip" data-lane="ai" aria-pressed="false">AI</button>
-    </div>
-    <p class="status" id="status" aria-live="polite"></p>
-  </div>
-
-  <main id="work">
-    <section class="story" id="cyber">
-      <header><p class="theme">Global impact</p><h2>Cyber Collective</h2><p class="meta">Fractional Chief Strategy &amp; Marketing Officer, 2021–2026. Board member since 2022</p></header>
-      <dl class="mini"><div class="stat"><dt>$600K+</dt><dd>funding secured</dd></div><div class="stat"><dt>100</dt><dd>co-designers</dd></div><div class="stat"><dt>500+</dt><dd>participants heard</dd></div><div class="stat"><dt>14+</dt><dd>countries</dd></div></dl>
-      <div class="gallery"><img src="images/story-cyber-collage.png" alt="Cyber Collective events, campaigns and Internet Street Smarts" loading="lazy" style="max-width:536px"><img src="images/story-cyber-merch.png" alt="Cyber Collective merch and the password journal" loading="lazy" style="max-width:538px"></div>
-      <div class="rows">
-      <div class="row" data-lanes="community partners social" data-keywords="creators influencers ecosystem digital safety Community Creators &amp; partners Social &amp; content"><h3>Social &amp; community</h3><p>Connected creator partners (Mozilla, Cisco, Filecoin Foundation, Stardust, AdoreMe), convenings, campaigns and merch into one story, with Internet Street Smarts at the center.</p></div>
-      <div class="row" data-lanes="social brand" data-keywords="campaign tiktok instagram awareness Social &amp; content Brand"><h3>Voice</h3><p>Directed three Cybersecurity Awareness Month campaigns and shaped the impact narratives used with funders and partners.</p></div>
-      <div class="row" data-lanes="brand partners launch" data-keywords="merch merchandise swag physical product tactile events irl Brand Creators &amp; partners Launch"><h3>Creative campaigns</h3><p>Created a password journal with digital safety tips to bring teachings IRL. Hosted convenings with creator, impact and brand partners on topics such as misinformation and Web3 privacy.</p></div>
-      <div class="row" data-lanes="insights community" data-keywords="research co-design participatory survey airtable anthem award Insights Community"><h3>Insights</h3><p>Co-designed the signature program with 100 global advocates, and built in pre- and post-program surveys and listening sessions with 500+ participants.</p></div>
-      <div class="row" data-lanes="brand partners" data-keywords="fundraising grants philanthropy revenue impact Brand Creators &amp; partners"><h3>Measurement</h3><p>Turned program data into evidence that secured $600K+ from Omidyar, Hewlett and the Archewell Foundation, and built revenue from events, merch and programs.</p></div>
-      <div class="row" data-lanes="community" data-keywords="leadership manager management Community"><h3>Team</h3><p>Led a team of three across comms, social, grants and community.</p></div>
-      </div>
-      <p class="storylink"><a href="cyber-collective.html">Read the full case study</a></p>
-    </section>
-    <section class="story" id="digital-culturist">
-      <header><p class="theme">0 to 1 product</p><h2>Digital Culturist</h2><p class="meta">AI consumer product, through Online &amp; IRL</p></header>
-      <dl class="mini"><div class="stat"><dt>55%</dt><dd>sign-up rate, email list to beta</dd></div><div class="stat"><dt>8</dt><dd>first customer interviews</dd></div></dl>
-      <div class="gallery"><img src="images/digital-culturist-hero.jpg" alt="Digital Culturist brand illustration of a retro computer" loading="lazy"><img src="images/story-dc-board.png" alt="Digital Culturist brand world, merch, beta community, mascot, trend report and enterprise pilot" loading="lazy" style="max-width:536px"></div>
-      <div class="rows">
-      <div class="row" data-lanes="community launch social ai" data-keywords="beta maxxing challenge advocates trend report slack Community Launch Social &amp; content AI"><h3>Social &amp; community</h3><p>Designed the advocate journey and value-exchange framework. Activated it through content, a private beta community on Slack, reveal events, challenges, merch and a co-created report.</p></div>
-      <div class="row" data-lanes="brand ai" data-keywords="messaging identity nostalgic tech brand world mascot Brand AI"><h3>Voice</h3><p>Sharpened the positioning to activate users as “Digital Culturists.”</p></div>
-      <div class="row" data-lanes="launch brand ai" data-keywords="merch hat go-to-market gtm events irl Launch Brand AI"><h3>Creative campaigns</h3><p>Ran the beta with my 0→1 playbook: prototype walkthrough, product reveal events, the June 2026 launch event and the “paid to overthink” hat.</p></div>
-      <div class="row" data-lanes="insights ai" data-keywords="user research ux interviews qualitative discovery Insights AI"><h3>Insights</h3><p>Ran the first 8 in-depth customer interviews. Built the bug-reporting workflow and customer data and feedback loop into a dashboard and recommendations for the product roadmap.</p></div>
-      <div class="row" data-lanes="launch ai" data-keywords="go-to-market lifecycle email activation retention growth analytics Launch AI"><h3>Measurement</h3><p>Set GTM success metrics, power-user thresholds and segmented re-engagement emails. Achieved a 55% sign-up rate from email list to beta.</p></div>
-      </div>
-      <p class="storylink"><a href="digital-culturist.html">Read the full case study</a></p>
-    </section>
-    <section class="story" id="online-irl">
-      <header><p class="theme">Creative</p><h2>Online &amp; IRL</h2><p class="meta">Founder and consultant, 2016–present. My studio and Substack on how we live with technology</p></header>
-      <dl class="mini"><div class="stat"><dt>250+</dt><dd>videos and essays</dd></div><div class="stat"><dt>15+</dt><dd>client engagements</dd></div><div class="stat"><dt>10+</dt><dd>events</dd></div><div class="stat"><dt>550+</dt><dd>community members across two communities</dd></div></dl>
-      <div class="gallery"><img src="images/story-oirl-events.png" alt="Posters for Online &amp; IRL events" loading="lazy" style="max-width:360px"></div>
-      <div class="rows">
-      <div class="row" data-lanes="social brand" data-keywords="creator content video editing writing Social &amp; content Brand"><h3>Voice</h3><p>I write, film and edit my own work: 250+ videos, essays and graphics across TikTok, Instagram, YouTube, LinkedIn and my Substack, Online &amp; IRL. I also self-published <i>Book of My Content</i>.</p></div>
-      <div class="row" data-lanes="community partners ai" data-keywords="founders sponsorships monetization affiliate Community Creators &amp; partners AI"><h3>Campaigns</h3><p>Co-created cross-promotion and monetization offers with creators (Shape of Now, Internet Intimacy Cohort), and launched Women Building with AI (400+) and the Conscious Technologist Association (150+) from scratch.</p></div>
-      <div class="row" data-lanes="insights launch ai" data-keywords="frameworks consulting Insights Launch AI"><h3>Insights</h3><p>Turned insights from 15+ client engagements and 10+ events into founder resources and marketing playbooks on customer marketing and 0 to 1 AI product launches.</p></div>
-      <div class="row" data-lanes="ai" data-keywords="builder vibe coding wellness productivity AI"><h3>Building with AI</h3><p>Shipped prototypes with Claude Code, Cursor and Vercel: Year at Glance, Screen Readings and Lifestyle.AI.</p></div>
-      <div class="row" data-lanes="brand ai" data-keywords="Brand AI merch physical tactile hardware essay substack"><h3>On trust</h3><p>“AI lives in the cloud, but trust lives in the body.” Why tech brands will need objects people can hold. <a href="https://onlineandirl.substack.com/p/the-trust-advantage-to-making-tech" rel="noopener">Get Ready for AI Gadgets</a></p></div>
-      <div class="row" data-lanes="community ai" data-keywords="Community AI essay substack culture"><h3>On belonging</h3><p>“Time has quietly become the primary signal of belonging in AI culture.” Why builders should design for connection first. <a href="https://onlineandirl.substack.com/p/time-is-the-new-belonging" rel="noopener">Time Is the New Belonging</a></p></div>
-      <div class="row" data-lanes="social" data-keywords="Social &amp; content essay substack"><h3>On attention</h3><p>“Attention means nothing without connection.” Why context now matters more than reach. <a href="https://onlineandirl.substack.com/p/is-context-is-the-new-currency" rel="noopener">Is Context the New Currency?</a></p></div>
-      <div class="row" data-lanes="ai launch" data-keywords="AI Launch essay substack vibe coding"><h3>On building</h3><p>“We must refuse to mistake speed for direction.” What lasting builders do differently. <a href="https://onlineandirl.substack.com/p/vibe-coding-this-generations-vice" rel="noopener">Vibe Coding: This Generation’s Vice</a></p></div>
-      <div class="row" data-lanes="insights brand" data-keywords="Insights Brand essay substack data privacy digital sovereignty"><h3>On agency</h3><p>“The internet doesn’t have to feel like something that’s happening to you.” People as participants, not passive users. <a href="https://onlineandirl.substack.com/p/introducing-digital-sovereignty" rel="noopener">Introducing Digital Sovereignty</a></p></div>
-      </div>
-      <p class="storylink"><a href="https://onlineandirl.com">Visit Online &amp; IRL</a></p>
-    </section>
-    <section class="story" id="b-lab">
-      <header><p class="theme">Campaigns</p><h2>B Lab</h2><p class="meta">Brand &amp; Community Manager, 2016–2019. The nonprofit behind B Corp</p></header>
-      <dl class="mini"><div class="stat"><dt>650K+</dt><dd>campaign reach</dd></div><div class="stat"><dt>400+</dt><dd>press placements</dd></div><div class="stat"><dt>15K+</dt><dd>followers from zero</dd></div><div class="stat"><dt>~20%</dt><dd>social growth a year</dd></div></dl>
-      <div class="gallery"><img src="images/story-blab-photos.png" alt="B Lab event photos" loading="lazy" style="max-width:198px"></div>
-      <div class="rows">
-      <div class="row" data-lanes="social brand" data-keywords="content strategy Social &amp; content Brand"><h3>Digital shift</h3><p>Led the shift from print to a digital content strategy, connecting social, a new community platform (bthechange.com) and earned media into one brand presence.</p></div>
-      <div class="row" data-lanes="social launch community" data-keywords="newsletter email media brand editorial Social &amp; content Launch Community"><h3>Growth</h3><p>Social following grew about 20% a year, and bthechange.com went from zero to 15K+ followers and 7,500 email subscribers.</p></div>
-      <div class="row" data-lanes="social brand" data-keywords="pr earned media comms ugc Social &amp; content Brand"><h3>Campaigns</h3><p>Designed the 2018 B Corp Month campaign, a proof of concept for community-powered marketing that reached 650K+ people on a minimal budget. Supported the earned media strategy behind 400+ placements, including Forbes and Fast Company.</p></div>
-      </div>
-      
-    </section>
-    <section class="story" id="menlo-guru">
-      <header><p class="theme">B2B programs</p><h2>Menlo Security &amp; Guru</h2><p class="meta">Director of Customer Marketing &amp; Advocacy at Menlo, 2021–2023. Customer Marketing Manager at Guru, 2019–2021</p></header>
-      <dl class="mini"><div class="stat"><dt>$7M</dt><dd>pipeline</dd></div><div class="stat"><dt>$1M+</dt><dd>influenced revenue</dd></div><div class="stat"><dt>68%</dt><dd>ARR increase contributed to</dd></div><div class="stat"><dt>3x</dt><dd>G2 reviews</dd></div></dl>
-      <div class="gallery"><img src="images/story-menlo-events.png" alt="Menlo Security customer events" loading="lazy" style="max-width:278px"></div>
-      <div class="rows">
-      <div class="row" data-lanes="advocacy insights" data-keywords="customer marketing cab references testimonials enterprise saas b2b executive retention Customer advocacy Insights"><h3>Menlo: programs</h3><p>Grew a global advocacy program to 100+ enterprise advocates. Built an award-nominated Customer Advisory Board of 15 strategic accounts (9.6/10 satisfaction, 100% return interest).</p></div>
-      <div class="row" data-lanes="advocacy launch" data-keywords="go-to-market gtm beta product marketing Customer advocacy Launch"><h3>Menlo: impact</h3><p>Defined segmentation and advocacy KPIs. Early adopter programs produced $7M in pipeline, workshops contributed $2M in new business, and advocacy influenced $1M+ in revenue.</p></div>
-      <div class="row" data-lanes="advocacy insights" data-keywords="voc interviews sales enablement leadership case studies Customer advocacy Insights"><h3>Menlo: team</h3><p>Built the customer marketing function, managed a direct report and led cross-functional initiatives. Ran a Voice of Customer program that produced 15 customer stories, mapped to sales plays with Sales Enablement.</p></div>
-      <div class="row" data-lanes="community advocacy social" data-keywords="plg community-led growth email lifecycle Community Customer advocacy Social &amp; content"><h3>Guru: community</h3><p>Connected a global community, peer-to-peer learning programs, a bi-weekly newsletter to 100K+ users and a G2 review program into one product-led growth motion.</p></div>
-      <div class="row" data-lanes="insights advocacy" data-keywords="data analytics Insights Customer advocacy"><h3>Guru: insights</h3><p>Ran product usage analysis in Pendo to find power users, which shaped who we recruited for reviews, case studies and advocacy. Turned customer stories into case studies with Sales, CS and Product.</p></div>
-      <div class="row" data-lanes="advocacy community" data-keywords="revenue retention review generation Customer advocacy Community"><h3>Guru: impact</h3><p>Community programs contributed to a 68% increase in ARR, G2 reviews tripled with quarterly awards, and case studies drove a 2x conversion rate.</p></div>
-      </div>
-      
-    </section>
-    <section class="story" id="more">
-      <header><h2>More client work</h2></header>
-      <div class="rows">
-<div class="row" data-lanes="brand community" data-keywords="fractional cmo health wellness Brand Community"><h3><a href="ourkind.html">OurKind Therapy</a></h3><p>Brand and community infrastructure for a therapy practice: 3x monthly inquiries through organic channels.</p></div>
-<div class="row" data-lanes="brand community launch" data-keywords="fractional cmo positioning Brand Community Launch"><h3><a href="conscious-stack-design.html">Conscious Stack Design</a></h3><p>CMO partnership covering brand narrative, go-to-market, community and the first practitioner certification.</p></div>
-<div class="row" data-lanes="brand community" data-keywords="digital wellness membership pricing Brand Community"><h3><a href="meta-well.html">MetaWell</a></h3><p>Reframed a wellness content brand as a community of practice, with a tiered revenue model and launch plan.</p></div>
-      </div>
-    </section>
-    <div class="empty" id="empty" hidden>
-      <p>No results for that search. Try a broader word like community or launch, or email me at callie@onlineandirl.com and I’ll tell you if I’ve done it.</p>
-    </div>
-  </main>
-
-  <footer class="foot">
-    <h2>Let’s talk</h2>
-    <ul>
-      <li><a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a></li>
-      <li><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://onlineandirl.substack.com" rel="noopener">Substack</a></li>
-      <li><a href="https://onlineandirl.com" rel="noopener">onlineandirl.com</a></li>
-      <li><a href="https://callierojewski.com" rel="noopener">callierojewski.com</a></li>
-    </ul>
-  </footer>
+  <div class="toc-wrap"><ol class="toc" style="list-style:none;margin:0;padding:0"><li><a href="#cyber"><span class="t-num">01</span><span class="t-name">Cyber Collective</span><span class="t-theme">Global impact</span></a></li><li><a href="#digital-culturist"><span class="t-num">02</span><span class="t-name">Digital Culturist</span><span class="t-theme">0 to 1 product</span></a></li><li><a href="#online-irl"><span class="t-num">03</span><span class="t-name">Online &amp; IRL</span><span class="t-theme">Creative</span></a></li><li><a href="#b-lab"><span class="t-num">04</span><span class="t-name">B Lab</span><span class="t-theme">Campaigns</span></a></li><li><a href="#menlo-guru"><span class="t-num">05</span><span class="t-name">Menlo Security &amp; Guru</span><span class="t-theme">B2B programs</span></a></li></ol></div>
 </div>
-
+<div class="bar"><div class="pad bar-in">
+  <div><label for="search" style="position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)">Search the work</label>
+  <input id="search" type="search" placeholder="Search: G2, merch, interviews" autocomplete="off"></div>
+  <div class="chips" id="chips" role="group" aria-label="Filter by area of work"><button type="button" class="chip" data-lane="" aria-pressed="true">All</button><button type="button" class="chip" data-lane="insights" aria-pressed="false">Insights</button><button type="button" class="chip" data-lane="brand" aria-pressed="false">Brand</button><button type="button" class="chip" data-lane="launch" aria-pressed="false">Launch</button><button type="button" class="chip" data-lane="community" aria-pressed="false">Community</button><button type="button" class="chip" data-lane="social" aria-pressed="false">Social &amp; content</button><button type="button" class="chip" data-lane="partners" aria-pressed="false">Creators &amp; partners</button><button type="button" class="chip" data-lane="advocacy" aria-pressed="false">Customer advocacy</button><button type="button" class="chip" data-lane="ai" aria-pressed="false">AI</button></div>
+  <p class="status" id="status" aria-live="polite"></p>
+</div></div>
+<main id="work" class="pad">
+<section class="story" id="cyber">
+  <header class="s-head"><p class="s-theme">01 / Global impact</p><h2>Cyber Collective</h2></header>
+  <div class="s-grid">
+    <div class="mosaic"><figure class="m b ph moving"><figcaption><b>GIF</b> Password journal flip-through<br>4:5 loop</figcaption></figure><figure class="m a"><img src="images/cyber-collective-workshops.png" alt="Cyber Collective community workshops" loading="lazy"></figure><figure class="m w"><img src="images/story-cyber-merch.png" alt="Cyber Collective merch and the password journal" loading="lazy"></figure><figure class="m c ph "><figcaption><b>PHOTO</b> Internet Street Smarts in the wild<br>4:3</figcaption></figure></div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">Cyber Collective</p><p class="r-meta">Fractional Chief Strategy &amp; Marketing Officer, 2021–2026. Board member since 2022</p>
+      <dl class="r-lines"><div class="line"><dt>$600K+</dt><dd>funding secured</dd></div><div class="line"><dt>100</dt><dd>co-designers</dd></div><div class="line"><dt>500+</dt><dd>participants heard</dd></div><div class="line"><dt>14+</dt><dd>countries</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div><a class="rlink" href="cyber-collective.html">Read the full case study</a>
+    </div></aside>
+  </div>
+  <div class="rows">
+<div class="row" data-lanes="community partners social" data-keywords="creators influencers ecosystem digital safety Community Creators &amp; partners Social &amp; content"><h3>Social &amp; community</h3><p>Connected creator partners (Mozilla, Cisco, Filecoin Foundation, Stardust, AdoreMe), convenings, campaigns and merch into one story, with Internet Street Smarts at the center.</p></div>
+<div class="row" data-lanes="social brand" data-keywords="campaign tiktok instagram awareness Social &amp; content Brand"><h3>Voice</h3><p>Directed three Cybersecurity Awareness Month campaigns and shaped the impact narratives used with funders and partners.</p></div>
+<div class="row" data-lanes="brand partners launch" data-keywords="merch merchandise swag physical product tactile events irl Brand Creators &amp; partners Launch"><h3>Creative campaigns</h3><p>Created a password journal with digital safety tips to bring teachings IRL. Hosted convenings with creator, impact and brand partners on topics such as misinformation and Web3 privacy.</p></div>
+<div class="row" data-lanes="insights community" data-keywords="research co-design participatory survey airtable anthem award Insights Community"><h3>Insights</h3><p>Co-designed the signature program with 100 global advocates, and built in pre- and post-program surveys and listening sessions with 500+ participants.</p></div>
+<div class="row" data-lanes="brand partners" data-keywords="fundraising grants philanthropy revenue impact Brand Creators &amp; partners"><h3>Measurement</h3><p>Turned program data into evidence that secured $600K+ from Omidyar, Hewlett and the Archewell Foundation, and built revenue from events, merch and programs.</p></div>
+<div class="row" data-lanes="community" data-keywords="leadership manager management Community"><h3>Team</h3><p>Led a team of three across comms, social, grants and community.</p></div>
+  </div>
+</section>
+<section class="story flip" id="digital-culturist">
+  <header class="s-head"><p class="s-theme">02 / 0 to 1 product</p><h2>Digital Culturist</h2></header>
+  <div class="s-grid">
+    <div class="mosaic"><figure class="m a"><img src="images/digital-culturist-hero.jpg" alt="Digital Culturist retro computer illustration" loading="lazy"></figure><figure class="m b ph moving"><figcaption><b>GIF</b> Product walkthrough<br>4:5 loop</figcaption></figure><figure class="m c ph "><figcaption><b>PHOTO</b> “Paid to overthink” hat<br>1:1</figcaption></figure><figure class="m w ph moving"><figcaption><b>VIDEO</b> “Beta maxxing” challenge clip<br>16:9 loop</figcaption></figure></div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">Digital Culturist</p><p class="r-meta">AI consumer product, through Online &amp; IRL</p>
+      <dl class="r-lines"><div class="line"><dt>55%</dt><dd>sign-up rate, email list to beta</dd></div><div class="line"><dt>8</dt><dd>first customer interviews</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div><a class="rlink" href="digital-culturist.html">Read the full case study</a>
+    </div></aside>
+  </div>
+  <div class="rows">
+<div class="row" data-lanes="community launch social ai" data-keywords="beta maxxing challenge advocates trend report slack Community Launch Social &amp; content AI"><h3>Social &amp; community</h3><p>Designed the advocate journey and value-exchange framework. Activated it through content, a private beta community on Slack, reveal events, challenges, merch and a co-created report.</p></div>
+<div class="row" data-lanes="brand ai" data-keywords="messaging identity nostalgic tech brand world mascot Brand AI"><h3>Voice</h3><p>Sharpened the positioning to activate users as “Digital Culturists.”</p></div>
+<div class="row" data-lanes="launch brand ai" data-keywords="merch hat go-to-market gtm events irl Launch Brand AI"><h3>Creative campaigns</h3><p>Ran the beta with my 0→1 playbook: prototype walkthrough, product reveal events, the June 2026 launch event and the “paid to overthink” hat.</p></div>
+<div class="row" data-lanes="insights ai" data-keywords="user research ux interviews qualitative discovery Insights AI"><h3>Insights</h3><p>Ran the first 8 in-depth customer interviews. Built the bug-reporting workflow and customer data and feedback loop into a dashboard and recommendations for the product roadmap.</p></div>
+<div class="row" data-lanes="launch ai" data-keywords="go-to-market lifecycle email activation retention growth analytics Launch AI"><h3>Measurement</h3><p>Set GTM success metrics, power-user thresholds and segmented re-engagement emails. Achieved a 55% sign-up rate from email list to beta.</p></div>
+  </div>
+</section>
+<section class="story" id="online-irl">
+  <header class="s-head"><p class="s-theme">03 / Creative</p><h2>Online &amp; IRL</h2></header>
+  <div class="s-grid">
+    <div class="mosaic"><figure class="m a ph moving"><figcaption><b>VIDEO</b> Best-of reel: TikTok, YouTube, Substack<br>16:9 loop</figcaption></figure><figure class="m b ph "><figcaption><b>PHOTO</b> Book of My Content<br>4:5</figcaption></figure><figure class="m w"><img src="images/story-oirl-events.png" alt="Posters for Online and IRL events" loading="lazy"></figure><figure class="m c ph moving"><figcaption><b>GIF</b> Laptop Party or Return on Attention<br>1:1 loop</figcaption></figure></div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">Online &amp; IRL</p><p class="r-meta">Founder and consultant, 2016–present</p>
+      <dl class="r-lines"><div class="line"><dt>250+</dt><dd>videos and essays</dd></div><div class="line"><dt>15+</dt><dd>client engagements</dd></div><div class="line"><dt>10+</dt><dd>events</dd></div><div class="line"><dt>550+</dt><dd>community members across two communities</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div><a class="rlink" href="https://onlineandirl.com" rel=noopener>Visit Online &amp; IRL</a>
+    </div></aside>
+  </div>
+  <div class="rows">
+<div class="row" data-lanes="social brand" data-keywords="creator content video editing writing Social &amp; content Brand"><h3>Voice</h3><p>I write, film and edit my own work: 250+ videos, essays and graphics across TikTok, Instagram, YouTube, LinkedIn and my Substack, Online &amp; IRL. I also self-published <i>Book of My Content</i>.</p></div>
+<div class="row" data-lanes="community partners ai" data-keywords="founders sponsorships monetization affiliate Community Creators &amp; partners AI"><h3>Campaigns</h3><p>Co-created cross-promotion and monetization offers with creators (Shape of Now, Internet Intimacy Cohort), and launched Women Building with AI (400+) and the Conscious Technologist Association (150+) from scratch.</p></div>
+<div class="row" data-lanes="insights launch ai" data-keywords="frameworks consulting Insights Launch AI"><h3>Insights</h3><p>Turned insights from 15+ client engagements and 10+ events into founder resources and marketing playbooks on customer marketing and 0 to 1 AI product launches.</p></div>
+<div class="row" data-lanes="ai" data-keywords="builder vibe coding wellness productivity AI"><h3>Building with AI</h3><p>Shipped prototypes with Claude Code, Cursor and Vercel: Year at Glance, Screen Readings and Lifestyle.AI.</p></div>
+<div class="row" data-lanes="brand ai" data-keywords="merch physical tactile hardware essay substack Brand AI"><h3>On trust</h3><p>“AI lives in the cloud, but trust lives in the body.” Why tech brands will need objects people can hold. <a href="https://onlineandirl.substack.com/p/the-trust-advantage-to-making-tech" rel="noopener">Get Ready for AI Gadgets</a></p></div>
+<div class="row" data-lanes="community ai" data-keywords="essay substack culture Community AI"><h3>On belonging</h3><p>“Time has quietly become the primary signal of belonging in AI culture.” Why builders should design for connection first. <a href="https://onlineandirl.substack.com/p/time-is-the-new-belonging" rel="noopener">Time Is the New Belonging</a></p></div>
+<div class="row" data-lanes="social" data-keywords="essay substack Social &amp; content"><h3>On attention</h3><p>“Attention means nothing without connection.” Why context now matters more than reach. <a href="https://onlineandirl.substack.com/p/is-context-is-the-new-currency" rel="noopener">Is Context the New Currency?</a></p></div>
+<div class="row" data-lanes="ai launch" data-keywords="essay substack vibe coding AI Launch"><h3>On building</h3><p>“We must refuse to mistake speed for direction.” What lasting builders do differently. <a href="https://onlineandirl.substack.com/p/vibe-coding-this-generations-vice" rel="noopener">Vibe Coding: This Generation’s Vice</a></p></div>
+<div class="row" data-lanes="insights brand" data-keywords="essay substack data privacy digital sovereignty Insights Brand"><h3>On agency</h3><p>“The internet doesn’t have to feel like something that’s happening to you.” People as participants, not passive users. <a href="https://onlineandirl.substack.com/p/introducing-digital-sovereignty" rel="noopener">Introducing Digital Sovereignty</a></p></div>
+  </div>
+</section>
+<section class="story flip" id="b-lab">
+  <header class="s-head"><p class="s-theme">04 / Campaigns</p><h2>B Lab</h2></header>
+  <div class="s-grid">
+    <div class="mosaic"><figure class="m b ph moving"><figcaption><b>GIF</b> B Corp Month campaign posts<br>4:5 loop</figcaption></figure><figure class="m a ph "><figcaption><b>PHOTO</b> Forbes and Fast Company coverage<br>16:10</figcaption></figure><figure class="m c"><img src="images/story-blab-photos.png" alt="B Lab event photos" loading="lazy"></figure><figure class="m w ph "><figcaption><b>PHOTO</b> bthechange.com homepage<br>16:9</figcaption></figure></div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">B Lab</p><p class="r-meta">Brand &amp; Community Manager, 2016–2019. The nonprofit behind B Corp</p>
+      <dl class="r-lines"><div class="line"><dt>650K+</dt><dd>campaign reach</dd></div><div class="line"><dt>400+</dt><dd>press placements</dd></div><div class="line"><dt>15K+</dt><dd>followers from zero</dd></div><div class="line"><dt>~20%</dt><dd>social growth a year</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div>
+    </div></aside>
+  </div>
+  <div class="rows">
+<div class="row" data-lanes="social brand" data-keywords="content strategy Social &amp; content Brand"><h3>Digital shift</h3><p>Led the shift from print to a digital content strategy, connecting social, a new community platform (bthechange.com) and earned media into one brand presence.</p></div>
+<div class="row" data-lanes="social launch community" data-keywords="newsletter email media brand editorial Social &amp; content Launch Community"><h3>Growth</h3><p>Social following grew about 20% a year, and bthechange.com went from zero to 15K+ followers and 7,500 email subscribers.</p></div>
+<div class="row" data-lanes="social brand" data-keywords="pr earned media comms ugc Social &amp; content Brand"><h3>Campaigns</h3><p>Designed the 2018 B Corp Month campaign, a proof of concept for community-powered marketing that reached 650K+ people on a minimal budget. Supported the earned media strategy behind 400+ placements, including Forbes and Fast Company.</p></div>
+  </div>
+</section>
+<section class="story" id="menlo-guru">
+  <header class="s-head"><p class="s-theme">05 / B2B programs</p><h2>Menlo Security &amp; Guru</h2></header>
+  <div class="s-grid">
+    <div class="mosaic"><figure class="m a ph "><figcaption><b>PHOTO</b> Customer Advisory Board in the room<br>16:10</figcaption></figure><figure class="m b ph moving"><figcaption><b>GIF</b> G2 badges by quarter<br>4:5 loop</figcaption></figure><figure class="m w"><img src="images/story-menlo-events.png" alt="Menlo Security customer events" loading="lazy"></figure><figure class="m c ph "><figcaption><b>PHOTO</b> Guru community or newsletter<br>1:1</figcaption></figure></div>
+    <aside class="receipt-wrap"><div class="receipt">
+      <p class="r-title">Menlo Security &amp; Guru</p><p class="r-meta">Director of Customer Marketing &amp; Advocacy at Menlo, 2021–2023. Customer Marketing Manager at Guru, 2019–2021</p>
+      <dl class="r-lines"><div class="line"><dt>$7M</dt><dd>pipeline</dd></div><div class="line"><dt>$1M+</dt><dd>influenced revenue</dd></div><div class="line"><dt>68%</dt><dd>ARR increase contributed to</dd></div><div class="line"><dt>3x</dt><dd>G2 reviews</dd></div></dl>
+      <div class="barcode" aria-hidden="true"></div>
+    </div></aside>
+  </div>
+  <div class="rows">
+<div class="row" data-lanes="advocacy insights" data-keywords="customer marketing cab references testimonials enterprise saas b2b executive retention Customer advocacy Insights"><h3>Menlo: programs</h3><p>Grew a global advocacy program to 100+ enterprise advocates. Built an award-nominated Customer Advisory Board of 15 strategic accounts (9.6/10 satisfaction, 100% return interest).</p></div>
+<div class="row" data-lanes="advocacy launch" data-keywords="go-to-market gtm beta product marketing Customer advocacy Launch"><h3>Menlo: impact</h3><p>Defined segmentation and advocacy KPIs. Early adopter programs produced $7M in pipeline, workshops contributed $2M in new business, and advocacy influenced $1M+ in revenue.</p></div>
+<div class="row" data-lanes="advocacy insights" data-keywords="voc sales enablement leadership case studies Customer advocacy Insights"><h3>Menlo: team</h3><p>Built the customer marketing function, managed a direct report and led cross-functional initiatives. Ran a Voice of Customer program that produced 15 customer stories, mapped to sales plays with Sales Enablement.</p></div>
+<div class="row" data-lanes="community advocacy social" data-keywords="plg community-led growth email lifecycle Community Customer advocacy Social &amp; content"><h3>Guru: community</h3><p>Connected a global community, peer-to-peer learning programs, a bi-weekly newsletter to 100K+ users and a G2 review program into one product-led growth motion.</p></div>
+<div class="row" data-lanes="insights advocacy" data-keywords="data analytics Insights Customer advocacy"><h3>Guru: insights</h3><p>Ran product usage analysis in Pendo to find power users, which shaped who we recruited for reviews, case studies and advocacy. Turned customer stories into case studies with Sales, CS and Product.</p></div>
+<div class="row" data-lanes="advocacy community" data-keywords="revenue retention review generation Customer advocacy Community"><h3>Guru: impact</h3><p>Community programs contributed to a 68% increase in ARR, G2 reviews tripled with quarterly awards, and case studies drove a 2x conversion rate.</p></div>
+  </div>
+</section>
+<section class="story" id="more"><header class="s-head"><h2>More client work</h2></header><div class="cards"><article class="row card" data-lanes="brand community" data-keywords="fractional cmo health wellness Brand Community"><a href="ourkind.html"><img src="images/ourkind-therapists.jpg" alt="OurKind Therapy" loading="lazy"><h3>OurKind Therapy</h3><p>Brand and community infrastructure for a therapy practice: 3x monthly inquiries through organic channels.</p></a></article><article class="row card" data-lanes="brand community launch" data-keywords="fractional cmo positioning Brand Community Launch"><a href="conscious-stack-design.html"><img src="images/conscious-stack-og.png" alt="Conscious Stack Design" loading="lazy"><h3>Conscious Stack Design</h3><p>CMO partnership covering brand narrative, go-to-market, community and the first practitioner certification.</p></a></article><article class="row card" data-lanes="brand community" data-keywords="digital wellness membership pricing Brand Community"><a href="meta-well.html"><img src="images/metawell-featured.png" alt="MetaWell" loading="lazy"><h3>MetaWell</h3><p>Reframed a wellness content brand as a community of practice, with a tiered revenue model and launch plan.</p></a></article></div></section>
+<div class="empty" id="empty" hidden><p>No results for that search. Try a broader word like community or launch, or email callie@onlineandirl.com.</p></div>
+</main>
+<footer class="foot pad">
+  <h2>Let’s talk</h2>
+  <ul><li><a href="mailto:callie@onlineandirl.com">callie@onlineandirl.com</a></li><li><a href="https://www.linkedin.com/in/callierojewski" rel="noopener">LinkedIn</a></li><li><a href="https://onlineandirl.substack.com" rel="noopener">Substack</a></li><li><a href="https://onlineandirl.com" rel="noopener">onlineandirl.com</a></li><li><a href="https://cal.com/callie-rojewski-onlineandirl/45" rel="noopener">Book a call</a></li></ul>
+</footer>
 <script>
 // Each filter has its own link, such as readmycasestudies.com/#insights
-const LANES={"insights": {"q": "Do you understand the market and where the opportunity is?", "name": "Insights", "proof": [["500+", "participants in surveys and listening sessions"], ["100", "advocates in co-design workshops"], ["9.6/10", "Customer Advisory Board satisfaction"], ["15", "customer stories from a Voice of Customer program"]]}, "brand": {"q": "Can you find the idea that makes people care?", "name": "Brand", "proof": [["$600K+", "in funding secured with impact narratives"], ["650K+", "reached by one campaign on a minimal budget"], ["400+", "press placements supported in 2018"], ["3x", "monthly inquiries for OurKind through organic channels"]]}, "launch": {"q": "Can you get a new product off the ground?", "name": "Launch", "proof": [["$7M", "pipeline from early adopter programs"], ["55%", "sign-up rate from email list to beta"], ["$2M", "new business from workshops"], ["15K+", "followers for a media brand started from zero"]]}, "community": {"q": "Will people choose to be part of it?", "name": "Community", "proof": [["400+", "members in Women Building with AI"], ["100K+", "product users on the Guru newsletter"], ["68%", "ARR increase community programs contributed to"], ["14+", "countries reached by a co-designed program"]]}, "social": {"q": "Can you get people to show up, online and IRL?", "name": "Social & content", "proof": [["650K+", "reached by B Corp Month on a minimal budget"], ["5M+", "reached through awareness campaigns"], ["~20%", "social following growth each year at B Lab"], ["250+", "videos and essays I made myself"]]}, "partners": {"q": "Can you turn partners into a growth channel?", "name": "Creators & partners", "proof": [["5", "brand partners connected into one story"], ["$600K+", "in funding from three foundations"], ["100", "advocates co-designing a program"]]}, "advocacy": {"q": "Can you turn customers into your best marketing?", "name": "Customer advocacy", "proof": [["100+", "enterprise advocates"], ["$2M+", "ARR influenced by the Customer Advisory Board"], ["3x", "G2 reviews at Guru"], ["2x", "conversion rate from customer case studies"]]}, "ai": {"q": "Can you build with AI, not just talk about it?", "name": "AI", "proof": [["55%", "email-to-beta sign-up rate for an AI product"], ["400+", "members in Women Building with AI"], ["150+", "members in the Conscious Technologist Association"], ["15+", "client engagements turned into playbooks"]]}};
+const LANES={"insights": {"q": "Do you understand the market and where the opportunity is?", "proof": [["500+", "participants in surveys and listening sessions"], ["100", "advocates in co-design workshops"], ["9.6/10", "Customer Advisory Board satisfaction"], ["15", "customer stories from a Voice of Customer program"]]}, "brand": {"q": "Can you find the idea that makes people care?", "proof": [["$600K+", "in funding secured with impact narratives"], ["650K+", "reached by one campaign on a minimal budget"], ["400+", "press placements supported in 2018"], ["3x", "monthly inquiries for OurKind through organic channels"]]}, "launch": {"q": "Can you get a new product off the ground?", "proof": [["$7M", "pipeline from early adopter programs"], ["55%", "sign-up rate from email list to beta"], ["$2M", "new business from workshops"], ["15K+", "followers for a media brand started from zero"]]}, "community": {"q": "Will people choose to be part of it?", "proof": [["400+", "members in Women Building with AI"], ["100K+", "product users on the Guru newsletter"], ["68%", "ARR increase community programs contributed to"], ["14+", "countries reached by a co-designed program"]]}, "social": {"q": "Can you get people to show up, online and IRL?", "proof": [["650K+", "reached by B Corp Month on a minimal budget"], ["5M+", "reached through awareness campaigns"], ["~20%", "social following growth each year at B Lab"], ["250+", "videos and essays I made myself"]]}, "partners": {"q": "Can you turn partners into a growth channel?", "proof": [["5", "brand partners connected into one story"], ["$600K+", "in funding from three foundations"], ["100", "advocates co-designing a program"]]}, "advocacy": {"q": "Can you turn customers into your best marketing?", "proof": [["100+", "enterprise advocates"], ["$2M+", "ARR influenced by the Customer Advisory Board"], ["3x", "G2 reviews at Guru"], ["2x", "conversion rate from customer case studies"]]}, "ai": {"q": "Can you build with AI, not just talk about it?", "proof": [["55%", "email-to-beta sign-up rate for an AI product"], ["400+", "members in Women Building with AI"], ["150+", "members in the Conscious Technologist Association"], ["15+", "client engagements turned into playbooks"]]}};
 const stories=[...document.querySelectorAll('.row')].map(el=>({el,lanes:el.dataset.lanes.split(' '),text:(el.textContent+' '+el.dataset.keywords+' '+el.closest('.story').querySelector('h2').textContent).toLowerCase()}));
 const groups=[...document.querySelectorAll('.story')],input=document.getElementById('search'),statusEl=document.getElementById('status'),empty=document.getElementById('empty'),proofEl=document.getElementById('proof'),chips=[...document.querySelectorAll('.chip')],defaultProof=proofEl.innerHTML;
 let lane='';
@@ -219,20 +262,21 @@ function apply(){
   stories.forEach(s=>{const show=(!lane||s.lanes.includes(lane))&&words.every(w=>(' '+s.text).includes(' '+w)||s.text.includes(w)&&w.length>3);s.el.hidden=!show;if(show)count++});
   groups.forEach(g=>{g.hidden=!g.querySelector('.row:not([hidden])')});
   empty.hidden=count>0;
-  const filtered=lane||words.length;
-  statusEl.textContent=lane?LANES[lane].q+(words.length?' '+count+(count===1?' result':' results')+'.':''):(filtered?count+(count===1?' result':' results')+'.':'');
+  const on=lane||words.length;document.body.classList.toggle('filtering',!!on);
+  const n=count+(count===1?' result.':' results.');
+  statusEl.textContent=lane?LANES[lane].q+(words.length?' '+n:''):(on?n:'');
 }
 function setLane(k,fromHash){
   lane=LANES[k]?k:'';
   chips.forEach(c=>c.setAttribute('aria-pressed',String(c.dataset.lane===lane)));
-  proofEl.innerHTML=lane?LANES[lane].proof.map(p=>'<div class="stat"><dt>'+esc(p[0])+'</dt><dd>'+esc(p[1])+'</dd></div>').join(''):defaultProof;
+  proofEl.innerHTML=lane?LANES[lane].proof.map(p=>'<div class="line"><dt>'+esc(p[0])+'</dt><dd>'+esc(p[1])+'</dd></div>').join(''):defaultProof;
   if(!fromHash){try{history.replaceState(null,'',lane?'#'+lane:location.pathname+location.search)}catch(e){}}
   apply();
 }
 chips.forEach(c=>c.addEventListener('click',()=>setLane(c.dataset.lane)));
 input.addEventListener('input',apply);
-window.addEventListener('hashchange',()=>setLane(location.hash.slice(1),true));
-setLane(location.hash.slice(1),true);
+window.addEventListener('hashchange',()=>{const k=location.hash.slice(1);if(LANES[k]||!k)setLane(k,true)});
+if(LANES[location.hash.slice(1)])setLane(location.hash.slice(1),true);
 </script>
 </body>
 </html>
