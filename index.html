@@ -67,7 +67,7 @@
     .hero-receipt img { display: block; width: 100%; height: auto; }
     .hero h1 {
       font-family: var(--display); font-weight: normal;
-      font-size: clamp(40px, 6.5vw, 88px);
+      font-size: clamp(34px, 4.6vw, 60px);
       line-height: .9; letter-spacing: 0;
     }
     .hero p {
@@ -184,6 +184,26 @@
       .tiles { display: flex; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
       .tile { flex: 0 0 200px; }
     }
+    /* STORY ROWS */
+    .story {
+      display: grid; grid-template-columns: minmax(200px, 280px) minmax(0, 1fr); gap: 24px;
+      border-top: 1px solid var(--line); padding: 12px 0 16px;
+      text-decoration: none; color: var(--ink);
+    }
+    .story[hidden] { display: none; }
+    a.story:hover { color: var(--ink); }
+    .story-meta { display: flex; flex-direction: column; gap: 4px; text-transform: uppercase; }
+    .story-name { font-weight: 500; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
+    .story-sub { color: var(--mute); }
+    .story-go { margin-top: auto; visibility: hidden; }
+    .story:hover .story-go, .story:focus-visible .story-go { visibility: visible; }
+    .story-strip { display: flex; gap: 4px; overflow: hidden; height: 200px; }
+    .story-strip img { height: 100%; width: auto; flex: 0 0 auto; display: block; background: var(--ph); }
+    @media (max-width: 760px) {
+      .story { grid-template-columns: 1fr; gap: 10px; }
+      .story-strip { overflow-x: auto; height: 150px; scrollbar-width: none; }
+      .story-go { display: none; }
+    }
     .count {
       border-top: 1px solid var(--line); padding: 10px 0 0;
       display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
@@ -294,7 +314,7 @@
   </header>
 
   <main id="work">
-    <div class="filters" role="group" aria-label="Filter by what I do">
+    <div class="filters" role="group" aria-label="Filter case studies">
       <span class="label">Show</span>
       <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
       <button type="button" class="chip" data-f="zero" aria-pressed="false">0→1 Launch</button>
@@ -309,108 +329,41 @@
       <button type="button" class="chip" data-f="creative" aria-pressed="false">Creative Direction</button>
     </div>
 
-    <div class="section-head"><span>What I do</span><span>Case studies · hover to preview, click to read</span></div>
-    <section class="do-row" data-tags="zero product" aria-labelledby="do-1">
-      <div class="do-text">
-        <h2 id="do-1"><span class="do-num">01</span>0→1 programs and launches.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Menlo Security</span><br>Customer advocacy + CAB</span><span class="tile-sum">100+ enterprise advocates and $1M+ influenced revenue; a global Customer Advisory Board with $2M+ influenced ARR.</span><span class="row-tags">0→1 Launch · Product · Consumer Insights · Customer Advocacy</span><span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Menlo Security</span><span class="tile-kind">Coming soon</span></span></div>
-        <a class="tile" href="digital-culturist.html"><span class="tile-img"><img src="images/digital-culturist-hero.jpg" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Digital Culturist</span><br>Fractional CMO · 0→1 GTM</span><span class="tile-sum">Go-to-market for an AI consumer product. 150+ beta members in 7 days, organic only, $0 paid spend.</span><span class="row-tags">0→1 Launch · Product · Consumer Insights · Community · AI &amp; Consumer Tech</span><span class="row-foot"><span>2025–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>Digital Culturist</span><span class="tile-kind">Case study</span></span></a>
-      </div>
-    </section>
-    <section class="do-row" data-tags="community insights ai" aria-labelledby="do-2">
-      <div class="do-text">
-        <h2 id="do-2"><span class="do-num">02</span>Turn early users into signal.</h2>
-      </div>
-      <div class="tiles">
-        <a class="tile" href="digital-culturist.html"><span class="tile-img"><img src="images/digital-culturist-hero.jpg" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Digital Culturist</span><br>Fractional CMO · 0→1 GTM</span><span class="tile-sum">Go-to-market for an AI consumer product. 150+ beta members in 7 days, organic only, $0 paid spend.</span><span class="row-tags">0→1 Launch · Product · Consumer Insights · Community · AI &amp; Consumer Tech</span><span class="row-foot"><span>2025–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>Digital Culturist</span><span class="tile-kind">Case study</span></span></a>
-      </div>
-    </section>
-    <section class="do-row" data-tags="insights" aria-labelledby="do-3">
-      <div class="do-text">
-        <h2 id="do-3"><span class="do-num">03</span>Listen to customers, then act on it.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Menlo Security</span><br>Customer advocacy + CAB</span><span class="tile-sum">100+ enterprise advocates and $1M+ influenced revenue; a global Customer Advisory Board with $2M+ influenced ARR.</span><span class="row-tags">0→1 Launch · Product · Consumer Insights · Customer Advocacy</span><span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Menlo Security</span><span class="tile-kind">Coming soon</span></span></div>
-        <a class="tile" href="cyber-collective.html"><span class="tile-img"><img src="images/cyber-collective-workshops.png" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Cyber Collective</span><br>Chief Strategy &amp; Marketing Officer</span><span class="tile-sum">Internet Street Smarts: scaling a digital safety movement to 14+ countries. $600K+ in philanthropic funding, 5M+ people reached.</span><span class="row-tags">Consumer Insights · Community · Brand · Creator &amp; Social</span><span class="row-foot"><span>2021–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>Cyber Collective</span><span class="tile-kind">Case study</span></span></a>
-      </div>
-    </section>
-    <section class="do-row" data-tags="advocacy" aria-labelledby="do-4">
-      <div class="do-text">
-        <h2 id="do-4"><span class="do-num">04</span>Turn customers into proof.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Menlo Security</span><br>Customer advocacy + CAB</span><span class="tile-sum">100+ enterprise advocates and $1M+ influenced revenue; a global Customer Advisory Board with $2M+ influenced ARR.</span><span class="row-tags">0→1 Launch · Product · Consumer Insights · Customer Advocacy</span><span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Menlo Security</span><span class="tile-kind">Coming soon</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Guru</span><br>[Role]</span><span class="tile-sum">Tripled G2 reviews, case studies that drove 2x conversion, and community programs behind 68% ARR growth.</span><span class="row-tags">Customer Advocacy · Growth &amp; Lifecycle</span><span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Guru</span><span class="tile-kind">Coming soon</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="community brand" aria-labelledby="do-5">
-      <div class="do-text">
-        <h2 id="do-5"><span class="do-num">05</span>Activate global campaigns and communities.</h2>
-      </div>
-      <div class="tiles">
-        <a class="tile" href="cyber-collective.html"><span class="tile-img"><img src="images/cyber-collective-workshops.png" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Cyber Collective</span><br>Chief Strategy &amp; Marketing Officer</span><span class="tile-sum">Internet Street Smarts: scaling a digital safety movement to 14+ countries. $600K+ in philanthropic funding, 5M+ people reached.</span><span class="row-tags">Consumer Insights · Community · Brand · Creator &amp; Social</span><span class="row-foot"><span>2021–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>Cyber Collective</span><span class="tile-kind">Case study</span></span></a>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">B Lab</span><br>B Corp Month</span><span class="tile-sum">650K+ people reached on a minimal budget; launched bthechange.com to 15K+ followers and 7,500 subscribers.</span><span class="row-tags">Community · Brand · Growth &amp; Lifecycle</span><span class="row-foot"><span>2018</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>B Lab</span><span class="tile-kind">Coming soon</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="community creator" aria-labelledby="do-6">
-      <div class="do-text">
-        <h2 id="do-6"><span class="do-num">06</span>Build community and creator growth.</h2>
-      </div>
-      <div class="tiles">
-        <a class="tile" href="cyber-collective.html"><span class="tile-img"><img src="images/cyber-collective-workshops.png" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Cyber Collective</span><br>Chief Strategy &amp; Marketing Officer</span><span class="tile-sum">Internet Street Smarts: scaling a digital safety movement to 14+ countries. $600K+ in philanthropic funding, 5M+ people reached.</span><span class="row-tags">Consumer Insights · Community · Brand · Creator &amp; Social</span><span class="row-foot"><span>2021–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>Cyber Collective</span><span class="tile-kind">Case study</span></span></a>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Women Building with AI</span><br>Co-founder</span><span class="tile-sum">Co-founded a community of 400+ women building with AI.</span><span class="row-tags">Community · Creator &amp; Social</span><span class="row-foot"><span>2024–</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Women Building with AI</span><span class="tile-kind">Coming soon</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="growth" aria-labelledby="do-7">
-      <div class="do-text">
-        <h2 id="do-7"><span class="do-num">07</span>Drive growth and lifecycle.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Guru</span><br>[Role]</span><span class="tile-sum">Tripled G2 reviews, case studies that drove 2x conversion, and community programs behind 68% ARR growth.</span><span class="row-tags">Customer Advocacy · Growth &amp; Lifecycle</span><span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>Guru</span><span class="tile-kind">Coming soon</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">B Lab</span><br>B Corp Month</span><span class="tile-sum">650K+ people reached on a minimal budget; launched bthechange.com to 15K+ followers and 7,500 subscribers.</span><span class="row-tags">Community · Brand · Growth &amp; Lifecycle</span><span class="row-foot"><span>2018</span><span class="soon">Coming soon</span></span></span></span><span class="tile-label"><span>B Lab</span><span class="tile-kind">Coming soon</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="creative brand" aria-labelledby="do-8">
-      <div class="do-text">
-        <h2 id="do-8"><span class="do-num">08</span>Create concepts and experiences.</h2>
-      </div>
-      <div class="tiles">
-        <a class="tile" href="conscious-stack-design.html"><span class="tile-img"><img src="images/conscious-stack-og.png" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">Conscious Stack Design</span><br>CMO partnership</span><span class="tile-sum">Building the movement infrastructure for conscious tech: brand narrative, community architecture and practitioner certification.</span><span class="row-tags">Brand · Creative Direction</span><span class="row-foot"><span>[Years]</span><span>Read →</span></span></span></span><span class="tile-label"><span>Conscious Stack Design</span><span class="tile-kind">Case study</span></span></a>
-        <a class="tile" href="meta-well.html"><span class="tile-img"><img src="images/metawell-featured.png" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">MetaWell</span><br>Fractional strategy &amp; GTM</span><span class="tile-sum">From wellness content to a community of practice: brand story, editorial voice and a $40 membership tier.</span><span class="row-tags">Brand · Creative Direction</span><span class="row-foot"><span>2024–2025</span><span>Read →</span></span></span></span><span class="tile-label"><span>MetaWell</span><span class="tile-kind">Case study</span></span></a>
-        <a class="tile" href="ourkind.html"><span class="tile-img"><img src="images/ourkind-therapists.jpg" alt="" loading="lazy"><span class="tile-card"><span><span class="row-name">OurKind Therapy</span><br>Brand &amp; community infrastructure</span><span class="tile-sum">Brand and community for a modern therapy practice. 3x monthly inquiries and a first group cohort filled, all organic.</span><span class="row-tags">Brand · Creative Direction</span><span class="row-foot"><span>2024–Present</span><span>Read →</span></span></span></span><span class="tile-label"><span>OurKind Therapy</span><span class="tile-kind">Case study</span></span></a>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Lifestyle.AI</span><br>Concept brand built with AI</span><span class="tile-sum">[One-line description]</span><span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span><span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span></span></span><span class="tile-label"><span>Lifestyle.AI</span><span class="tile-kind">Concept</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Screen Readings</span><br>Concept brand built with AI</span><span class="tile-sum">[One-line description]</span><span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span><span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span></span></span><span class="tile-label"><span>Screen Readings</span><span class="tile-kind">Concept</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="ai creative" aria-labelledby="do-9">
-      <div class="do-text">
-        <h2 id="do-9"><span class="do-num">09</span>Build with AI.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Lifestyle.AI</span><br>Concept brand built with AI</span><span class="tile-sum">[One-line description]</span><span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span><span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span></span></span><span class="tile-label"><span>Lifestyle.AI</span><span class="tile-kind">Concept</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Screen Readings</span><br>Concept brand built with AI</span><span class="tile-sum">[One-line description]</span><span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span><span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span></span></span><span class="tile-label"><span>Screen Readings</span><span class="tile-kind">Concept</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Year at Glance</span><br>AI build</span><span class="tile-sum">[One-line description]</span><span class="row-tags">AI &amp; Consumer Tech · Creative Direction</span><span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span></span></span><span class="tile-label"><span>Year at Glance</span><span class="tile-kind">Concept</span></span></div>
-      </div>
-    </section>
-    <section class="do-row" data-tags="" aria-labelledby="do-10">
-      <div class="do-text">
-        <h2 id="do-10"><span class="do-num">10</span>Speak, host, and write.</h2>
-      </div>
-      <div class="tiles">
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Speaking</span><br>Talks + panels</span><span class="tile-sum">I&#x27;ve spoken at Columbia University, New America, NYC Open Data Week, and Philly Tech Week.</span><span class="row-tags"></span><span class="row-foot"><span>[Years]</span><span class="soon">Details soon</span></span></span></span><span class="tile-label"><span>Speaking</span><span class="tile-kind">Talks</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Customer Marketing Summit</span><br>Host</span><span class="tile-sum">Hosted the Customer Marketing Summit twice.</span><span class="row-tags"></span><span class="row-foot"><span>[Years]</span><span class="soon">Details soon</span></span></span></span><span class="tile-label"><span>Customer Marketing Summit</span><span class="tile-kind">Host</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Online &amp; IRL Substack</span><br>Writer</span><span class="tile-sum">I write the Online &amp; IRL Substack.</span><span class="row-tags"></span><span class="row-foot"><span>[Years]–</span><span class="soon">Details soon</span></span></span></span><span class="tile-label"><span>Online &amp; IRL Substack</span><span class="tile-kind">Writing</span></span></div>
-        <div class="tile is-soon" tabindex="0"><span class="tile-img ph"><span class="tile-card"><span><span class="row-name">Book of My Content</span><br>Self-published book</span><span class="tile-sum">I self-published Book of My Content.</span><span class="row-tags"></span><span class="row-foot"><span>[Year]</span><span class="soon">Details soon</span></span></span></span><span class="tile-label"><span>Book of My Content</span><span class="tile-kind">Book</span></span></div>
-      </div>
-    </section>
+    <div class="section-head"><span>Case studies</span><span id="count"></span></div>
+    <a class="story" href="cyber-collective.html" data-tags="insights community brand creator">
+      <span class="story-meta"><span class="story-name">Cyber Collective</span><span class="story-sub">Fractional Chief Strategy &amp; Marketing Officer</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/cc/merch-dont-get-got.jpg" alt="“Don’t Get Got” tee" loading="lazy"><img src="images/cc/iss-website.jpg" alt="Internet Street Smarts course page" loading="lazy"><img src="images/cc/convening-collage.jpg" alt="Guests at a Cyber Collective dinner" loading="lazy"><img src="images/cc/merch-hoodie-back.jpg" alt="Hoodie: are you who the internet thinks you are?" loading="lazy"><img src="images/cc/password-journal.jpg" alt="Password journal" loading="lazy"><img src="images/cc/dinner-table.jpg" alt="Convening dinner table" loading="lazy"><img src="images/cc/merch-duo.jpg" alt="Merch shoot" loading="lazy"></span>
+    </a>
+    <a class="story" href="digital-culturist.html" data-tags="zero product insights community ai">
+      <span class="story-meta"><span class="story-name">Digital Culturist</span><span class="story-sub">Fractional CMO · 0→1 AI launch</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/dc/brand-world.jpg" alt="Retro computer: ready to curate the internet?" loading="lazy"><img src="images/dc/hat-post-1.jpg" alt="“Paid to overthink” hat" loading="lazy"><img src="images/dc/beta-community.jpg" alt="Beta community call" loading="lazy"><img src="images/dc/trend-report.jpg" alt="Trend report map" loading="lazy"><img src="images/dc/app-mobile.jpg" alt="Save from your phone" loading="lazy"><img src="images/dc/enterprise-pilot.jpg" alt="Enterprise pilot slide" loading="lazy"></span>
+    </a>
+    <a class="story" href="online-and-irl.html" data-tags="community creator creative ai">
+      <span class="story-meta"><span class="story-name">Online &amp; IRL</span><span class="story-sub">Founder · studio, community + events</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/oi/protect-your-genius.jpg" alt="Protect Your Genius workshop poster" loading="lazy"><img src="images/oi/laptop-party.jpg" alt="Laptop Party poster" loading="lazy"><img src="images/oi/apres-scroll.jpg" alt="Après Scroll poster" loading="lazy"><img src="images/oi/return-on-attention.jpg" alt="Return on Attention poster" loading="lazy"></span>
+    </a>
+    <a class="story" href="b2b-tech.html" data-tags="zero product insights advocacy growth">
+      <span class="story-meta"><span class="story-name">Menlo Security &amp; Guru</span><span class="story-sub">Customer marketing + advocacy · B2B tech</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/b2b/menlo-cab-event.jpg" alt="Menlo Customer Advisory Board event" loading="lazy"></span>
+    </a>
+    <a class="story" href="b-lab.html" data-tags="community brand growth">
+      <span class="story-meta"><span class="story-name">B Lab</span><span class="story-sub">Digital content + B Corp Month</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/blab/b-corp-month-street.jpg" alt="B Corp Month street activation" loading="lazy"><img src="images/blab/b-lab-event.jpg" alt="B Lab event" loading="lazy"><img src="images/blab/b-corp-sign.jpg" alt="Certified B Corporation sign" loading="lazy"></span>
+    </a>
+    <a class="story" href="conscious-stack-design.html" data-tags="creative brand">
+      <span class="story-meta"><span class="story-name">Conscious Stack Design</span><span class="story-sub">CMO partnership</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/conscious-stack-og.png" alt="Conscious Stack: Reclaim your mind" loading="lazy"></span>
+    </a>
+    <a class="story" href="meta-well.html" data-tags="creative brand">
+      <span class="story-meta"><span class="story-name">MetaWell</span><span class="story-sub">Fractional strategy &amp; GTM</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/metawell-featured.png" alt="MetaWell brand visual" loading="lazy"></span>
+    </a>
+    <a class="story" href="ourkind.html" data-tags="creative brand">
+      <span class="story-meta"><span class="story-name">OurKind Therapy</span><span class="story-sub">Brand &amp; community infrastructure</span><span class="story-go">Read →</span></span>
+      <span class="story-strip"><img src="images/ourkind-therapists.jpg" alt="OurKind Therapy team" loading="lazy"><img src="images/ourkind-group.jpg" alt="OurKind group session" loading="lazy"><img src="images/ourkind-website-review.jpg" alt="OurKind website review call" loading="lazy"></span>
+    </a>
 
     <p class="empty" id="empty">Nothing in this filter yet.</p>
-    <div class="count">
-      <span id="count"></span>
-      <span>10 things I do</span>
-    </div>
   </main>
 
   <section class="proof" id="proof" aria-label="Proof">
@@ -474,7 +427,7 @@
 <script>
   (function () {
     var chips = document.querySelectorAll('.chip');
-    var rows = document.querySelectorAll('.do-row');
+    var rows = document.querySelectorAll('.story');
     var empty = document.getElementById('empty');
 
     function apply(f) {

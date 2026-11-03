@@ -1,0 +1,113 @@
+/* Case study pages: same black-and-white system as the home page. */
+@font-face {
+  font-family: 'Antilag';
+  src: url('../fonts/Antilag.otf') format('opentype'),
+       url('../fonts/Antilag.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --ink: #000000;
+  --mute: #6B6B6B;
+  --soft: #D9D9D9;
+  --panel: #F2F2F2;
+  --display: 'Antilag', 'IBM Plex Mono', monospace;
+  --mono: 'IBM Plex Mono', ui-monospace, monospace;
+}
+
+html { scroll-behavior: smooth; }
+body {
+  background: #FFFFFF; color: var(--ink);
+  font-family: var(--mono); font-size: 12px; line-height: 1.5; letter-spacing: .03em;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; }
+a:hover { color: var(--mute); }
+:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.caps { text-transform: uppercase; }
+
+.nav { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding: 16px 0; text-transform: uppercase; }
+.nav a { text-decoration: none; }
+
+/* Header */
+.cs-head {
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 380px);
+  gap: 40px; align-items: end; padding: 40px 0 32px;
+}
+.cs-kicker { text-transform: uppercase; color: var(--mute); }
+.cs-head h1 {
+  font-family: var(--display); font-weight: normal; letter-spacing: 0;
+  font-size: clamp(34px, 4.6vw, 60px); line-height: .95; margin: 14px 0 16px;
+}
+.cs-pitch { max-width: 600px; font-size: 16px; line-height: 1.55; letter-spacing: 0; }
+.cs-meta {
+  display: grid; grid-template-columns: auto 1fr; gap: 8px 16px;
+  border-top: 1px solid var(--ink); padding-top: 12px; text-transform: uppercase;
+}
+.cs-meta dt { color: var(--mute); }
+
+/* Numbers */
+.cs-stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; padding-bottom: 48px; }
+.cs-stat { border-top: 1px solid var(--ink); padding-top: 10px; display: flex; flex-direction: column; gap: 6px; text-transform: uppercase; }
+.cs-stat b { font-family: var(--display); font-weight: normal; font-size: clamp(36px, 5vw, 56px); line-height: 1; letter-spacing: 0; }
+.cs-stat span { color: var(--mute); }
+
+/* Lead image */
+.cs-lead { margin: 0 0 48px; background: var(--panel); }
+.cs-lead img { display: block; width: 100%; max-height: 640px; object-fit: cover; object-position: 50% 65%; }
+
+/* Section label */
+.section-label {
+  border-top: 1px solid var(--ink); padding: 10px 0 0;
+  display: flex; justify-content: space-between; gap: 16px; text-transform: uppercase;
+}
+.section-label h2 { font-size: inherit; font-weight: 500; }
+.section-label span { color: var(--mute); }
+
+/* What I did rows, label | text */
+.cs-rows { margin: 8px 0 56px; }
+.cs-row {
+  display: grid; grid-template-columns: minmax(180px, 300px) minmax(0, 1fr); gap: 32px;
+  padding: 18px 0; border-bottom: 1px solid var(--soft);
+}
+.cs-row:last-child { border-bottom: 0; }
+.cs-row h3 { font-size: 13px; font-weight: 500; text-transform: uppercase; letter-spacing: .04em; }
+.cs-row p { font-size: 15px; line-height: 1.6; letter-spacing: 0; color: #111; max-width: 760px; }
+
+/* Gallery */
+.cs-gallery { columns: 3 260px; column-gap: 16px; margin: 20px 0 56px; }
+.cs-gallery figure { break-inside: avoid; margin: 0 0 20px; display: flex; flex-direction: column; gap: 8px; }
+.cs-gallery img { display: block; width: 100%; height: auto; background: var(--panel); }
+.cs-gallery figcaption { text-transform: uppercase; display: flex; flex-direction: column; gap: 2px; }
+.cs-gallery figcaption span { color: var(--mute); }
+
+/* Partners */
+.cs-partners { display: grid; grid-template-columns: minmax(180px, 300px) minmax(0, 1fr); gap: 32px; padding: 18px 0 56px; text-transform: uppercase; }
+.cs-partners dd { line-height: 1.8; }
+.cs-partners dt { color: var(--mute); }
+
+/* Sub-sections (pages with two companies) */
+.cs-sub { padding-top: 24px; }
+.cs-sub h2.cs-subtitle { font-family: var(--display); font-weight: normal; font-size: 36px; line-height: 1; letter-spacing: 0; margin: 8px 0 16px; }
+.cs-sub .cs-meta { max-width: 520px; margin-bottom: 24px; }
+
+/* Footer */
+.cs-foot {
+  border-top: 1px solid var(--ink); padding: 16px 0 40px;
+  display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; text-transform: uppercase;
+}
+.cs-foot a { text-decoration: none; }
+
+@media (max-width: 760px) {
+  .wrap { padding: 0 16px; }
+  .cs-head { grid-template-columns: 1fr; gap: 24px; padding: 24px 0; }
+  .cs-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); padding-bottom: 32px; }
+  .cs-row, .cs-partners { grid-template-columns: 1fr; gap: 8px; }
+  .cs-row p { font-size: 14px; }
+}
