@@ -130,6 +130,15 @@
       display: flex; align-items: center; justify-content: center;
     }
 
+    .row-tags { color: var(--mute); font-size: 10px; }
+    .section-head {
+      border-top: 1px solid var(--line); padding: 10px 0 2px;
+      display: flex; justify-content: space-between; gap: 16px;
+      text-transform: uppercase; font-weight: 500;
+    }
+    .section-head span + span { color: var(--mute); font-weight: 400; }
+    .concepts-head { margin-top: 56px; border-top-width: 2px; }
+    #concepts[hidden] { display: none; }
     .count {
       border-top: 1px solid var(--line); padding: 10px 0 0;
       display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
@@ -209,51 +218,29 @@
   </header>
 
   <main id="work">
-    <div class="filters" role="group" aria-label="Filter projects">
+    <div class="filters" role="group" aria-label="Filter by what I do">
       <span class="label">Show</span>
       <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
-      <button type="button" class="chip" data-f="movement" aria-pressed="false">Movement building</button>
+      <button type="button" class="chip" data-f="gtm" aria-pressed="false">Go-to-Market</button>
+      <button type="button" class="chip" data-f="launch" aria-pressed="false">Product Launches</button>
+      <button type="button" class="chip" data-f="insights" aria-pressed="false">Consumer Insights</button>
+      <button type="button" class="chip" data-f="advocacy" aria-pressed="false">Customer Advocacy</button>
       <button type="button" class="chip" data-f="community" aria-pressed="false">Community</button>
-      <button type="button" class="chip" data-f="gtm" aria-pressed="false">GTM strategy</button>
-      <button type="button" class="chip" data-f="brand" aria-pressed="false">Brand narrative</button>
-      <button type="button" class="chip" data-f="ai" aria-pressed="false">AI &amp; tech</button>
-      <button type="button" class="chip" data-f="events" aria-pressed="false">Events</button>
-      <button type="button" class="chip" data-f="customers" aria-pressed="false">Customers</button>
+      <button type="button" class="chip" data-f="brand" aria-pressed="false">Brand</button>
+      <button type="button" class="chip" data-f="creator" aria-pressed="false">Creator &amp; Social</button>
+      <button type="button" class="chip" data-f="growth" aria-pressed="false">Growth &amp; Lifecycle</button>
+      <button type="button" class="chip" data-f="ai" aria-pressed="false">AI &amp; Consumer Tech</button>
+      <button type="button" class="chip" data-f="creative" aria-pressed="false">Creative Direction</button>
     </div>
 
+    <div class="section-head"><span>Case studies</span><span id="count-work"></span></div>
+    <div id="work-rows">
     <!-- Live case studies -->
-    <a class="row" href="cyber-collective.html" data-tags="movement community events brand">
-      <div class="row-meta">
-        <span><span class="row-name">Cyber Collective</span><br>Chief Strategy &amp; Marketing Officer</span>
-        <span class="row-sum">Internet Street Smarts: scaling a digital safety movement to 14+ countries. $600K+ in philanthropic funding, 5M+ people reached.</span>
-        <span class="row-foot"><span>2021–Present</span><span class="go">Read →</span></span>
-      </div>
-      <div class="thumbs">
-        <div class="thumb lg"><img src="images/cyber-collective-workshops.png" alt="Cyber Collective community workshops"></div>
-        <div class="thumb sm"><img src="images/cyber-collective-course.png" alt="Internet Street Smarts course"></div>
-        <div class="thumb sm fit"><img src="images/cyber-collective-logo.png" alt="Cyber Collective logo"></div>
-        <div class="more">+14</div>
-      </div>
-    </a>
-
-    <a class="row" href="conscious-stack-design.html" data-tags="movement brand gtm community">
-      <div class="row-meta">
-        <span><span class="row-name">Conscious Stack Design</span><br>CMO partnership</span>
-        <span class="row-sum">Building the movement infrastructure for conscious tech: brand narrative, community architecture and practitioner certification.</span>
-        <span class="row-foot"><span>[Years]</span><span class="go">Read →</span></span>
-      </div>
-      <div class="thumbs">
-        <div class="thumb lg"><img src="images/conscious-stack-og.png" alt="Conscious Stack: Reclaim your mind"></div>
-        <div class="thumb sm ph" aria-hidden="true"></div>
-        <div class="thumb sm ph" aria-hidden="true"></div>
-        <div class="more">+3</div>
-      </div>
-    </a>
-
-    <a class="row" href="digital-culturist.html" data-tags="gtm ai community">
+    <a class="row" href="digital-culturist.html" data-tags="gtm launch insights community ai">
       <div class="row-meta">
         <span><span class="row-name">Digital Culturist</span><br>Fractional CMO · 0→1 GTM</span>
         <span class="row-sum">Go-to-market for an AI consumer product. 150+ beta members in 7 days, organic only, $0 paid spend.</span>
+        <span class="row-tags">Go-to-Market · Product Launches · Consumer Insights · Community · AI &amp; Consumer Tech</span>
         <span class="row-foot"><span>2025–Present</span><span class="go">Read →</span></span>
       </div>
       <div class="thumbs">
@@ -264,10 +251,41 @@
       </div>
     </a>
 
-    <a class="row" href="meta-well.html" data-tags="brand ai community">
+    <a class="row" href="cyber-collective.html" data-tags="insights community brand creator">
+      <div class="row-meta">
+        <span><span class="row-name">Cyber Collective</span><br>Chief Strategy &amp; Marketing Officer</span>
+        <span class="row-sum">Internet Street Smarts: scaling a digital safety movement to 14+ countries. $600K+ in philanthropic funding, 5M+ people reached.</span>
+        <span class="row-tags">Consumer Insights · Community · Brand · Creator &amp; Social</span>
+        <span class="row-foot"><span>2021–Present</span><span class="go">Read →</span></span>
+      </div>
+      <div class="thumbs">
+        <div class="thumb lg"><img src="images/cyber-collective-workshops.png" alt="Cyber Collective community workshops"></div>
+        <div class="thumb sm"><img src="images/cyber-collective-course.png" alt="Internet Street Smarts course"></div>
+        <div class="thumb sm fit"><img src="images/cyber-collective-logo.png" alt="Cyber Collective logo"></div>
+        <div class="more">+14</div>
+      </div>
+    </a>
+
+    <a class="row" href="conscious-stack-design.html" data-tags="brand creative">
+      <div class="row-meta">
+        <span><span class="row-name">Conscious Stack Design</span><br>CMO partnership</span>
+        <span class="row-sum">Building the movement infrastructure for conscious tech: brand narrative, community architecture and practitioner certification.</span>
+        <span class="row-tags">Brand · Creative Direction</span>
+        <span class="row-foot"><span>[Years]</span><span class="go">Read →</span></span>
+      </div>
+      <div class="thumbs">
+        <div class="thumb lg"><img src="images/conscious-stack-og.png" alt="Conscious Stack: Reclaim your mind"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="more">+3</div>
+      </div>
+    </a>
+
+    <a class="row" href="meta-well.html" data-tags="brand creative">
       <div class="row-meta">
         <span><span class="row-name">MetaWell</span><br>Fractional strategy &amp; GTM</span>
         <span class="row-sum">From wellness content to a community of practice: brand story, editorial voice and a $40 membership tier.</span>
+        <span class="row-tags">Brand · Creative Direction</span>
         <span class="row-foot"><span>2024–2025</span><span class="go">Read →</span></span>
       </div>
       <div class="thumbs">
@@ -278,10 +296,11 @@
       </div>
     </a>
 
-    <a class="row" href="ourkind.html" data-tags="community brand movement">
+    <a class="row" href="ourkind.html" data-tags="brand creative">
       <div class="row-meta">
         <span><span class="row-name">OurKind Therapy</span><br>Brand &amp; community infrastructure</span>
         <span class="row-sum">Brand and community for a modern therapy practice. 3x monthly inquiries and a first group cohort filled, all organic.</span>
+        <span class="row-tags">Brand · Creative Direction</span>
         <span class="row-foot"><span>2024–Present</span><span class="go">Read →</span></span>
       </div>
       <div class="thumbs">
@@ -292,11 +311,12 @@
       </div>
     </a>
 
-    <!-- Placeholders: stories still to write -->
-    <div class="row" data-tags="customers events">
+    <!-- New case studies still to write -->
+    <div class="row" data-tags="gtm launch insights advocacy">
       <div class="row-meta">
         <span><span class="row-name">Menlo Security</span><br>Advisory board + advocacy</span>
         <span class="row-sum">[One-line outcome]</span>
+        <span class="row-tags">Go-to-Market · Product Launches · Consumer Insights · Customer Advocacy</span>
         <span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span>
       </div>
       <div class="thumbs">
@@ -307,11 +327,12 @@
       </div>
     </div>
 
-    <div class="row" data-tags="community events ai">
+    <div class="row" data-tags="advocacy growth">
       <div class="row-meta">
-        <span><span class="row-name">Women Building with AI</span><br>Co-founder</span>
+        <span><span class="row-name">Guru</span><br>[Role]</span>
         <span class="row-sum">[One-line outcome]</span>
-        <span class="row-foot"><span>2024–</span><span class="soon">Coming soon</span></span>
+        <span class="row-tags">Customer Advocacy · Growth &amp; Lifecycle</span>
+        <span class="row-foot"><span>[Years]</span><span class="soon">Coming soon</span></span>
       </div>
       <div class="thumbs">
         <div class="thumb lg ph" aria-hidden="true"></div>
@@ -321,10 +342,11 @@
       </div>
     </div>
 
-    <div class="row" data-tags="movement brand">
+    <div class="row" data-tags="community brand growth">
       <div class="row-meta">
         <span><span class="row-name">B Lab</span><br>B Corp Month</span>
         <span class="row-sum">[One-line outcome]</span>
+        <span class="row-tags">Community · Brand · Growth &amp; Lifecycle</span>
         <span class="row-foot"><span>2018</span><span class="soon">Coming soon</span></span>
       </div>
       <div class="thumbs">
@@ -335,11 +357,30 @@
       </div>
     </div>
 
-    <div class="row" data-tags="ai">
+    <div class="row" data-tags="community creator">
       <div class="row-meta">
-        <span><span class="row-name">AI prototypes</span><br>Build</span>
+        <span><span class="row-name">Women Building with AI</span><br>Co-founder</span>
         <span class="row-sum">[One-line outcome]</span>
-        <span class="row-foot"><span>2026</span><span class="soon">Coming soon</span></span>
+        <span class="row-tags">Community · Creator &amp; Social</span>
+        <span class="row-foot"><span>2024–</span><span class="soon">Coming soon</span></span>
+      </div>
+      <div class="thumbs">
+        <div class="thumb lg ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="more">+N</div>
+      </div>
+    </div>
+    </div>
+
+    <section id="concepts" aria-labelledby="concepts-label">
+      <div class="section-head concepts-head"><span id="concepts-label">Concepts &amp; experiments</span><span id="count-concepts"></span></div>
+    <div class="row" data-tags="brand ai creative">
+      <div class="row-meta">
+        <span><span class="row-name">Lifestyle.AI</span><br>Concept</span>
+        <span class="row-sum">[One-line outcome]</span>
+        <span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span>
+        <span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span>
       </div>
       <div class="thumbs">
         <div class="thumb lg ph" aria-hidden="true"></div>
@@ -349,9 +390,40 @@
       </div>
     </div>
 
+    <div class="row" data-tags="brand ai creative">
+      <div class="row-meta">
+        <span><span class="row-name">Screen Readings</span><br>Concept</span>
+        <span class="row-sum">[One-line outcome]</span>
+        <span class="row-tags">Brand · AI &amp; Consumer Tech · Creative Direction</span>
+        <span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span>
+      </div>
+      <div class="thumbs">
+        <div class="thumb lg ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="more">+N</div>
+      </div>
+    </div>
+
+    <div class="row" data-tags="ai creative">
+      <div class="row-meta">
+        <span><span class="row-name">Year at Glance</span><br>AI build</span>
+        <span class="row-sum">[One-line outcome]</span>
+        <span class="row-tags">AI &amp; Consumer Tech · Creative Direction</span>
+        <span class="row-foot"><span>[Year]</span><span class="soon">In progress</span></span>
+      </div>
+      <div class="thumbs">
+        <div class="thumb lg ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="thumb sm ph" aria-hidden="true"></div>
+        <div class="more">+N</div>
+      </div>
+    </div>
+    </section>
+
     <p class="empty" id="empty">Nothing in this filter yet.</p>
     <div class="count">
-      <span id="count">9 of 9 projects</span>
+      <span id="count"></span>
       <span>Click a row to read the story</span>
     </div>
   </main>
@@ -394,25 +466,37 @@
 <script>
   (function () {
     var chips = document.querySelectorAll('.chip');
-    var rows = document.querySelectorAll('#work .row');
-    var count = document.getElementById('count');
+    var work = document.querySelectorAll('#work-rows .row');
+    var concepts = document.querySelectorAll('#concepts .row');
+    var conceptsSection = document.getElementById('concepts');
     var empty = document.getElementById('empty');
 
-    function apply(f) {
+    function filter(rows, f) {
       var shown = 0;
       rows.forEach(function (r) {
         var match = f === 'all' || r.dataset.tags.split(' ').indexOf(f) !== -1;
         r.hidden = !match;
         if (match) shown++;
       });
-      chips.forEach(function (c) { c.setAttribute('aria-pressed', c.dataset.f === f ? 'true' : 'false'); });
-      count.textContent = shown + ' of ' + rows.length + ' projects';
-      empty.classList.toggle('on', shown === 0);
+      return shown;
     }
 
-    chips.forEach(function (c) {
-      c.addEventListener('click', function () { apply(c.dataset.f); });
+    function apply(f) {
+      var w = filter(work, f);
+      var c = filter(concepts, f);
+      conceptsSection.hidden = c === 0;
+      chips.forEach(function (ch) { ch.setAttribute('aria-pressed', ch.dataset.f === f ? 'true' : 'false'); });
+      document.getElementById('count-work').textContent = w + ' of ' + work.length;
+      document.getElementById('count-concepts').textContent = c + ' of ' + concepts.length;
+      document.getElementById('count').textContent =
+        w + (w === 1 ? ' case study' : ' case studies') + ' · ' + c + (c === 1 ? ' concept' : ' concepts');
+      empty.classList.toggle('on', w + c === 0);
+    }
+
+    chips.forEach(function (ch) {
+      ch.addEventListener('click', function () { apply(ch.dataset.f); });
     });
+    apply('all');
   })();
 </script>
 </body>
