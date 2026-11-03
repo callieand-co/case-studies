@@ -216,6 +216,37 @@
       border: 1px dashed #9A9A9A; color: var(--mute); font-size: 11px;
     }
 
+    .logo-wall {
+      list-style: none; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr));
+      border-top: 1px solid var(--soft); border-left: 1px solid var(--soft);
+      margin: 16px 0 56px;
+    }
+    .logo-wall li {
+      border-right: 1px solid var(--soft); border-bottom: 1px solid var(--soft);
+      aspect-ratio: 4 / 3; display: flex; align-items: center; justify-content: center;
+      overflow: hidden; background: #fff; padding: 0 6%;
+    }
+    .logo-wall img {
+      width: 100%; height: 100%; object-fit: contain; display: block;
+      mix-blend-mode: multiply; filter: grayscale(1);
+      transform: scale(var(--s, 1)); opacity: .85; transition: opacity .2s ease;
+    }
+    .logo-wall li:hover img { opacity: 1; }
+    @media (max-width: 860px) { .logo-wall { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+    .press { display: grid; grid-template-columns: 3fr 4fr; gap: 24px; margin-bottom: 48px; }
+    .logo-wall--sm { margin: 16px 0 0; }
+    .press > div:first-child .logo-wall--sm { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .press > div:last-child .logo-wall--sm { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .logo-wall--sm li { aspect-ratio: 3 / 2; padding: 0 16%; }
+    .logo-wall--sm img { filter: brightness(0); mix-blend-mode: normal; height: auto; max-height: 46%; }
+    .logo-wall--sm img.raster { filter: grayscale(1); mix-blend-mode: multiply; height: 100%; max-height: none; }
+    .wordmark { font-family: var(--display); font-size: 18px; line-height: 1; text-align: center; white-space: nowrap; }
+    @media (max-width: 860px) {
+      .press { grid-template-columns: 1fr; }
+      .press > div:last-child .logo-wall--sm { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+
     /* FOOTER */
     .footer {
       border-top: 1px solid var(--line); padding: 16px 0 40px;
@@ -390,19 +421,42 @@
       <div class="stat"><b>5M+</b><span>Reached</span></div>
     </div>
 
-    <div class="section-label">Worked with, featured in, spoken at</div>
-    <div class="logos">
-      <div class="logo-group">
-        <h3>Worked with</h3>
-        <span class="logo">B Lab</span><span class="logo">Guru</span><span class="logo">Menlo Security</span><span class="logo">Mozilla</span><span class="logo">Cisco</span><span class="logo">Filecoin Foundation</span>
+    <div class="section-label">Worked with</div>
+    <ul class="logo-wall" aria-label="Companies I've worked with">
+      <li><img style="--s: 2.3" src="images/logos/menlo-security.png" alt="Menlo Security" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.25" src="images/logos/guru.png" alt="Guru" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.15" src="images/logos/patagonia.png" alt="Patagonia" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.5" src="images/logos/ben-and-jerrys.png" alt="Ben &amp; Jerry&#x27;s" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.2" src="images/logos/athleta.png" alt="Athleta" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.15" src="images/logos/meta.png" alt="Meta" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.15" src="images/logos/b-corp.png" alt="B Lab / Certified B Corporation" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.1" src="images/logos/archewell.png" alt="Archewell Foundation" width="600" height="450" loading="lazy"></li>
+      <li><img src="images/logos/hopelab.png" alt="Hopelab" width="600" height="450" loading="lazy"></li>
+      <li><img src="images/logos/the-markup.png" alt="The Markup" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.2" src="images/logos/alliance-for-securing-democracy.png" alt="Alliance for Securing Democracy" width="600" height="450" loading="lazy"></li>
+      <li><img src="images/logos/unfinished.png" alt="Unfinished" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.1" src="images/logos/rt-youth-power-fund.png" alt="RT Youth Power Fund" width="600" height="450" loading="lazy"></li>
+      <li><img style="--s: 1.15" src="images/logos/nyc-open-data.png" alt="NYC Open Data" width="600" height="450" loading="lazy"></li>
+      <li><img src="images/logos/meta-well.png" alt="Meta Well" width="600" height="450" loading="lazy"></li>
+    </ul>
+
+    <div class="press">
+      <div>
+        <div class="section-label">Featured in</div>
+        <ul class="logo-wall logo-wall--sm" aria-label="Featured in">
+          <li><img src="images/logos/forbes.svg" alt="Forbes"></li>
+          <li><img src="images/logos/vogue.svg" alt="Vogue"></li>
+          <li><img src="images/logos/harpers-bazaar.svg" alt="Harper’s Bazaar"></li>
+        </ul>
       </div>
-      <div class="logo-group">
-        <h3>Featured in</h3>
-        <span class="logo">Forbes</span><span class="logo">Vogue</span><span class="logo">Harper’s Bazaar</span><span class="logo">[Logo]</span>
-      </div>
-      <div class="logo-group">
-        <h3>Spoken at</h3>
-        <span class="logo">Columbia</span><span class="logo">New America</span><span class="logo">NYC Open Data Week</span><span class="logo">[Logo]</span>
+      <div>
+        <div class="section-label">Spoken at</div>
+        <ul class="logo-wall logo-wall--sm" aria-label="Spoken at">
+          <li style="padding: 0 6%"><img src="images/logos/columbia.svg" alt="Columbia University" style="max-height: none; width: 100%"></li>
+          <li><img src="images/logos/new-america.svg" alt="New America"></li>
+          <li><img class="raster" style="--s: 1.6" src="images/logos/nyc-open-data.png" alt="NYC Open Data Week"></li>
+          <li><span class="wordmark">Philly<br>Tech Week</span></li>
+        </ul>
       </div>
     </div>
   </section>
