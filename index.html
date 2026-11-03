@@ -195,6 +195,7 @@
     .story-meta { display: flex; flex-direction: column; gap: 4px; text-transform: uppercase; }
     .story-name { font-weight: 500; font-size: 13px; text-decoration: underline; text-underline-offset: 3px; }
     .story-sub { color: var(--mute); }
+    .story-tags { color: var(--ink); font-size: 10px; line-height: 1.6; padding-top: 6px; max-width: 260px; }
     .story-go { margin-top: auto; visibility: hidden; }
     .story:hover .story-go, .story:focus-visible .story-go { visibility: visible; }
     .story-strip { display: flex; gap: 4px; overflow: hidden; height: 200px; }
@@ -314,56 +315,27 @@
   </header>
 
   <main id="work">
-    <div class="filters" role="group" aria-label="Filter case studies">
-      <span class="label">Show</span>
-      <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
-      <button type="button" class="chip" data-f="zero" aria-pressed="false">0→1 Launch</button>
-      <button type="button" class="chip" data-f="product" aria-pressed="false">Product</button>
-      <button type="button" class="chip" data-f="insights" aria-pressed="false">Consumer Insights</button>
-      <button type="button" class="chip" data-f="advocacy" aria-pressed="false">Customer Advocacy</button>
-      <button type="button" class="chip" data-f="community" aria-pressed="false">Community</button>
-      <button type="button" class="chip" data-f="brand" aria-pressed="false">Brand</button>
-      <button type="button" class="chip" data-f="creator" aria-pressed="false">Creator &amp; Social</button>
-      <button type="button" class="chip" data-f="growth" aria-pressed="false">Growth &amp; Lifecycle</button>
-      <button type="button" class="chip" data-f="ai" aria-pressed="false">AI &amp; Consumer Tech</button>
-      <button type="button" class="chip" data-f="creative" aria-pressed="false">Creative Direction</button>
-    </div>
-
-    <div class="section-head"><span>Case studies</span><span id="count"></span></div>
+    <div class="section-head"><span>Case studies</span><span>5 stories</span></div>
     <a class="story" href="cyber-collective.html" data-tags="insights community brand creator">
-      <span class="story-meta"><span class="story-name">Cyber Collective</span><span class="story-sub">Fractional Chief Strategy &amp; Marketing Officer</span><span class="story-go">Read →</span></span>
+      <span class="story-meta"><span class="story-name">Cyber Collective</span><span class="story-sub">Fractional Chief Strategy &amp; Marketing Officer</span><span class="story-tags">Consumer Insights · Community · Brand · Creator &amp; Social</span><span class="story-go">Read →</span></span>
       <span class="story-strip"><img src="images/cc/merch-dont-get-got.jpg" alt="“Don’t Get Got” tee" loading="lazy"><img src="images/cc/iss-website.jpg" alt="Internet Street Smarts course page" loading="lazy"><img src="images/cc/convening-collage.jpg" alt="Guests at a Cyber Collective dinner" loading="lazy"><img src="images/cc/merch-hoodie-back.jpg" alt="Hoodie: are you who the internet thinks you are?" loading="lazy"><img src="images/cc/password-journal.jpg" alt="Password journal" loading="lazy"><img src="images/cc/dinner-table.jpg" alt="Convening dinner table" loading="lazy"><img src="images/cc/merch-duo.jpg" alt="Merch shoot" loading="lazy"></span>
     </a>
     <a class="story" href="digital-culturist.html" data-tags="zero product insights community ai">
-      <span class="story-meta"><span class="story-name">Digital Culturist</span><span class="story-sub">Fractional CMO · 0→1 AI launch</span><span class="story-go">Read →</span></span>
+      <span class="story-meta"><span class="story-name">Digital Culturist</span><span class="story-sub">Fractional CMO · 0→1 AI launch</span><span class="story-tags">0→1 Launch · Product · Consumer Insights · Community · AI &amp; Consumer Tech</span><span class="story-go">Read →</span></span>
       <span class="story-strip"><img src="images/dc/brand-world.jpg" alt="Retro computer: ready to curate the internet?" loading="lazy"><img src="images/dc/hat-post-1.jpg" alt="“Paid to overthink” hat" loading="lazy"><img src="images/dc/beta-community.jpg" alt="Beta community call" loading="lazy"><img src="images/dc/trend-report.jpg" alt="Trend report map" loading="lazy"><img src="images/dc/app-mobile.jpg" alt="Save from your phone" loading="lazy"><img src="images/dc/enterprise-pilot.jpg" alt="Enterprise pilot slide" loading="lazy"></span>
     </a>
     <a class="story" href="online-and-irl.html" data-tags="community creator creative ai">
-      <span class="story-meta"><span class="story-name">Online &amp; IRL</span><span class="story-sub">Founder · studio, community + events</span><span class="story-go">Read →</span></span>
+      <span class="story-meta"><span class="story-name">Online &amp; IRL</span><span class="story-sub">Founder · studio, community + events</span><span class="story-tags">Community · Creator &amp; Social · Creative Direction · AI &amp; Consumer Tech</span><span class="story-go">Read →</span></span>
       <span class="story-strip"><img src="images/oi/protect-your-genius.jpg" alt="Protect Your Genius workshop poster" loading="lazy"><img src="images/oi/laptop-party.jpg" alt="Laptop Party poster" loading="lazy"><img src="images/oi/apres-scroll.jpg" alt="Après Scroll poster" loading="lazy"><img src="images/oi/return-on-attention.jpg" alt="Return on Attention poster" loading="lazy"></span>
     </a>
     <a class="story" href="b2b-tech.html" data-tags="zero product insights advocacy growth">
-      <span class="story-meta"><span class="story-name">Menlo Security &amp; Guru</span><span class="story-sub">Customer marketing + advocacy · B2B tech</span><span class="story-go">Read →</span></span>
+      <span class="story-meta"><span class="story-name">Menlo Security &amp; Guru</span><span class="story-sub">Customer marketing + advocacy · B2B tech</span><span class="story-tags">0→1 Launch · Product · Consumer Insights · Customer Advocacy · Growth &amp; Lifecycle</span><span class="story-go">Read →</span></span>
       <span class="story-strip"><img src="images/b2b/menlo-cab-event.jpg" alt="Menlo Customer Advisory Board event" loading="lazy"></span>
     </a>
     <a class="story" href="b-lab.html" data-tags="community brand growth">
-      <span class="story-meta"><span class="story-name">B Lab</span><span class="story-sub">Digital content + B Corp Month</span><span class="story-go">Read →</span></span>
+      <span class="story-meta"><span class="story-name">B Lab</span><span class="story-sub">Digital content + B Corp Month</span><span class="story-tags">Community · Brand · Growth &amp; Lifecycle</span><span class="story-go">Read →</span></span>
       <span class="story-strip"><img src="images/blab/b-corp-month-street.jpg" alt="B Corp Month street activation" loading="lazy"><img src="images/blab/b-lab-event.jpg" alt="B Lab event" loading="lazy"><img src="images/blab/b-corp-sign.jpg" alt="Certified B Corporation sign" loading="lazy"></span>
     </a>
-    <a class="story" href="conscious-stack-design.html" data-tags="creative brand">
-      <span class="story-meta"><span class="story-name">Conscious Stack Design</span><span class="story-sub">CMO partnership</span><span class="story-go">Read →</span></span>
-      <span class="story-strip"><img src="images/conscious-stack-og.png" alt="Conscious Stack: Reclaim your mind" loading="lazy"></span>
-    </a>
-    <a class="story" href="meta-well.html" data-tags="creative brand">
-      <span class="story-meta"><span class="story-name">MetaWell</span><span class="story-sub">Fractional strategy &amp; GTM</span><span class="story-go">Read →</span></span>
-      <span class="story-strip"><img src="images/metawell-featured.png" alt="MetaWell brand visual" loading="lazy"></span>
-    </a>
-    <a class="story" href="ourkind.html" data-tags="creative brand">
-      <span class="story-meta"><span class="story-name">OurKind Therapy</span><span class="story-sub">Brand &amp; community infrastructure</span><span class="story-go">Read →</span></span>
-      <span class="story-strip"><img src="images/ourkind-therapists.jpg" alt="OurKind Therapy team" loading="lazy"><img src="images/ourkind-group.jpg" alt="OurKind group session" loading="lazy"><img src="images/ourkind-website-review.jpg" alt="OurKind website review call" loading="lazy"></span>
-    </a>
-
-    <p class="empty" id="empty">Nothing in this filter yet.</p>
   </main>
 
   <section class="proof" id="proof" aria-label="Proof">
@@ -424,29 +396,5 @@
   </footer>
 
 </div>
-<script>
-  (function () {
-    var chips = document.querySelectorAll('.chip');
-    var rows = document.querySelectorAll('.story');
-    var empty = document.getElementById('empty');
-
-    function apply(f) {
-      var shown = 0;
-      rows.forEach(function (r) {
-        var match = f === 'all' || r.dataset.tags.split(' ').indexOf(f) !== -1;
-        r.hidden = !match;
-        if (match) shown++;
-      });
-      chips.forEach(function (ch) { ch.setAttribute('aria-pressed', ch.dataset.f === f ? 'true' : 'false'); });
-      document.getElementById('count').textContent = shown + ' of ' + rows.length;
-      empty.classList.toggle('on', shown === 0);
-    }
-
-    chips.forEach(function (ch) {
-      ch.addEventListener('click', function () { apply(ch.dataset.f); });
-    });
-    apply('all');
-  })();
-</script>
 </body>
 </html>

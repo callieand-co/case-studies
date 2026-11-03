@@ -4,6 +4,36 @@
       "source": "/mercury",
       "destination": "https://canva.link/j710n35qhuo39xx",
       "permanent": false
+    },
+    {
+      "source": "/conscious-stack-design",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/conscious-stack-design.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/meta-well",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/meta-well.html",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/ourkind",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/ourkind.html",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }
